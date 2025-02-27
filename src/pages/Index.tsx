@@ -29,7 +29,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-safari-lime via-white to-safari-cream">
       <header className="py-6 px-4 flex justify-between items-center bg-safari-orange text-white shadow-md">
-        <h1 className="text-2xl font-bold">Curious Service Safari</h1>
+        <h1 className="text-2xl font-bold">Curiosity Service Design Safari</h1>
         
         <Button 
           variant="outline" 
@@ -88,7 +88,7 @@ const Index = () => {
       </main>
       
       <footer className="py-6 text-center text-safari-brown text-sm bg-safari-cream">
-        <p>© 2023 Curious Service Safari | Inspired by <span className="font-bold">The Screaming Hairy Armadillo</span></p>
+        <p>© 2023 Curiosity Service Design Safari | Inspired by <span className="font-bold">The Screaming Hairy Armadillo</span></p>
       </footer>
     </div>
   );
