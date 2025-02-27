@@ -8,6 +8,7 @@ interface AnimatedContainerProps {
   delay?: number;
   className?: string;
   once?: boolean;
+  onClick?: () => void;
 }
 
 const AnimatedContainer = ({
@@ -16,6 +17,7 @@ const AnimatedContainer = ({
   delay = 0,
   className = "",
   once = true,
+  onClick,
 }: AnimatedContainerProps) => {
   const [isVisible, setIsVisible] = useState(!once);
   
@@ -53,6 +55,7 @@ const AnimatedContainer = ({
         className
       )}
       style={{ transitionDelay: `${delay}ms` }}
+      onClick={onClick}
     >
       {children}
     </div>

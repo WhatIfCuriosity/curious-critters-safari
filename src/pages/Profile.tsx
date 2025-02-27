@@ -1,15 +1,15 @@
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/contexts/AuthContext";
-import { getUserProfile, getUserActivities } from "@/services/databaseService";
-import { ArrowLeft, Award, Clock, Settings, User } from "lucide-react";
-import Button from "@/components/Button";
-import AnimatedContainer from "@/components/AnimatedContainer";
-import { UserProfile, UserActivity } from "@/lib/supabase";
-import { getAnimalById } from "@/lib/animals";
-import { getActivityById } from "@/lib/activities";
-import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "../contexts/AuthContext";
+import { getUserProfile, getUserActivities } from "../services/databaseService";
+import { ArrowLeft, Award, Clock, Settings, User, Check } from "lucide-react";
+import { Button } from "../components/ui/button";
+import AnimatedContainer from "../components/AnimatedContainer";
+import { UserProfile, UserActivity } from "../lib/supabase";
+import { getAnimalById } from "../lib/animals";
+import { getActivityById } from "../lib/activities";
+import { useToast } from "../hooks/use-toast";
 
 const Profile = () => {
   const { user, signOut } = useAuth();
@@ -128,7 +128,7 @@ const Profile = () => {
               <div className="bg-white rounded-xl p-6 text-center border border-gray-100">
                 <p className="text-gray-500">You haven't completed any activities yet.</p>
                 <Button 
-                  variant="primary"
+                  variant="default"
                   onClick={() => navigate("/biomimicrosity")}
                   className="mt-4"
                 >
@@ -193,6 +193,3 @@ const Profile = () => {
 };
 
 export default Profile;
-
-// Importing Check here to avoid build error
-import { Check } from "lucide-react";

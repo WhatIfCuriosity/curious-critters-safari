@@ -2,11 +2,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Moon, Sun, Bell, BellOff } from "lucide-react";
-import Button from "@/components/Button";
-import AnimatedContainer from "@/components/AnimatedContainer";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
+import { Button } from "../components/ui/button";
+import AnimatedContainer from "../components/AnimatedContainer";
+import { Switch } from "../components/ui/switch";
+import { Label } from "../components/ui/label";
+import { useToast } from "../hooks/use-toast";
 
 const Settings = () => {
   const navigate = useNavigate();

@@ -2,16 +2,16 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Check, Sparkles } from "lucide-react";
-import AnimalCard from "@/components/AnimalCard";
-import ActivityCard from "@/components/ActivityCard";
-import Button from "@/components/Button";
-import { getAnimalById, getRandomAnimal, Animal } from "@/lib/animals";
-import { getRandomActivity, Activity } from "@/lib/activities";
-import AnimatedContainer from "@/components/AnimatedContainer";
-import { useToast } from "@/hooks/use-toast";
-import { useAuth } from "@/contexts/AuthContext";
-import { saveUserActivity } from "@/services/databaseService";
-import ProfileBadge from "@/components/ProfileBadge";
+import AnimalCard from "../components/AnimalCard";
+import ActivityCard from "../components/ActivityCard";
+import { Button } from "../components/ui/button";
+import { getAnimalById, getRandomAnimal, Animal } from "../lib/animals";
+import { getRandomActivity, Activity } from "../lib/activities";
+import AnimatedContainer from "../components/AnimatedContainer";
+import { useToast } from "../hooks/use-toast";
+import { useAuth } from "../contexts/AuthContext";
+import { saveUserActivity } from "../services/databaseService";
+import ProfileBadge from "../components/ProfileBadge";
 
 const steps = [
   {
@@ -167,7 +167,7 @@ const Biomimicrosity = () => {
               ></textarea>
               
               <Button
-                variant="primary"
+                variant="default"
                 className="mt-4"
                 onClick={() => markStepComplete(0)}
                 disabled={notes[0].trim().length === 0}
@@ -197,7 +197,7 @@ const Biomimicrosity = () => {
               ></textarea>
               
               <Button
-                variant="primary"
+                variant="default"
                 className="mt-4"
                 onClick={() => markStepComplete(1)}
                 disabled={notes[1].trim().length === 0}
@@ -230,7 +230,7 @@ const Biomimicrosity = () => {
               ></textarea>
               
               <Button
-                variant="primary"
+                variant="default"
                 className="mt-4"
                 onClick={() => markStepComplete(2)}
                 disabled={notes[2].trim().length === 0}
@@ -350,7 +350,7 @@ const Biomimicrosity = () => {
             </Button>
           ) : (
             <Button
-              variant={completed[currentStep] ? "primary" : "outline"}
+              variant={completed[currentStep] ? "default" : "outline"}
               onClick={handleComplete}
               disabled={!completed[currentStep] || isSaving}
               className="flex items-center"
