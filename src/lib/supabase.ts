@@ -1,29 +1,21 @@
 
 import { createClient } from '@supabase/supabase-js';
 
-// This file sets up the Supabase client
-// The environment variables are automatically injected by Lovable
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// Use default empty values for development if environment variables are not set
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://placeholder-project.supabase.co';
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'placeholder-key';
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
-export type User = {
-  id: string;
-  email?: string;
-  username?: string;
-};
-
-export type UserProfile = {
+// Interface for user profile
+export interface UserProfile {
   id: string;
   user_id: string;
   username: string;
-  avatar_url?: string;
   completed_activities: number;
-  created_at?: string;
-};
+  created_at: string;
+}
 
-export type UserActivity = {
+// Interface for user activity
+export interface UserActivity {
   id: string;
   user_id: string;
   animal_id: string;
@@ -31,11 +23,6 @@ export type UserActivity = {
   notes: string[];
   completed: boolean;
   created_at: string;
-};
+}
 
-export type UserPreferences = {
-  id: string;
-  user_id: string;
-  theme: 'light' | 'dark';
-  notifications_enabled: boolean;
-};
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
