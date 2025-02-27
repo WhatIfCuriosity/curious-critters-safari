@@ -1,9 +1,10 @@
+
 export interface Animal {
   id: string;
   name: string;
   question: string;
   facts: string[];
-  image: string;
+  image: string | string[];
   category: "original" | "sweet" | "weird" | "magical" | "fierce" | "delicious" | "mysterious";
 }
 
@@ -17,7 +18,7 @@ export const animals: Animal[] = [
       "It spends most of its life underground",
       "Its pink color comes from blood vessels showing through its thin shell"
     ],
-    image: "?",
+    image: ["/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"],
     category: "original"
   },
   {
@@ -29,7 +30,7 @@ export const animals: Animal[] = [
       "It's often called a 'living fossil' because it's the only living member of its family, which dates back 125 million years",
       "It primarily lives in deep ocean waters"
     ],
-    image: "?",
+    image: ["/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png", "/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"],
     category: "mysterious"
   },
   {
@@ -53,7 +54,7 @@ export const animals: Animal[] = [
       "It uses expandable ribs covered with skin to form 'wings'",
       "Despite its name, it's actually a small lizard, not a dragon"
     ],
-    image: "?",
+    image: ["/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"],
     category: "magical"
   },
   {
@@ -65,7 +66,7 @@ export const animals: Animal[] = [
       "It has vibrant, colorful patterns on its abdomen",
       "It's only about the size of a grain of rice"
     ],
-    image: "?", 
+    image: ["/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png", "/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"],
     category: "magical"
   },
   {
@@ -77,7 +78,7 @@ export const animals: Animal[] = [
       "The bluer the feet, the more attractive they are to potential mates",
       "They dive from great heights to catch fish in the ocean"
     ],
-    image: "?",
+    image: ["/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png", "/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"],
     category: "weird"
   },
   {
@@ -125,7 +126,7 @@ export const animals: Animal[] = [
       "They are almost immune to cancer",
       "They can survive with very little oxygen and feel almost no pain"
     ],
-    image: "?",
+    image: ["/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png", "/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"],
     category: "weird"
   }
 ];
@@ -133,6 +134,17 @@ export const animals: Animal[] = [
 // Keep track of recently shown animals to avoid repeats
 let recentlyShownAnimals: string[] = [];
 const MAX_RECENT_ANIMALS = Math.min(5, Math.floor(animals.length / 2));
+
+// Helper function to get a random image from multiple options
+export const getRandomImage = (image: string | string[]): string => {
+  if (typeof image === 'string') {
+    return image;
+  }
+  
+  // Select a random image from the array
+  const randomIndex = Math.floor(Math.random() * image.length);
+  return image[randomIndex];
+};
 
 // Improved random animal selection that avoids repeats
 export const getRandomAnimal = (): Animal => {

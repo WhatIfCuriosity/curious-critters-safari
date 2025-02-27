@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { Animal } from "../lib/animals";
+import { Animal, getRandomImage } from "../lib/animals";
 import AnimatedContainer from "./AnimatedContainer";
 import { cn } from "../lib/utils";
 import { Info, HelpCircle } from "lucide-react";
@@ -19,21 +19,26 @@ const AnimalCard = ({
   const [showAllFacts, setShowAllFacts] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string>("");
 
   useEffect(() => {
     // Reset states when animal changes
     setIsLoaded(false);
     setHasError(false);
     
-    // Handle question mark placeholder
+    // Handle question mark placeholder or select a random image from available options
     if (animal.image === "?") {
       setIsLoaded(true);
       setHasError(true);
       return;
     }
     
+    // Get a random image if multiple are available
+    const imageToUse = getRandomImage(animal.image);
+    setSelectedImage(imageToUse);
+    
     const img = new Image();
-    img.src = animal.image;
+    img.src = imageToUse;
     img.onload = () => setIsLoaded(true);
     img.onerror = () => {
       setIsLoaded(true);
@@ -49,7 +54,7 @@ const AnimalCard = ({
     }, 3000);
     
     return () => clearTimeout(timeout);
-  }, [animal.image]);
+  }, [animal]);
 
   const getCategoryColor = (category: string) => {
     switch (category) {
@@ -89,7 +94,7 @@ const AnimalCard = ({
             </div>
           ) : (
             <img
-              src={animal.image}
+              src={selectedImage}
               alt={animal.name}
               className={cn(
                 "w-full h-full object-contain transition-opacity duration-500",
