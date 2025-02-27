@@ -18,7 +18,7 @@ export const animals: Animal[] = [
       "It spends most of its life underground",
       "Its pink color comes from blood vessels showing through its thin shell"
     ],
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/a921d78a-a617-405b-af5e-ba4fd16eb181.png",
     category: "original"
   },
   {
@@ -30,7 +30,7 @@ export const animals: Animal[] = [
       "It's often called a 'living fossil' because it's the only living member of its family, which dates back 125 million years",
       "It primarily lives in deep ocean waters"
     ],
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1501286353178-1ec881214838?q=80&w=2070&auto=format&fit=crop",
     category: "mysterious"
   },
   {
@@ -42,7 +42,7 @@ export const animals: Animal[] = [
       "It actually walks on the ocean floor rather than swimming",
       "It uses a modified dorsal fin on its head to lure prey"
     ],
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?q=80&w=1376&auto=format&fit=crop",
     category: "weird"
   },
   {
@@ -54,7 +54,7 @@ export const animals: Animal[] = [
       "It uses expandable ribs covered with skin to form 'wings'",
       "Despite its name, it's actually a small lizard, not a dragon"
     ],
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1487252665478-49b61b47f302?q=80&w=2070&auto=format&fit=crop",
     category: "magical"
   },
   {
@@ -66,7 +66,7 @@ export const animals: Animal[] = [
       "It has vibrant, colorful patterns on its abdomen",
       "It's only about the size of a grain of rice"
     ],
-    image: "/placeholder.svg", 
+    image: "?", 
     category: "magical"
   },
   {
@@ -78,7 +78,7 @@ export const animals: Animal[] = [
       "The bluer the feet, the more attractive they are to potential mates",
       "They dive from great heights to catch fish in the ocean"
     ],
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369?q=80&w=2048&auto=format&fit=crop",
     category: "weird"
   },
   {
@@ -90,7 +90,7 @@ export const animals: Animal[] = [
       "It has more hair than other armadillo species",
       "It's an excellent digger, creating burrows for shelter"
     ],
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/a921d78a-a617-405b-af5e-ba4fd16eb181.png",
     category: "original"
   },
   {
@@ -102,7 +102,7 @@ export const animals: Animal[] = [
       "They're highly social animals that live in groups",
       "They're excellent swimmers with partially webbed feet"
     ],
-    image: "/placeholder.svg",
+    image: "?",
     category: "sweet"
   },
   {
@@ -114,7 +114,7 @@ export const animals: Animal[] = [
       "It can produce bioluminescent light from light organs on its body",
       "Despite its name, it doesn't suck blood and is actually quite gentle"
     ],
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?q=80&w=1770&auto=format&fit=crop",
     category: "mysterious"
   },
   {
@@ -126,7 +126,7 @@ export const animals: Animal[] = [
       "They are almost immune to cancer",
       "They can survive with very little oxygen and feel almost no pain"
     ],
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1469041797191-50ace28483c3?q=80&w=2070&auto=format&fit=crop",
     category: "weird"
   }
 ];

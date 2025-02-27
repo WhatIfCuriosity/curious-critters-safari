@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Animal } from "../lib/animals";
 import AnimatedContainer from "./AnimatedContainer";
 import { cn } from "../lib/utils";
-import { Info } from "lucide-react";
+import { Info, HelpCircle } from "lucide-react";
 
 interface AnimalCardProps {
   animal: Animal;
@@ -18,14 +18,35 @@ const AnimalCard = ({
 }: AnimalCardProps) => {
   const [showAllFacts, setShowAllFacts] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
+    // Reset states when animal changes
+    setIsLoaded(false);
+    setHasError(false);
+    
+    // Handle question mark placeholder
+    if (animal.image === "?") {
+      setIsLoaded(true);
+      setHasError(true);
+      return;
+    }
+    
     const img = new Image();
     img.src = animal.image;
     img.onload = () => setIsLoaded(true);
+    img.onerror = () => {
+      setIsLoaded(true);
+      setHasError(true);
+    };
     
     // Fallback in case image doesn't load
-    const timeout = setTimeout(() => setIsLoaded(true), 1000);
+    const timeout = setTimeout(() => {
+      if (!isLoaded) {
+        setIsLoaded(true);
+        setHasError(true);
+      }
+    }, 3000);
     
     return () => clearTimeout(timeout);
   }, [animal.image]);
@@ -59,14 +80,21 @@ const AnimalCard = ({
     >
       <div className="relative h-48 overflow-hidden bg-safari-amber/10">
         <div className={`absolute inset-0 ${!isLoaded ? 'animate-pulse bg-safari-amber/20' : ''}`}>
-          <img
-            src={animal.image}
-            alt={animal.name}
-            className={cn(
-              "w-full h-full object-contain transition-opacity duration-500",
-              isLoaded ? "opacity-100" : "opacity-0"
-            )}
-          />
+          {hasError || animal.image === "?" ? (
+            <div className="w-full h-full flex items-center justify-center bg-gray-100">
+              <HelpCircle className="h-16 w-16 text-gray-400" />
+              <span className="sr-only">Image unavailable</span>
+            </div>
+          ) : (
+            <img
+              src={animal.image}
+              alt={animal.name}
+              className={cn(
+                "w-full h-full object-contain transition-opacity duration-500",
+                isLoaded ? "opacity-100" : "opacity-0"
+              )}
+            />
+          )}
         </div>
         <div className="absolute top-4 right-4">
           <span className={cn(
