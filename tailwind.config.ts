@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Book-themed colors
+				'safari-orange': '#F97316', // Orange from book cover
+				'safari-green': '#65A30D',  // Green from the frog
+				'safari-blue': '#3B82F6',   // Blue from the bottom section
+				'safari-lime': '#A3E635',   // Lime green from the top section
+				'safari-brown': '#92400E',  // Brown from the armadillo
+				'safari-cream': '#FEF3C7',  // Light cream color for backgrounds
+				'safari-amber': '#F59E0B',  // Amber for highlights
+				'safari-leaf': '#4ADE80',   // Another green shade for accents
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -49,12 +49,12 @@ const Random = () => {
   };
   
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-safari-cream">
-      <header className="py-6 px-4 flex justify-between items-center">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-safari-lime/30 to-safari-cream">
+      <header className="py-6 px-4 flex justify-between items-center bg-safari-orange text-white shadow-md">
         <Button 
           variant="ghost" 
           onClick={() => navigate("/")}
-          className="flex items-center text-gray-600"
+          className="flex items-center text-white hover:bg-white/20"
         >
           <ArrowLeft className="h-5 w-5 mr-1" />
           Back
@@ -75,9 +75,8 @@ const Random = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 mt-8">
           <Button
-            variant="default"
             onClick={handleNewAnimal}
-            className="flex items-center justify-center"
+            className="flex items-center justify-center bg-safari-green hover:bg-safari-green/90 text-white"
           >
             <RefreshCw className="h-5 w-5 mr-2" />
             New Animal
@@ -86,6 +85,7 @@ const Random = () => {
           <Button
             variant="outline"
             onClick={handleBiomimicrosity}
+            className="border-safari-orange text-safari-orange hover:bg-safari-orange/10"
           >
             Start 4-Step Activity
           </Button>
@@ -93,7 +93,7 @@ const Random = () => {
         
         {previousAnimals.length > 0 && (
           <div className="mt-12 w-full">
-            <h2 className="text-xl font-bold mb-4">Previously Explored</h2>
+            <h2 className="text-xl font-bold mb-4 text-safari-brown">Previously Explored</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {previousAnimals.map((prevAnimal, index) => (
                 <div 
@@ -106,7 +106,7 @@ const Random = () => {
                     delay={index * 100}
                     className="h-full"
                   >
-                    <div className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center h-full">
+                    <div className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center h-full border-l-4 border-safari-orange">
                       <div className="h-12 w-12 bg-gray-100 rounded-md mr-3 flex items-center justify-center overflow-hidden">
                         {prevAnimal.image === "?" ? (
                           <HelpCircle className="h-6 w-6 text-gray-400" />

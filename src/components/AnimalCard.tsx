@@ -74,16 +74,16 @@ const AnimalCard = ({
     <AnimatedContainer
       animation="scale"
       className={cn(
-        "rounded-2xl overflow-hidden shadow-md bg-white",
+        "rounded-2xl overflow-hidden shadow-md bg-white border border-safari-orange/30",
         className
       )}
     >
       <div className="relative h-48 overflow-hidden bg-safari-amber/10">
         <div className={`absolute inset-0 ${!isLoaded ? 'animate-pulse bg-safari-amber/20' : ''}`}>
           {hasError || animal.image === "?" ? (
-            <div className="w-full h-full flex flex-col items-center justify-center bg-gray-100">
-              <HelpCircle className="h-16 w-16 text-gray-400 mb-2" />
-              <p className="text-gray-500 text-sm text-center px-4">
+            <div className="w-full h-full flex flex-col items-center justify-center bg-safari-cream">
+              <HelpCircle className="h-16 w-16 text-safari-orange mb-2" />
+              <p className="text-safari-brown text-sm text-center px-4">
                 Image from "The Screaming Hairy Armadillo" book needed
               </p>
             </div>
@@ -109,14 +109,14 @@ const AnimalCard = ({
       </div>
       
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-gray-800 mb-2">{animal.name}</h3>
+        <h3 className="text-2xl font-bold text-safari-brown mb-2">{animal.name}</h3>
         <p className="text-gray-600 italic mb-4">"{animal.question}"</p>
         
         {showFacts && (
           <div className="mt-4">
             <div className="flex items-center mb-2">
               <Info className="h-5 w-5 text-safari-amber mr-2" />
-              <h4 className="font-semibold text-gray-800">Fun Facts</h4>
+              <h4 className="font-semibold text-safari-brown">Fun Facts</h4>
             </div>
             <ul className="space-y-2">
               {animal.facts.slice(0, showAllFacts ? undefined : 1).map((fact, index) => (
