@@ -1,11 +1,11 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "@/components/Button";
-import AnimatedContainer from "@/components/AnimatedContainer";
+import { Button } from "../components/ui/button";
+import AnimatedContainer from "../components/AnimatedContainer";
 import { ArrowRight, Sparkles } from "lucide-react";
-import ProfileBadge from "@/components/ProfileBadge";
-import { useAuth } from "@/contexts/AuthContext";
+import ProfileBadge from "../components/ProfileBadge";
+import { useAuth } from "../contexts/AuthContext";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -64,12 +64,12 @@ const Index = () => {
           
           <Button
             size="lg"
-            variant="primary"
-            withArrow
+            variant="default"
             onClick={handleExplore}
             className="animate-scale-in mb-8 w-full md:w-auto"
           >
             Get Curious
+            <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl">

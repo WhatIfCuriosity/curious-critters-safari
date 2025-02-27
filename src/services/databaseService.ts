@@ -1,7 +1,7 @@
 
-import { supabase, UserActivity, UserProfile } from '@/lib/supabase';
-import { Animal } from '@/lib/animals';
-import { Activity } from '@/lib/activities';
+import { supabase, UserActivity, UserProfile } from '../lib/supabase';
+import { Animal } from '../lib/animals';
+import { Activity } from '../lib/activities';
 
 // User Profile Services
 export const createUserProfile = async (userId: string, username: string): Promise<UserProfile> => {
@@ -114,30 +114,5 @@ export const getCompletedActivitiesCount = async (userId: string): Promise<numbe
 
 // Function to create necessary tables in Supabase if they don't exist
 export const setupDatabase = async () => {
-  // Note: This isn't typically how you'd set up tables in Supabase
-  // Normally you'd use the Supabase dashboard to create these tables
-  // This is just a reference for what tables we'd need
-
-  // profiles table
-  // CREATE TABLE profiles (
-  //   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  //   user_id UUID REFERENCES auth.users NOT NULL,
-  //   username TEXT,
-  //   avatar_url TEXT,
-  //   completed_activities INTEGER DEFAULT 0,
-  //   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-  // );
-
-  // user_activities table
-  // CREATE TABLE user_activities (
-  //   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  //   user_id UUID REFERENCES auth.users NOT NULL,
-  //   animal_id TEXT NOT NULL,
-  //   activity_id TEXT NOT NULL,
-  //   notes TEXT[] DEFAULT '{}',
-  //   completed BOOLEAN DEFAULT FALSE,
-  //   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-  // );
-  
   console.log("Database setup reference logged to console");
 };

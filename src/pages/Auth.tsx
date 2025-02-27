@@ -1,12 +1,12 @@
 
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import { useAuth } from "@/contexts/AuthContext";
-import AuthForm from "@/components/AuthForm";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useAuth } from "../contexts/AuthContext";
+import AuthForm from "../components/AuthForm";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { ArrowLeft, User } from "lucide-react";
-import Button from "@/components/Button";
-import AnimatedContainer from "@/components/AnimatedContainer";
+import { Button } from "../components/ui/button";
+import AnimatedContainer from "../components/AnimatedContainer";
 
 const Auth = () => {
   const { user, loading } = useAuth();
