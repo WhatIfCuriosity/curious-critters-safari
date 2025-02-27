@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft, RefreshCw, HelpCircle } from "lucide-react";
 import AnimalCard from "../components/AnimalCard";
 import { Button } from "../components/ui/button";
-import { getRandomAnimal, Animal } from "../lib/animals";
+import { getRandomAnimal, Animal, getRandomImage } from "../lib/animals";
 import AnimatedContainer from "../components/AnimatedContainer";
 import { useToast } from "../hooks/use-toast";
 import ProfileBadge from "../components/ProfileBadge";
@@ -114,7 +114,11 @@ const Random = () => {
                         {prevAnimal.image === "?" ? (
                           <HelpCircle className="h-6 w-6 text-gray-400" />
                         ) : (
-                          <img src={prevAnimal.image} alt={prevAnimal.name} className="h-full w-full object-contain" />
+                          <img 
+                            src={typeof prevAnimal.image === 'string' ? prevAnimal.image : getRandomImage(prevAnimal.image)} 
+                            alt={prevAnimal.name} 
+                            className="h-full w-full object-contain" 
+                          />
                         )}
                       </div>
                       <div>

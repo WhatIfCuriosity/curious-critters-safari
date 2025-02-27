@@ -7,7 +7,7 @@ import { ArrowLeft, Award, Clock, Settings, User, Check } from "lucide-react";
 import { Button } from "../components/ui/button";
 import AnimatedContainer from "../components/AnimatedContainer";
 import { UserProfile, UserActivity } from "../lib/supabase";
-import { getAnimalById } from "../lib/animals";
+import { getAnimalById, getRandomImage } from "../lib/animals";
 import { getActivityById } from "../lib/activities";
 import { useToast } from "../hooks/use-toast";
 
@@ -150,9 +150,9 @@ const Profile = () => {
                     >
                       <div className="flex items-start gap-3">
                         <div className="w-12 h-12 bg-gray-100 rounded-md overflow-hidden">
-                          {animal && (
+                          {animal && animal.image !== "?" && (
                             <img 
-                              src={animal.image} 
+                              src={typeof animal.image === 'string' ? animal.image : getRandomImage(animal.image)} 
                               alt={animal.name} 
                               className="w-full h-full object-cover"
                             />
