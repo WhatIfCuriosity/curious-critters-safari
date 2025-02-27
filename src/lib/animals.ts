@@ -1,4 +1,3 @@
-
 export interface Animal {
   id: string;
   name: string;
@@ -131,10 +130,35 @@ export const animals: Animal[] = [
   }
 ];
 
-// Utility function to get a random animal
+// Keep track of recently shown animals to avoid repeats
+let recentlyShownAnimals: string[] = [];
+const MAX_RECENT_ANIMALS = Math.min(5, Math.floor(animals.length / 2));
+
+// Improved random animal selection that avoids repeats
 export const getRandomAnimal = (): Animal => {
-  const randomIndex = Math.floor(Math.random() * animals.length);
-  return animals[randomIndex];
+  // If we've shown all animals or almost all, reset the history
+  if (recentlyShownAnimals.length >= animals.length - 1) {
+    recentlyShownAnimals = [];
+  }
+  
+  // Filter out recently shown animals
+  const availableAnimals = animals.filter(
+    animal => !recentlyShownAnimals.includes(animal.id)
+  );
+  
+  // Pick a random animal from available ones
+  const randomIndex = Math.floor(Math.random() * availableAnimals.length);
+  const selectedAnimal = availableAnimals[randomIndex];
+  
+  // Add to recently shown list
+  recentlyShownAnimals.push(selectedAnimal.id);
+  
+  // Maintain max length for recently shown animals
+  if (recentlyShownAnimals.length > MAX_RECENT_ANIMALS) {
+    recentlyShownAnimals.shift(); // Remove oldest animal
+  }
+  
+  return selectedAnimal;
 };
 
 // Utility function to get animal by ID

@@ -26,7 +26,10 @@ const Random = () => {
     
     // Save current animal to history
     if (animal) {
-      setPreviousAnimals(prev => [...prev.slice(-4), animal]);
+      // Avoid duplicates in history
+      if (!previousAnimals.some(prevAnimal => prevAnimal.id === animal.id)) {
+        setPreviousAnimals(prev => [...prev.slice(-4), animal]);
+      }
     }
     
     // Add delay for animation
