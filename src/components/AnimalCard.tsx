@@ -81,9 +81,11 @@ const AnimalCard = ({
       <div className="relative h-48 overflow-hidden bg-safari-amber/10">
         <div className={`absolute inset-0 ${!isLoaded ? 'animate-pulse bg-safari-amber/20' : ''}`}>
           {hasError || animal.image === "?" ? (
-            <div className="w-full h-full flex items-center justify-center bg-gray-100">
-              <HelpCircle className="h-16 w-16 text-gray-400" />
-              <span className="sr-only">Image unavailable</span>
+            <div className="w-full h-full flex flex-col items-center justify-center bg-gray-100">
+              <HelpCircle className="h-16 w-16 text-gray-400 mb-2" />
+              <p className="text-gray-500 text-sm text-center px-4">
+                Image from "The Screaming Hairy Armadillo" book needed
+              </p>
             </div>
           ) : (
             <img

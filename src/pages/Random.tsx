@@ -108,7 +108,11 @@ const Random = () => {
                   >
                     <div className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center h-full">
                       <div className="h-12 w-12 bg-gray-100 rounded-md mr-3 flex items-center justify-center overflow-hidden">
-                        <img src={prevAnimal.image} alt={prevAnimal.name} className="h-full w-full object-contain" />
+                        {prevAnimal.image === "?" ? (
+                          <HelpCircle className="h-6 w-6 text-gray-400" />
+                        ) : (
+                          <img src={prevAnimal.image} alt={prevAnimal.name} className="h-full w-full object-contain" />
+                        )}
                       </div>
                       <div>
                         <h3 className="font-medium text-gray-900">{prevAnimal.name}</h3>
