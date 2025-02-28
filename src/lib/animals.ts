@@ -67,9 +67,10 @@ export const animals: Animal[] = [
     facts: [
       "The Sparklemuffin Peacock Spider performs an elaborate dance to attract mates",
       "It has vibrant, colorful patterns on its abdomen",
-      "It's only about the size of a grain of rice"
+      "It's only about the size of a grain of rice",
+      "It was discovered in 2015 and named for its dazzling colors and movements"
     ],
-    image: [BOOK_COVER, BOOK_COVER],
+    image: ["/lovable-uploads/bd8e6eba-d75a-4091-b9eb-9d01aab80b31.png", "/lovable-uploads/6a968286-9e9f-4704-8c99-dc9dca87952a.png", BOOK_COVER],
     category: "magical"
   },
   {
