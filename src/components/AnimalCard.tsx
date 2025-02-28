@@ -104,7 +104,7 @@ const AnimalCard = ({
         if (retryCount < MAX_RETRIES && typeof animal.image !== 'string' && animal.image.length > 1) {
           // Try another image from the array if available
           setRetryCount(prev => prev + 1);
-          setTimeout(loadImage, 500); // Even longer delay before retrying
+          setTimeout(loadImage, 500); // Longer delay before retrying
         } else {
           // Use the book cover as final fallback
           setSelectedImage(DEFAULT_PLACEHOLDER);
