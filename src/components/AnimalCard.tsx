@@ -227,6 +227,9 @@ const DOGFACE_BUTTERFLY_IMAGES = [
   "/lovable-uploads/9a2680d2-e921-4a4e-8aae-be364052792a.png"
 ];
 
+// New Headless Chicken Monster image
+const HEADLESS_CHICKEN_MONSTER_IMAGE = "/lovable-uploads/10e9d55f-42ff-486c-bd56-59d1e72e36a3.png";
+
 const AnimalCard = ({
   animal,
   showFacts = false,
@@ -374,6 +377,8 @@ const AnimalCard = ({
         return CHICKEN_TURTLE_IMAGES;
       } else if (animal.id === "dogface-butterfly") {
         return DOGFACE_BUTTERFLY_IMAGES;
+      } else if (animal.id === "headless-chicken-monster") {
+        return HEADLESS_CHICKEN_MONSTER_IMAGE;
       } else {
         return animal.image;
       }
