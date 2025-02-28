@@ -100,6 +100,8 @@ const CANDY_STRIPED_HERMIT_CRAB_IMAGES = [
   "/lovable-uploads/3e41b731-dad5-4490-a5c3-fbefbabdcae6.png"
 ];
 
+const PANCAKE_TORTOISE_IMAGE = "/lovable-uploads/60a4b820-e601-4a27-a1ef-e001f2d68e9b.png";
+
 const SARCASTIC_FRINGEHEAD_IMAGES = [
   "/lovable-uploads/8c79dbe2-73ec-4260-9abb-104b2de92996.png", 
   "/lovable-uploads/ffe1fac4-535b-487d-b4fb-4490a85c9409.png"
@@ -263,6 +265,8 @@ const AnimalCard = ({
         return FRIED_EGG_JELLYFISH_IMAGES;
       } else if (animal.id === "candy-striped-hermit-crab") {
         return CANDY_STRIPED_HERMIT_CRAB_IMAGES;
+      } else if (animal.id === "pancake-tortoise") {
+        return PANCAKE_TORTOISE_IMAGE;
       } else if (animal.id === "sarcastic-fringehead") {
         return SARCASTIC_FRINGEHEAD_IMAGES;
       } else if (animal.id === "long-wattled-umbrellabird") {

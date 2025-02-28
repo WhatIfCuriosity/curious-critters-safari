@@ -47,6 +47,20 @@ export const animals: Animal[] = [
     category: "weird"
   },
   {
+    id: "pancake-tortoise",
+    name: "Pancake Tortoise",
+    question: "What if a service could adapt to tight spaces like a Pancake Tortoise with its flat shell?",
+    facts: [
+      "The Pancake Tortoise has a uniquely flat, flexible shell that allows it to squeeze into narrow rock crevices",
+      "Unlike other tortoises, its shell is not rigid but slightly flexible to help it wedge into tight spaces",
+      "When threatened, it runs for shelter rather than retreating into its shell like other tortoises",
+      "They're native to Kenya and Tanzania in East Africa",
+      "They're excellent climbers, using their flat bodies and strong claws to navigate rocky terrain"
+    ],
+    image: "/lovable-uploads/60a4b820-e601-4a27-a1ef-e001f2d68e9b.png",
+    category: "weird"
+  },
+  {
     id: "bone-eating-snot-flower-worm",
     name: "Bone-Eating Snot Flower Worm",
     question: "What if a service could extract value from overlooked resources like a Bone-Eating Snot Flower Worm?",
