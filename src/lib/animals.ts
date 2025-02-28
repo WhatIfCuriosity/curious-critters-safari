@@ -13,6 +13,22 @@ const BOOK_LINK = "https://amzn.to/41maKgG";
 
 export const animals: Animal[] = [
   {
+    id: "wunderpus-octopus",
+    name: "Wunderpus Octopus",
+    question: "What if a service could disguise itself as effectively as a Wunderpus Octopus?",
+    facts: [
+      "The Wunderpus Octopus has distinctive white and reddish-brown striped patterns that are unique to each individual",
+      "Scientists can identify individual Wunderpus Octopuses by their pattern, similar to human fingerprints",
+      "They can change their shape dramatically to mimic other sea creatures, including lionfish, sea snakes, and flatfish",
+      "Despite their impressive camouflage abilities, they're quite small - usually just 2-3 inches in body length",
+      "The name 'Wunderpus' comes from the German word 'wunder' meaning 'wonder' or 'miracle'"
+    ],
+    image: [
+      "/lovable-uploads/d8d68f30-d905-40eb-b414-91b26bc78d36.png"
+    ],
+    category: "mysterious"
+  },
+  {
     id: "yeti-crab",
     name: "Yeti Crab",
     question: "What if a service could thrive in extreme conditions like a Yeti Crab at hydrothermal vents?",

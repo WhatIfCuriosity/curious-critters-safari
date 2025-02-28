@@ -38,6 +38,10 @@ const YETI_CRAB_IMAGES = [
   "/lovable-uploads/54f13674-bc2a-4ac5-977b-98285f66941f.png"
 ];
 
+const WUNDERPUS_OCTOPUS_IMAGES = [
+  "/lovable-uploads/d8d68f30-d905-40eb-b414-91b26bc78d36.png"
+];
+
 const MONKEYFACE_PRICKLEBACK_IMAGE = "/lovable-uploads/dcb35bf4-8a2b-471e-8da8-3211c44f19e0.png";
 const SCREAMING_HAIRY_ARMADILLO_IMAGE = "/lovable-uploads/7b96f153-2562-47fa-ba94-df3d8a4b3be1.png";
 const RED_LIPPED_BATFISH_IMAGES = [
@@ -117,6 +121,8 @@ const AnimalCard = ({
         return AGRA_CADABRA_IMAGES;
       } else if (animal.id === "yeti-crab") {
         return YETI_CRAB_IMAGES;
+      } else if (animal.id === "wunderpus-octopus") {
+        return WUNDERPUS_OCTOPUS_IMAGES;
       } else if (animal.id === "monkeyface-prickleback") {
         return MONKEYFACE_PRICKLEBACK_IMAGE;
       } else if (animal.id === "screaming-hairy-armadillo") {
