@@ -199,7 +199,7 @@ export const animals: Animal[] = [
       "Despite its name, it doesn't suck blood and is actually quite gentle"
     ],
     image: [
-      "/lovable-uploads/9cd1674f-c952-4d10-a2a0-05051c7e9b2c.png"
+      BOOK_COVER
     ],
     category: "mysterious"
   },
@@ -262,7 +262,8 @@ export const animals: Animal[] = [
       "They are well-adapted to Australia's arid environments with efficient water conservation systems"
     ],
     image: [
-      "/lovable-uploads/e15c59a6-e20f-47bd-9d62-e5028ecb994c.png"
+      "/lovable-uploads/e15c59a6-e20f-47bd-9d62-e5028ecb994c.png",
+      "/lovable-uploads/73762eb7-97bd-44f0-9064-9ec199c90cbd.png"
     ],
     category: "original"
   },

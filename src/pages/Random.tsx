@@ -59,11 +59,19 @@ const Random = () => {
     try {
       // If it's a string, return it directly
       if (typeof animalImage === 'string') {
-        return animalImage === '?' ? DEFAULT_FALLBACK : animalImage;
+        // Check if it's the book cover or a question mark
+        if (animalImage === '?' || animalImage === bookInfo.coverImage) {
+          return DEFAULT_FALLBACK;
+        }
+        return animalImage;
       }
       
       // If it's an array, get the first image or fallback
       if (animalImage.length > 0) {
+        // Check if the first image is the book cover
+        if (animalImage[0] === bookInfo.coverImage) {
+          return DEFAULT_FALLBACK;
+        }
         return animalImage[0];
       }
       
