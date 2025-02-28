@@ -28,6 +28,11 @@ const MOONRAT_IMAGES = [
   "/lovable-uploads/4c0bb9db-d9c9-475f-a6b0-a3865c32bc66.png"
 ];
 
+const AGRA_CADABRA_IMAGES = [
+  "/lovable-uploads/5198a0b6-c5ce-4228-b837-a314cee5ca8d.png",
+  "/lovable-uploads/4e209bbd-cd62-4664-89f9-0f1d7a2b776e.png"
+];
+
 const MONKEYFACE_PRICKLEBACK_IMAGE = "/lovable-uploads/dcb35bf4-8a2b-471e-8da8-3211c44f19e0.png";
 const SCREAMING_HAIRY_ARMADILLO_IMAGE = "/lovable-uploads/7b96f153-2562-47fa-ba94-df3d8a4b3be1.png";
 const RED_LIPPED_BATFISH_IMAGES = [
@@ -103,6 +108,8 @@ const AnimalCard = ({
         return NAKED_MOLE_RAT_IMAGES;
       } else if (animal.id === "moonrat") {
         return MOONRAT_IMAGES;
+      } else if (animal.id === "agra-cadabra") {
+        return AGRA_CADABRA_IMAGES;
       } else if (animal.id === "monkeyface-prickleback") {
         return MONKEYFACE_PRICKLEBACK_IMAGE;
       } else if (animal.id === "screaming-hairy-armadillo") {

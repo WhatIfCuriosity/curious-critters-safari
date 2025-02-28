@@ -13,6 +13,23 @@ const BOOK_LINK = "https://amzn.to/41maKgG";
 
 export const animals: Animal[] = [
   {
+    id: "agra-cadabra",
+    name: "Agra Cadabra",
+    question: "What if a service could disappear problems as magically as the name Agra Cadabra suggests?",
+    facts: [
+      "The Agra Cadabra is a beetle with a name that sounds like a magician's phrase",
+      "It belongs to the Agra genus, named by scientist Terry Erwin",
+      "Erwin named many Agra species after celebrities, including Arnold Schwarzenegger and Kate Winslet",
+      "With its shimmering blue body and gold-tipped legs, it appears almost magical",
+      "Despite its magical-sounding name, it's a real beetle found in tropical forests"
+    ],
+    image: [
+      "/lovable-uploads/5198a0b6-c5ce-4228-b837-a314cee5ca8d.png",
+      "/lovable-uploads/4e209bbd-cd62-4664-89f9-0f1d7a2b776e.png"
+    ],
+    category: "magical"
+  },
+  {
     id: "unicorn-fish",
     name: "Unicorn Fish",
     question: "What if a service could adapt to changing circumstances like a Unicorn Fish changes its diet as it grows?",
