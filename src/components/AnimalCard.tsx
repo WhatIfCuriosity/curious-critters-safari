@@ -1,4 +1,3 @@
-
 import { useEffect, useState, useRef } from "react";
 import { Animal, getRandomImage, bookInfo, BOOK_COVER } from "../lib/animals";
 import AnimatedContainer from "./AnimatedContainer";
