@@ -38,31 +38,65 @@ const AnimalCard = ({
     const imageToUse = getRandomImage(animal.image);
     setSelectedImage(imageToUse);
     
+    // Pre-load the image
     const img = new Image();
     img.src = imageToUse;
-    img.onload = () => setIsLoaded(true);
+    
+    // Set up proper event handlers
+    img.onload = () => {
+      setIsLoaded(true);
+      setHasError(false);
+    };
+    
     img.onerror = () => {
       console.error(`Failed to load image: ${imageToUse}`);
-      setIsLoaded(true);
       setHasError(true);
+      setIsLoaded(true);
       
-      // If this image failed, try the book cover as fallback
+      // Try book cover as fallback if we're not already using it
       if (imageToUse !== bookInfo.coverImage) {
-        setSelectedImage(bookInfo.coverImage);
+        setTimeout(() => {
+          setSelectedImage(bookInfo.coverImage);
+        }, 100);
       }
     };
     
-    // Fallback in case image doesn't load
+    // Fallback in case image loading takes too long
     const timeout = setTimeout(() => {
       if (!isLoaded) {
         console.warn(`Image load timeout for: ${imageToUse}`);
         setIsLoaded(true);
-        setHasError(true);
+        
+        // Only set error if the image hasn't already loaded
+        if (!isLoaded) {
+          setHasError(true);
+          
+          // Try book cover as fallback if we're not already using it
+          if (imageToUse !== bookInfo.coverImage) {
+            setSelectedImage(bookInfo.coverImage);
+          }
+        }
       }
-    }, 3000);
+    }, 5000); // Increased timeout for slower connections
     
-    return () => clearTimeout(timeout);
-  }, [animal]);
+    return () => {
+      // Clean up
+      clearTimeout(timeout);
+      img.onload = null;
+      img.onerror = null;
+    };
+  }, [animal, animal.image]);
+
+  // Handle image error as a direct event on the img element as an additional safeguard
+  const handleImageError = () => {
+    console.error(`Image error event triggered for: ${selectedImage}`);
+    setHasError(true);
+    
+    // Try book cover as fallback if we're not already using it
+    if (selectedImage !== bookInfo.coverImage) {
+      setSelectedImage(bookInfo.coverImage);
+    }
+  };
 
   const getCategoryColor = (category: string) => {
     switch (category) {
@@ -84,14 +118,11 @@ const AnimalCard = ({
   };
 
   const handleImageClick = () => {
-    // If the image is the book cover, open the Amazon link
+    // Show book info when image is clicked
+    setShowBookInfo(true);
+    
+    // Only open Amazon link when book cover is clicked or specifically requested
     if (selectedImage === bookInfo.coverImage) {
-      window.open(bookInfo.link, "_blank");
-      setShowBookInfo(true);
-    } else {
-      // For other images, still show book info but don't navigate
-      setShowBookInfo(true);
-      // This still makes all images act like they're linked to the book
       window.open(bookInfo.link, "_blank");
     }
   };
@@ -107,7 +138,7 @@ const AnimalCard = ({
       <div className="relative h-48 overflow-hidden bg-safari-amber/10">
         <div className={`absolute inset-0 ${!isLoaded ? 'animate-pulse bg-safari-amber/20' : ''}`}>
           {hasError || animal.image === "?" ? (
-            <div className="w-full h-full flex flex-col items-center justify-center bg-safari-cream">
+            <div className="w-full h-48 flex flex-col items-center justify-center bg-safari-cream">
               <HelpCircle className="h-16 w-16 text-safari-orange mb-2" />
               <p className="text-safari-brown text-sm text-center px-4">
                 Image from "The Screaming Hairy Armadillo" book needed
@@ -115,28 +146,22 @@ const AnimalCard = ({
             </div>
           ) : (
             <div 
-              className="relative cursor-pointer group"
+              className="relative cursor-pointer group h-48 flex items-center justify-center bg-safari-cream/50"
               onClick={handleImageClick}
             >
               <img
                 src={selectedImage}
                 alt={animal.name}
                 className={cn(
-                  "w-full h-48 object-contain transition-opacity duration-500",
+                  "max-w-full max-h-48 object-contain transition-opacity duration-500",
                   isLoaded ? "opacity-100" : "opacity-0"
                 )}
-                onError={() => {
-                  console.error(`Image error event for: ${selectedImage}`);
-                  setHasError(true);
-                  // Try book cover as fallback
-                  if (selectedImage !== bookInfo.coverImage) {
-                    setSelectedImage(bookInfo.coverImage);
-                  }
-                }}
+                onError={handleImageError}
+                loading="eager"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                 <span className="bg-white/90 text-safari-brown px-3 py-1 rounded-full text-sm font-medium flex items-center">
-                  View on Amazon <ExternalLink className="h-3 w-3 ml-1" />
+                  {selectedImage === bookInfo.coverImage ? "View on Amazon" : "Learn More"} <ExternalLink className="h-3 w-3 ml-1" />
                 </span>
               </div>
             </div>
