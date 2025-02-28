@@ -26,8 +26,8 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
       : animal.image[Math.floor(Math.random() * animal.image.length)]
   );
 
-  // Get service design question
-  const serviceDesignQuestion = getServiceDesignQuestion(animal.id);
+  // Get service design question to use as the main question
+  const serviceDesignQuestion = getServiceDesignQuestion(animal.id) || animal.question;
 
   const handleImageClick = () => {
     if (typeof animal.image === "string") return;
@@ -64,7 +64,7 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
           {animal.category.charAt(0).toUpperCase() + animal.category.slice(1)}
         </div>
 
-        <p className="text-lg font-medium italic mb-4">{animal.question}</p>
+        <p className="text-lg font-medium italic mb-4">{serviceDesignQuestion}</p>
 
         {showFacts && (
           <ul className="space-y-2 text-left list-disc list-inside">
@@ -74,13 +74,6 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
               </li>
             ))}
           </ul>
-        )}
-
-        {serviceDesignQuestion && (
-          <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-            <h3 className="font-semibold text-blue-800 mb-2">Service Design Question:</h3>
-            <p className="italic text-blue-700">{serviceDesignQuestion}</p>
-          </div>
         )}
       </CardContent>
 
