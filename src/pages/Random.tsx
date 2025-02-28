@@ -30,7 +30,7 @@ const animalThumbnails: Record<string, string> = {
   "leafy-sea-dragon": "/lovable-uploads/6d46bd6b-028e-4023-b686-dbdc3e37207a.png",
   "sparklemuffin-peacock-spider": "/lovable-uploads/bd8e6eba-d75a-4091-b9eb-9d01aab80b31.png",
   "blue-footed-booby": "/lovable-uploads/6897367d-a430-4f51-a44b-121384738827.png",
-  "screaming-hairy-armadillo": "/lovable-uploads/7b96f153-2562-47fa-ba94-df3d8a4b3be1.png",
+  "screaming-hairy-armadillo": "/lovable-uploads/83a9a168-32af-4519-b78b-51be96eb5da7.png",
   "caramel-coated-capybara": "/lovable-uploads/a921d78a-a617-405b-af5e-ba4fd16eb181.png",
   "pink-fairy-armadillo": "/lovable-uploads/bd7c3d5a-85af-4cbc-bbf0-e7b84e278a78.png",
   "goblin-shark": "/lovable-uploads/d51adab8-b69f-4ea2-b209-ebedc533f680.png",
@@ -45,7 +45,8 @@ const animalThumbnails: Record<string, string> = {
   "lionhead-rabbit": "/lovable-uploads/fb87f26b-313f-4968-85eb-4f5895bb5ade.png",
   "hagfish": "/lovable-uploads/26ed8a88-1b0b-4643-b0e2-12f1491364d3.png",
   "poison-dart-frog": "/lovable-uploads/f1e987b7-ef95-43af-8629-a5385bc56ed9.png",
-  "bone-eating-snot-flower-worm": "/lovable-uploads/57f09d26-cde9-4730-8967-b6c037b44528.png"
+  "bone-eating-snot-flower-worm": "/lovable-uploads/57f09d26-cde9-4730-8967-b6c037b44528.png",
+  "hickory-horned-devil": "/lovable-uploads/b243e9ce-c47f-4f9c-a4a8-cf591b0b54e2.png"
 };
 
 const Random = () => {

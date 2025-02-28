@@ -112,7 +112,12 @@ const BA_HUMBUGI_IMAGES = [
 const CARAMEL_COATED_CAPYBARA_IMAGE = "/lovable-uploads/a921d78a-a617-405b-af5e-ba4fd16eb181.png";
 
 const MONKEYFACE_PRICKLEBACK_IMAGE = "/lovable-uploads/dcb35bf4-8a2b-471e-8da8-3211c44f19e0.png";
-const SCREAMING_HAIRY_ARMADILLO_IMAGE = "/lovable-uploads/7b96f153-2562-47fa-ba94-df3d8a4b3be1.png";
+
+const SCREAMING_HAIRY_ARMADILLO_IMAGES = [
+  "/lovable-uploads/7b96f153-2562-47fa-ba94-df3d8a4b3be1.png",
+  "/lovable-uploads/83a9a168-32af-4519-b78b-51be96eb5da7.png"
+];
+
 const RED_LIPPED_BATFISH_IMAGES = [
   "/lovable-uploads/f3205e2a-86cf-4934-887f-c40862c21ab0.png",
   "/lovable-uploads/33cae5a1-1c32-49e5-ad2d-13fd8ba04809.png"
@@ -254,7 +259,7 @@ const AnimalCard = ({
       } else if (animal.id === "monkeyface-prickleback") {
         return MONKEYFACE_PRICKLEBACK_IMAGE;
       } else if (animal.id === "screaming-hairy-armadillo") {
-        return SCREAMING_HAIRY_ARMADILLO_IMAGE;
+        return SCREAMING_HAIRY_ARMADILLO_IMAGES;
       } else if (animal.id === "red-lipped-batfish") {
         return RED_LIPPED_BATFISH_IMAGES;
       } else if (animal.id === "australian-ghost-shark") {
