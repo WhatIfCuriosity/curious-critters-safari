@@ -1,3 +1,4 @@
+
 // ANIMAL DATA
 export type Animal = {
   id: string;
@@ -471,3 +472,123 @@ export const animals: Animal[] = [
     category: "mysterious",
     question: "What deep-sea creature has red eyes, webbed arms, and a cloak-like body?",
     facts: [
+      "Despite its name, the vampire squid is neither a vampire nor a true squid, but belongs to its own order of cephalopods.",
+      "It gets its name from its dark color, red eyes, and cape-like webbing between its arms.",
+      "When threatened, it can turn itself inside out, exposing spiny projections that make it look intimidating."
+    ],
+    image: ["/lovable-uploads/1d7339ad-b285-43e9-a6b6-1314465ec4bc.png", "/lovable-uploads/dfacb60f-ace9-4bdf-8f0c-74e70615a1f1.png"],
+  },
+  {
+    id: "honey-badger",
+    name: "Honey Badger",
+    category: "fierce",
+    question: "What animal is known for not caring and fighting animals much larger than itself?",
+    facts: [
+      "Honey badgers are notorious for their strength, ferocity and toughness, attacking animals much larger than themselves.",
+      "They have incredibly loose, thick skin that allows them to twist and turn to attack even when being held.",
+      "They're virtually immune to snake venom and can recover from multiple snake bites that would kill other animals."
+    ],
+    image: ["/lovable-uploads/ddacacb5-d210-4b3f-a705-0a0958330fc6.png", "/lovable-uploads/99a13886-4fe8-4f52-9d3c-7d99a8350c7a.png"],
+  },
+  {
+    id: "chocolate-dipped-damselfish",
+    name: "Chocolate Dipped Damselfish",
+    category: "delicious",
+    question: "What fish looks like it's been half-dipped in chocolate?",
+    facts: [
+      "The chocolate dipped damselfish appears to have been dipped into chocolate, with a stark color contrast between its front and back halves.",
+      "It was only discovered in 2008 in the Coral Triangle in the western Pacific Ocean.",
+      "Like many damselfish, it's territorial and defends its home with surprising ferocity despite its small size."
+    ],
+    image: "/lovable-uploads/e86cf5b4-84d5-4754-b8a6-ff7b0e604ea2.png",
+  },
+  {
+    id: "pieza-pi",
+    name: "Pieza Pi",
+    category: "mysterious",
+    question: "What fly is named after a mathematical constant?",
+    facts: [
+      "Pieza pi is a real species of fly named after the mathematical constant π (pi).",
+      "It belongs to a genus of flies with other mathematical names including Pieza tau, Pieza rhea (for Rhea, a Greek goddess), and Pieza kake (sounds like 'piece of cake').",
+      "This is another example of scientists having fun with the naming of new species they discover."
+    ],
+    image: "/lovable-uploads/c843c985-49b9-4baa-8d84-839084778214.png",
+  },
+  {
+    id: "banana-slug",
+    name: "Banana Slug",
+    category: "weird",
+    question: "What bright yellow creature leaves a trail of slime wherever it goes?",
+    facts: [
+      "Banana slugs are among the largest slugs in the world, growing up to 9.8 inches (25 cm) long.",
+      "They get their name from their bright yellow color, which resembles a ripe banana.",
+      "Their slime contains chemicals that numb the tongue of would-be predators, making them less appealing to eat."
+    ],
+    image: ["/lovable-uploads/9b9595ae-b4e2-43fa-b83c-6ca66e17323d.png", "/lovable-uploads/7320dbeb-59eb-460c-b8f0-1cad8f7879a3.png"],
+  },
+  {
+    id: "waxy-monkey-tree-frog",
+    name: "Waxy Monkey Tree Frog",
+    category: "weird",
+    question: "What amphibian has a waxy coating and moves like a monkey?",
+    facts: [
+      "The waxy monkey tree frog gets its name from the waxy secretion it produces to prevent water loss in dry environments.",
+      "Instead of jumping like typical frogs, it walks or climbs hand over hand like a monkey.",
+      "During dry seasons, it can seal itself in a cocoon made of shed skin to prevent dehydration."
+    ],
+    image: ["/lovable-uploads/e931cfc9-6e89-4dad-9a01-10bde4da20c1.png", "/lovable-uploads/50d45d98-0a48-440f-bd02-d32114066130.png", "/lovable-uploads/4f3e5526-bca1-48c2-86b2-da7ed3786e46.png"],
+  },
+  {
+    id: "chicken-turtle",
+    name: "Chicken Turtle",
+    category: "weird",
+    question: "What shelled reptile is named after a bird?",
+    facts: [
+      "Chicken turtles get their name from the taste of their meat, which was said to resemble chicken.",
+      "Unlike most turtles, they're most active in the winter and spring rather than summer.",
+      "They have extremely long necks and can extend them quickly to catch prey."
+    ],
+    image: ["/lovable-uploads/8ed3ae0d-1a26-4996-9d15-2a7f04a850d9.png", "/lovable-uploads/fa9636a2-cba8-4b4a-bb78-a4f140e27400.png"],
+  },
+  {
+    id: "dogface-butterfly",
+    name: "Dogface Butterfly",
+    category: "sweet",
+    question: "What insect has wing markings that look like a poodle?",
+    facts: [
+      "The dogface butterfly gets its name from the pattern on its wings that resembles a dog's face in profile.",
+      "It's the state insect of California, having been designated in 1972.",
+      "Males and females look quite different, with only the males having the distinctive dog face pattern."
+    ],
+    image: ["/lovable-uploads/74ad3c1d-8f45-4b60-ab56-b3e8e64a8569.png", "/lovable-uploads/9a2680d2-e921-4a4e-8aae-be364052792a.png"],
+  },
+  {
+    id: "headless-chicken-monster",
+    name: "Headless Chicken Monster",
+    category: "weird",
+    question: "What deep-sea creature looks like a chicken without a head?",
+    facts: [
+      "Despite its bizarre nickname, the Headless Chicken Monster is actually a sea cucumber (Enypniastes eximia).",
+      "It got its name from its unusual body shape that resembles a plucked chicken with no head.",
+      "Unlike most sea cucumbers that stay on the ocean floor, this species can swim up into the water column using fin-like structures."
+    ],
+    image: "/lovable-uploads/10e9d55f-42ff-486c-bd56-59d1e72e36a3.png",
+  }
+];
+
+// Function to get a random animal from the animals array
+export const getRandomAnimal = (): Animal => {
+  const randomIndex = Math.floor(Math.random() * animals.length);
+  return animals[randomIndex];
+};
+
+// Function to get random image from an animal's image array or string
+export const getRandomImage = (animal: Animal): string => {
+  if (typeof animal.image === 'string') {
+    return animal.image;
+  }
+  
+  // If it's an array, get a random image
+  const randomIndex = Math.floor(Math.random() * animal.image.length);
+  return animal.image[randomIndex];
+};
