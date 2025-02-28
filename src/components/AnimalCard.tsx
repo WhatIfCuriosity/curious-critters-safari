@@ -151,6 +151,11 @@ const VAMPIRE_SQUID_IMAGES = [
   "/lovable-uploads/dfacb60f-ace9-4bdf-8f0c-74e70615a1f1.png"
 ];
 
+const HICKORY_HORNED_DEVIL_IMAGES = [
+  "/lovable-uploads/b243e9ce-c47f-4f9c-a4a8-cf591b0b54e2.png",
+  "/lovable-uploads/0283ed03-15cc-4ecc-bd41-ec583d2fac4a.png"
+];
+
 const AnimalCard = ({
   animal,
   showFacts = false,
@@ -270,6 +275,8 @@ const AnimalCard = ({
         return POISON_DART_FROG_IMAGES;
       } else if (animal.id === "bone-eating-snot-flower-worm") {
         return BONE_EATING_SNOT_FLOWER_WORM_IMAGES;
+      } else if (animal.id === "hickory-horned-devil") {
+        return HICKORY_HORNED_DEVIL_IMAGES;
       } else {
         return animal.image;
       }

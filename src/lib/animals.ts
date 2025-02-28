@@ -538,6 +538,23 @@ export const animals: Animal[] = [
       "/lovable-uploads/298cb0f7-5917-4b2a-bf29-582997fe1d8f.png"
     ],
     category: "mysterious"
+  },
+  {
+    id: "hickory-horned-devil",
+    name: "Hickory Horned Devil",
+    question: "What if a service could transform itself as dramatically as a Hickory Horned Devil becoming a regal moth?",
+    facts: [
+      "The Hickory Horned Devil is the caterpillar of the Regal Moth (Citheronia regalis)",
+      "Despite its fearsome appearance with orange spiky horns, it's completely harmless to humans",
+      "It's one of the largest caterpillars in North America, growing up to 5.5 inches long",
+      "It feeds primarily on hickory, walnut, and persimmon trees",
+      "When threatened, it rears up and makes clicking sounds with its mandibles to scare predators"
+    ],
+    image: [
+      "/lovable-uploads/b243e9ce-c47f-4f9c-a4a8-cf591b0b54e2.png",
+      "/lovable-uploads/0283ed03-15cc-4ecc-bd41-ec583d2fac4a.png"
+    ],
+    category: "fierce"
   }
 ];
 
@@ -559,4 +576,9 @@ export const getRandomImage = (imageSource: string | string[]): string => {
     return imageSource;
   }
   return imageSource[Math.floor(Math.random() * imageSource.length)];
+};
+
+// Add the missing getAnimalById function
+export const getAnimalById = (id: string): Animal | undefined => {
+  return animals.find(animal => animal.id === id);
 };
