@@ -61,6 +61,23 @@ export const animals: Animal[] = [
     category: "weird"
   },
   {
+    id: "potato-cod",
+    name: "Potato Cod",
+    question: "What if a service could be as curious and approachable as a Potato Cod with divers?",
+    facts: [
+      "The Potato Cod is named for its potato-like blotches and markings on its body",
+      "They're known for being curious and friendly with divers, often approaching for a closer look",
+      "These large fish can grow up to 2 meters (6.5 feet) in length",
+      "They're found in coral reef environments throughout the Indo-Pacific region",
+      "Despite their imposing size, they're generally docile and non-aggressive"
+    ],
+    image: [
+      "/lovable-uploads/07536683-61e2-4723-82c1-defa44d108fc.png",
+      "/lovable-uploads/c2e246ec-84fe-40d5-b525-66c9ff44265e.png"
+    ],
+    category: "mysterious"
+  },
+  {
     id: "bone-eating-snot-flower-worm",
     name: "Bone-Eating Snot Flower Worm",
     question: "What if a service could extract value from overlooked resources like a Bone-Eating Snot Flower Worm?",
