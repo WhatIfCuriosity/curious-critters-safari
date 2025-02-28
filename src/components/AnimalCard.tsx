@@ -1,3 +1,4 @@
+
 import { useEffect, useState, useRef } from "react";
 import { Animal, getRandomImage, bookInfo } from "../lib/animals";
 import AnimatedContainer from "./AnimatedContainer";
@@ -72,8 +73,22 @@ const AnimalCard = ({
     const loadImage = () => {
       if (!isMounted.current) return;
       
-      // Get a random image if multiple are available
-      const imageToUse = getRandomImage(animal.image);
+      // Filter out book cover from image options to prioritize actual animal images
+      const imageOptions = typeof animal.image === 'string' 
+        ? animal.image 
+        : animal.image.filter(img => img !== DEFAULT_PLACEHOLDER && img !== bookInfo.coverImage);
+      
+      // Only use book cover if no other images are available
+      if (Array.isArray(imageOptions) && imageOptions.length === 0) {
+        setSelectedImage(DEFAULT_PLACEHOLDER);
+        setIsLoaded(true);
+        setHasError(true);
+        globalImageCache[animal.id] = DEFAULT_PLACEHOLDER;
+        return;
+      }
+      
+      // Get a random image from filtered options
+      const imageToUse = typeof imageOptions === 'string' ? imageOptions : imageOptions[Math.floor(Math.random() * imageOptions.length)];
       
       // Pre-load the image
       const img = new Image();
@@ -96,7 +111,7 @@ const AnimalCard = ({
         console.error(`Failed to load image for ${animal.name}: ${imageToUse}, retry: ${retryCount}`);
         
         // If we have retries left and multiple images available, try another
-        if (retryCount < MAX_RETRIES && Array.isArray(animal.image) && animal.image.length > 1) {
+        if (retryCount < MAX_RETRIES && Array.isArray(imageOptions) && imageOptions.length > 1) {
           setRetryCount(prev => prev + 1);
           setTimeout(loadImage, 800); // Longer delay before retrying
         } else {

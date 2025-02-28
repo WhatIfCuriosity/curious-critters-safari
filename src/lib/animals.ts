@@ -1,4 +1,3 @@
-
 export interface Animal {
   id: string;
   name: string;
@@ -26,8 +25,8 @@ export const animals: Animal[] = [
     image: [
       "/lovable-uploads/bd7c3d5a-85af-4cbc-bbf0-e7b84e278a78.png", 
       "/lovable-uploads/5b6665f7-758b-4942-8619-671ed0fa0132.png", 
-      "/lovable-uploads/ce8c8520-8c58-4029-b828-9d1f65f21d21.png", 
-      BOOK_COVER
+      "/lovable-uploads/ce8c8520-8c58-4029-b828-9d1f65f21d21.png",
+      "/lovable-uploads/1193d4dd-e023-4b8d-8625-792f5b1a3409.png"
     ],
     category: "original"
   },
@@ -40,7 +39,10 @@ export const animals: Animal[] = [
       "It's often called a 'living fossil' because it's the only living member of its family, which dates back 125 million years",
       "It primarily lives in deep ocean waters"
     ],
-    image: ["/lovable-uploads/d51adab8-b69f-4ea2-b209-ebedc533f680.png", BOOK_COVER],
+    image: [
+      "/lovable-uploads/d51adab8-b69f-4ea2-b209-ebedc533f680.png",
+      "/lovable-uploads/aba8aea6-6c61-472d-b308-b9f776866f9c.png"
+    ],
     category: "mysterious"
   },
   {
@@ -52,7 +54,9 @@ export const animals: Animal[] = [
       "It actually walks on the ocean floor rather than swimming",
       "It uses a modified dorsal fin on its head to lure prey"
     ],
-    image: [BOOK_COVER],
+    image: [
+      "/lovable-uploads/88b8ec06-2483-4641-9925-f9c40a2f9d6e.png"
+    ],
     category: "weird"
   },
   {
@@ -64,7 +68,9 @@ export const animals: Animal[] = [
       "It uses expandable ribs covered with skin to form 'wings'",
       "Despite its name, it's actually a small lizard, not a dragon"
     ],
-    image: [BOOK_COVER],
+    image: [
+      "/lovable-uploads/d2a1aa74-8d30-4f7e-996c-78ca522be1d2.png"
+    ],
     category: "magical"
   },
   {
@@ -77,7 +83,11 @@ export const animals: Animal[] = [
       "It's only about the size of a grain of rice",
       "It was discovered in 2015 and named for its dazzling colors and movements"
     ],
-    image: ["/lovable-uploads/bd8e6eba-d75a-4091-b9eb-9d01aab80b31.png", "/lovable-uploads/6a968286-9e9f-4704-8c99-dc9dca87952a.png", BOOK_COVER],
+    image: [
+      "/lovable-uploads/bd8e6eba-d75a-4091-b9eb-9d01aab80b31.png", 
+      "/lovable-uploads/6a968286-9e9f-4704-8c99-dc9dca87952a.png",
+      "/lovable-uploads/0b6e48e8-07e5-461f-bc9c-7a7d9f292b91.png"
+    ],
     category: "magical"
   },
   {
@@ -93,8 +103,7 @@ export const animals: Animal[] = [
     image: [
       "/lovable-uploads/6897367d-a430-4f51-a44b-121384738827.png", 
       "/lovable-uploads/e26dfbc2-3a9b-4a58-9b4d-2c33e4cabc25.png", 
-      "/lovable-uploads/870d7b5e-d363-40d9-9f46-a270bacb437d.png",
-      BOOK_COVER
+      "/lovable-uploads/870d7b5e-d363-40d9-9f46-a270bacb437d.png"
     ],
     category: "weird"
   },
@@ -107,7 +116,9 @@ export const animals: Animal[] = [
       "It has more hair than other armadillo species",
       "It's an excellent digger, creating burrows for shelter"
     ],
-    image: [BOOK_COVER],
+    image: [
+      "/lovable-uploads/7b96f153-2562-47fa-ba94-df3d8a4b3be1.png"
+    ],
     category: "original"
   },
   {
@@ -119,7 +130,9 @@ export const animals: Animal[] = [
       "They're highly social animals that live in groups",
       "They're excellent swimmers with partially webbed feet"
     ],
-    image: [BOOK_COVER],
+    image: [
+      "/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"
+    ],
     category: "sweet"
   },
   {
@@ -131,7 +144,9 @@ export const animals: Animal[] = [
       "It can produce bioluminescent light from light organs on its body",
       "Despite its name, it doesn't suck blood and is actually quite gentle"
     ],
-    image: [BOOK_COVER],
+    image: [
+      "/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"
+    ],
     category: "mysterious"
   },
   {
@@ -144,7 +159,10 @@ export const animals: Animal[] = [
       "They can survive with very little oxygen and feel almost no pain",
       "Despite being called rats, they're more closely related to porcupines and guinea pigs"
     ],
-    image: ["/lovable-uploads/bb8eb6cc-a644-41df-bbce-f82ad79d7f45.png", "/lovable-uploads/5cc87126-c35c-42e4-b267-1032de57fe99.png", BOOK_COVER],
+    image: [
+      "/lovable-uploads/bb8eb6cc-a644-41df-bbce-f82ad79d7f45.png", 
+      "/lovable-uploads/5cc87126-c35c-42e4-b267-1032de57fe99.png"
+    ],
     category: "weird"
   },
   {
@@ -157,7 +175,9 @@ export const animals: Animal[] = [
       "It's named for the umbrella-like crest on its head",
       "This bird is found in the humid forests of Colombia and Ecuador"
     ],
-    image: ["/lovable-uploads/fb824a16-e514-4e58-a21b-87c220bfdc8e.png", BOOK_COVER],
+    image: [
+      "/lovable-uploads/fb824a16-e514-4e58-a21b-87c220bfdc8e.png"
+    ],
     category: "mysterious"
   },
   {
@@ -170,7 +190,10 @@ export const animals: Animal[] = [
       "They live in the Pacific Ocean off the coast of North America",
       "Their name comes from their cranky, aggressive behavior"
     ],
-    image: ["/lovable-uploads/8c79dbe2-73ec-4260-9abb-104b2de92996.png", "/lovable-uploads/ffe1fac4-535b-487d-b4fb-4490a85c9409.png", BOOK_COVER],
+    image: [
+      "/lovable-uploads/8c79dbe2-73ec-4260-9abb-104b2de92996.png", 
+      "/lovable-uploads/ffe1fac4-535b-487d-b4fb-4490a85c9409.png"
+    ],
     category: "fierce"
   },
   {
@@ -183,7 +206,10 @@ export const animals: Animal[] = [
       "They can dig extensive burrow systems with their powerful claws",
       "They are well-adapted to Australia's arid environments with efficient water conservation systems"
     ],
-    image: ["/lovable-uploads/9cd1674f-c952-4d10-a2a0-05051c7e9b2c.png", "/lovable-uploads/a921d78a-a617-405b-af5e-ba4fd16eb181.png", BOOK_COVER],
+    image: [
+      "/lovable-uploads/9cd1674f-c952-4d10-a2a0-05051c7e9b2c.png", 
+      "/lovable-uploads/a921d78a-a617-405b-af5e-ba4fd16eb181.png"
+    ],
     category: "original"
   },
   {
@@ -196,7 +222,9 @@ export const animals: Animal[] = [
       "It has prickly spines on its dorsal fin",
       "It's a popular fish for catching and eating along the Pacific coast of North America"
     ],
-    image: ["/lovable-uploads/dcb35bf4-8a2b-471e-8da8-3211c44f19e0.png", BOOK_COVER],
+    image: [
+      "/lovable-uploads/dcb35bf4-8a2b-471e-8da8-3211c44f19e0.png"
+    ],
     category: "weird"
   },
   {
@@ -209,7 +237,10 @@ export const animals: Animal[] = [
       "Their exoskeleton is extremely tough, which protects them when they invade other insects' nests",
       "They can curl into a defensive ball when threatened, protecting their vulnerable parts"
     ],
-    image: ["/lovable-uploads/f157dcd0-9218-4d98-abd2-42e051483a08.png", "/lovable-uploads/0923a6e3-70f6-461a-8912-3ee29c3cb1b5.png", BOOK_COVER],
+    image: [
+      "/lovable-uploads/f157dcd0-9218-4d98-abd2-42e051483a08.png", 
+      "/lovable-uploads/0923a6e3-70f6-461a-8912-3ee29c3cb1b5.png"
+    ],
     category: "mysterious"
   },
   {
@@ -222,7 +253,10 @@ export const animals: Animal[] = [
       "This snail has a distinctive spiral shell with beautiful brown patterns",
       "Many Hawaiian snail species are endangered due to habitat loss and introduced predators"
     ],
-    image: ["/lovable-uploads/7c8c7438-96f5-483c-8f8a-a7b96ebcf229.png", "/lovable-uploads/52a92cf1-d7c1-45e1-a4c3-e14b10da3e91.png", BOOK_COVER],
+    image: [
+      "/lovable-uploads/7c8c7438-96f5-483c-8f8a-a7b96ebcf229.png", 
+      "/lovable-uploads/52a92cf1-d7c1-45e1-a4c3-e14b10da3e91.png"
+    ],
     category: "weird"
   },
   {
@@ -235,7 +269,9 @@ export const animals: Animal[] = [
       "Instead of a gas-filled swim bladder, it has gelatinous flesh with a density slightly less than water, allowing it to float above the seafloor",
       "It was voted the 'World's Ugliest Animal' in 2013, becoming a mascot for the Ugly Animal Preservation Society"
     ],
-    image: ["/lovable-uploads/eb0a6e45-42af-4c28-98d3-3f7c6a7a82ff.png", BOOK_COVER],
+    image: [
+      "/lovable-uploads/eb0a6e45-42af-4c28-98d3-3f7c6a7a82ff.png"
+    ],
     category: "weird"
   },
   {
@@ -248,7 +284,10 @@ export const animals: Animal[] = [
       "It can change its color and pattern to camouflage with its surroundings",
       "They're generally nocturnal and hide in the sand or among rocks during the day"
     ],
-    image: ["/lovable-uploads/3ac88dae-5336-4f8d-98c6-26f10b4c4551.png", "/lovable-uploads/298cb0f7-5917-4b2a-bf29-582997fe1d8f.png", BOOK_COVER],
+    image: [
+      "/lovable-uploads/3ac88dae-5336-4f8d-98c6-26f10b4c4551.png", 
+      "/lovable-uploads/298cb0f7-5917-4b2a-bf29-582997fe1d8f.png"
+    ],
     category: "mysterious"
   }
 ];
