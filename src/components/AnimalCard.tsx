@@ -17,7 +17,7 @@ const DEFAULT_PLACEHOLDER = "/lovable-uploads/4813c70d-678a-4536-bd98-88a5e0eca7
 // Use a global cache to persist between component unmounts/remounts with animal ID as key
 const globalImageCache: Record<string, string> = {};
 
-// New images for animals missing proper imagery
+// Images for all animals
 const NAKED_MOLE_RAT_IMAGES = [
   "/lovable-uploads/bb8eb6cc-a644-41df-bbce-f82ad79d7f45.png", 
   "/lovable-uploads/5cc87126-c35c-42e4-b267-1032de57fe99.png"
@@ -128,6 +128,11 @@ const SOUTHERN_WOMBAT_IMAGES = [
   "/lovable-uploads/de9414a0-a291-4caf-8d6d-a889a8e4d749.png"
 ];
 const UNICORN_FISH_IMAGE = "/lovable-uploads/fe2688f7-2b9c-4dfb-87b1-1b59a2847db9.png";
+
+const LIONHEAD_RABBIT_IMAGES = [
+  "/lovable-uploads/fb87f26b-313f-4968-85eb-4f5895bb5ade.png",
+  "/lovable-uploads/a569de47-f3b9-4c4c-95dd-b13244ac767f.png"
+];
 
 const AnimalCard = ({
   animal,
@@ -240,6 +245,8 @@ const AnimalCard = ({
         return UNICORN_FISH_IMAGE;
       } else if (animal.id === "vampire-squid") {
         return BOOK_COVER; // Always use book cover for vampire squid
+      } else if (animal.id === "lionhead-rabbit") {
+        return LIONHEAD_RABBIT_IMAGES;
       } else {
         return animal.image;
       }

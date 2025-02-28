@@ -13,6 +13,23 @@ const BOOK_LINK = "https://amzn.to/41maKgG";
 
 export const animals: Animal[] = [
   {
+    id: "lionhead-rabbit",
+    name: "Lionhead Rabbit",
+    question: "What if a service could be as adorable and distinctive as a Lionhead Rabbit with its fluffy mane?",
+    facts: [
+      "The Lionhead Rabbit gets its name from the wooly mane around its head, resembling a lion",
+      "They were first bred in Belgium but are now popular pets worldwide",
+      "Despite their elaborate mane, they have relatively small ears (2-3 inches) compared to other rabbit breeds",
+      "They are a small breed, typically weighing between 2.5 to 3.5 pounds",
+      "Their scientific name is Oryctolagus cuniculus"
+    ],
+    image: [
+      "/lovable-uploads/fb87f26b-313f-4968-85eb-4f5895bb5ade.png",
+      "/lovable-uploads/a569de47-f3b9-4c4c-95dd-b13244ac767f.png"
+    ],
+    category: "sweet"
+  },
+  {
     id: "spined-assassin-bug",
     name: "Spined Assassin Bug",
     question: "What if a service could adapt its approach as precisely as a Spined Assassin Bug hunts its prey?",
