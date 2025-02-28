@@ -131,6 +131,19 @@ export const animals: Animal[] = [
     ],
     image: [BOOK_COVER, BOOK_COVER],
     category: "weird"
+  },
+  {
+    id: "long-wattled-umbrellabird",
+    name: "Long-Wattled Umbrellabird",
+    question: "What if a service could make a statement as distinctive as a Long-Wattled Umbrellabird's wattle?",
+    facts: [
+      "The Long-Wattled Umbrellabird has a long, feathered wattle that hangs from its chest",
+      "Males can extend their wattle during courtship displays to attract females",
+      "It's named for the umbrella-like crest on its head",
+      "This bird is found in the humid forests of Colombia and Ecuador"
+    ],
+    image: ["/lovable-uploads/fb824a16-e514-4e58-a21b-87c220bfdc8e.png", BOOK_COVER],
+    category: "mysterious"
   }
 ];
 

@@ -81,6 +81,11 @@ const AnimalCard = ({
     if (selectedImage === bookInfo.coverImage) {
       window.open(bookInfo.link, "_blank");
       setShowBookInfo(true);
+    } else {
+      // For other images, still show book info but don't navigate
+      setShowBookInfo(true);
+      // This still makes all images act like they're linked to the book
+      window.open(bookInfo.link, "_blank");
     }
   };
 
@@ -114,13 +119,11 @@ const AnimalCard = ({
                   isLoaded ? "opacity-100" : "opacity-0"
                 )}
               />
-              {selectedImage === bookInfo.coverImage && (
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <span className="bg-white/90 text-safari-brown px-3 py-1 rounded-full text-sm font-medium flex items-center">
-                    View on Amazon <ExternalLink className="h-3 w-3 ml-1" />
-                  </span>
-                </div>
-              )}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span className="bg-white/90 text-safari-brown px-3 py-1 rounded-full text-sm font-medium flex items-center">
+                  View on Amazon <ExternalLink className="h-3 w-3 ml-1" />
+                </span>
+              </div>
             </div>
           )}
         </div>
