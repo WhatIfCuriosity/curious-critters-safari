@@ -1,4 +1,4 @@
-
+<lov-code>
 export interface Animal {
   id: string;
   name: string;
@@ -45,6 +45,23 @@ export const animals: Animal[] = [
       "/lovable-uploads/36c20eaf-4b47-443c-9a26-7a337b4862d2.png"
     ],
     category: "fierce"
+  },
+  {
+    id: "vampire-squid",
+    name: "Vampire Squid",
+    question: "What if a service could illuminate hidden user needs like a Vampire Squid lights up the deep?",
+    facts: [
+      "The Vampire Squid can turn itself inside out to defend against predators",
+      "It can produce bioluminescent light from light organs on its body",
+      "Despite its name, it doesn't suck blood and is actually quite gentle",
+      "It's not actually a squid, but is related to both squids and octopuses",
+      "It has a vampire-like cape (webbing between arms) and lives in the deep ocean"
+    ],
+    image: [
+      "/lovable-uploads/1d7339ad-b285-43e9-a6b6-1314465ec4bc.png",
+      "/lovable-uploads/dfacb60f-ace9-4bdf-8f0c-74e70615a1f1.png"
+    ],
+    category: "mysterious"
   },
   {
     id: "hagfish",
@@ -406,8 +423,7 @@ export const animals: Animal[] = [
     ],
     image: [
       "/lovable-uploads/bb8eb6cc-a644-41df-bbce-f82ad79d7f45.png", 
-      "/lovable-uploads/5cc87126-c35c-42e4-b267-1032de57fe99.png",
-      "/lovable-uploads/2ea06720-63eb-4db7-9b39-c5584b236640.png"
+      "/lovable-uploads/5cc87126-c35c-42e4-b267-1032de57fe99.png"
     ],
     category: "weird"
   },
@@ -528,70 +544,4 @@ export const animals: Animal[] = [
     facts: [
       "The Pyjama Squid is actually a type of cuttlefish despite its name",
       "Its distinctive white and brown striped pattern resembles pajamas or a zebra",
-      "It can change its color and pattern to camouflage with its surroundings",
-      "They're generally nocturnal and hide in the sand or among rocks during the day"
-    ],
-    image: [
-      "/lovable-uploads/3ac88dae-5336-4f8d-98c6-26f10b4c4551.png", 
-      "/lovable-uploads/298cb0f7-5917-4b2a-bf29-582997fe1d8f.png"
-    ],
-    category: "mysterious"
-  }
-];
-
-// Keep track of recently shown animals to avoid repeats
-let recentlyShownAnimals: string[] = [];
-const MAX_RECENT_ANIMALS = Math.min(5, Math.floor(animals.length / 2));
-
-// Helper function to get a random image from multiple options
-export const getRandomImage = (image: string | string[]): string => {
-  if (typeof image === 'string') {
-    return image;
-  }
-  
-  // Select a random image from the array
-  const randomIndex = Math.floor(Math.random() * image.length);
-  return image[randomIndex];
-};
-
-// Improved random animal selection that avoids repeats
-export const getRandomAnimal = (): Animal => {
-  // If we've shown all animals or almost all, reset the history
-  if (recentlyShownAnimals.length >= animals.length - 1) {
-    recentlyShownAnimals = [];
-  }
-  
-  // Filter out recently shown animals
-  const availableAnimals = animals.filter(
-    animal => !recentlyShownAnimals.includes(animal.id)
-  );
-  
-  // Pick a random animal from available ones
-  const randomIndex = Math.floor(Math.random() * availableAnimals.length);
-  const selectedAnimal = availableAnimals[randomIndex];
-  
-  // Add to recently shown list
-  recentlyShownAnimals.push(selectedAnimal.id);
-  
-  // Maintain max length for recently shown animals
-  if (recentlyShownAnimals.length > MAX_RECENT_ANIMALS) {
-    recentlyShownAnimals.shift(); // Remove oldest animal
-  }
-  
-  return selectedAnimal;
-};
-
-// Utility function to get animal by ID
-export const getAnimalById = (id: string): Animal | undefined => {
-  return animals.find(animal => animal.id === id);
-};
-
-// Book information
-export const bookInfo = {
-  title: "The Screaming Hairy Armadillo and 76 Other Animals with Weird, Wild Names",
-  authors: "Matthew Murrie and Steve Murrie",
-  illustrator: "Julie Benbassat",
-  description: "A fascinating and funny guide to animals with bizarre names, from the Bald-Faced Hornets to the Fried Egg Jellyfish. Perfect for animal lovers of all ages!",
-  link: BOOK_LINK,
-  coverImage: BOOK_COVER
-};
+      "

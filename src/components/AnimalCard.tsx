@@ -146,6 +146,11 @@ const BONE_EATING_SNOT_FLOWER_WORM_IMAGES = [
   "/lovable-uploads/93960820-e0cd-4fcb-8903-c75302378bb9.png"
 ];
 
+const VAMPIRE_SQUID_IMAGES = [
+  "/lovable-uploads/1d7339ad-b285-43e9-a6b6-1314465ec4bc.png",
+  "/lovable-uploads/dfacb60f-ace9-4bdf-8f0c-74e70615a1f1.png"
+];
+
 const AnimalCard = ({
   animal,
   showFacts = false,
@@ -256,7 +261,7 @@ const AnimalCard = ({
       } else if (animal.id === "unicorn-fish") {
         return UNICORN_FISH_IMAGE;
       } else if (animal.id === "vampire-squid") {
-        return BOOK_COVER; // Always use book cover for vampire squid
+        return VAMPIRE_SQUID_IMAGES;
       } else if (animal.id === "lionhead-rabbit") {
         return LIONHEAD_RABBIT_IMAGES;
       } else if (animal.id === "hagfish") {

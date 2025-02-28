@@ -18,7 +18,7 @@ const animalThumbnails: Record<string, string> = {
   "hercules-beetle": "/lovable-uploads/fa0dc4ec-7637-4fd4-91d3-32e96249f92f.png",
   "naked-mole-rat": "/lovable-uploads/bb8eb6cc-a644-41df-bbce-f82ad79d7f45.png",
   "southern-hairy-nosed-wombat": "/lovable-uploads/e15c59a6-e20f-47bd-9d62-e5028ecb994c.png",
-  "vampire-squid": BOOK_COVER,
+  "vampire-squid": "/lovable-uploads/1d7339ad-b285-43e9-a6b6-1314465ec4bc.png",
   "red-lipped-batfish": "/lovable-uploads/f3205e2a-86cf-4934-887f-c40862c21ab0.png",
   "unicorn-fish": "/lovable-uploads/fe2688f7-2b9c-4dfb-87b1-1b59a2847db9.png",
   "agra-cadabra": "/lovable-uploads/5198a0b6-c5ce-4228-b837-a314cee5ca8d.png",
