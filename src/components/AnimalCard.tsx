@@ -1,6 +1,6 @@
 
 import { useEffect, useState, useRef } from "react";
-import { Animal, getRandomImage, bookInfo } from "../lib/animals";
+import { Animal, getRandomImage, bookInfo, BOOK_COVER } from "../lib/animals";
 import AnimatedContainer from "./AnimatedContainer";
 import { cn } from "../lib/utils";
 import { Info, HelpCircle, ExternalLink } from "lucide-react";
@@ -44,6 +44,7 @@ const SOUTHERN_WOMBAT_IMAGES = [
   "/lovable-uploads/73762eb7-97bd-44f0-9064-9ec199c90cbd.png", 
   "/lovable-uploads/de9414a0-a291-4caf-8d6d-a889a8e4d749.png"
 ];
+const UNICORN_FISH_IMAGE = "/lovable-uploads/fe2688f7-2b9c-4dfb-87b1-1b59a2847db9.png";
 
 const AnimalCard = ({
   animal,
@@ -114,6 +115,8 @@ const AnimalCard = ({
         return HERCULES_BEETLE_IMAGES;
       } else if (animal.id === "southern-hairy-nosed-wombat") {
         return SOUTHERN_WOMBAT_IMAGES;
+      } else if (animal.id === "unicorn-fish") {
+        return UNICORN_FISH_IMAGE;
       } else if (animal.id === "vampire-squid") {
         return BOOK_COVER; // Always use book cover for vampire squid
       } else {

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft, RefreshCw, HelpCircle } from "lucide-react";
 import AnimalCard from "../components/AnimalCard";
 import { Button } from "../components/ui/button";
-import { getRandomAnimal, Animal, getRandomImage, bookInfo } from "../lib/animals";
+import { getRandomAnimal, Animal, getRandomImage, bookInfo, BOOK_COVER } from "../lib/animals";
 import AnimatedContainer from "../components/AnimatedContainer";
 import { useToast } from "../hooks/use-toast";
 import ProfileBadge from "../components/ProfileBadge";
@@ -19,7 +19,8 @@ const animalThumbnails: Record<string, string> = {
   "naked-mole-rat": "/lovable-uploads/bb8eb6cc-a644-41df-bbce-f82ad79d7f45.png",
   "southern-hairy-nosed-wombat": "/lovable-uploads/e15c59a6-e20f-47bd-9d62-e5028ecb994c.png",
   "vampire-squid": BOOK_COVER,
-  "red-lipped-batfish": "/lovable-uploads/f3205e2a-86cf-4934-887f-c40862c21ab0.png"
+  "red-lipped-batfish": "/lovable-uploads/f3205e2a-86cf-4934-887f-c40862c21ab0.png",
+  "unicorn-fish": "/lovable-uploads/fe2688f7-2b9c-4dfb-87b1-1b59a2847db9.png"
 };
 
 const Random = () => {

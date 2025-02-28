@@ -8,10 +8,24 @@ export interface Animal {
   category: "original" | "sweet" | "weird" | "magical" | "fierce" | "delicious" | "mysterious";
 }
 
-const BOOK_COVER = "/lovable-uploads/4813c70d-678a-4536-bd98-88a5e0eca792.png";
+export const BOOK_COVER = "/lovable-uploads/4813c70d-678a-4536-bd98-88a5e0eca792.png";
 const BOOK_LINK = "https://amzn.to/41maKgG";
 
 export const animals: Animal[] = [
+  {
+    id: "unicorn-fish",
+    name: "Unicorn Fish",
+    question: "What if a service could adapt to changing circumstances like a Unicorn Fish changes its diet as it grows?",
+    facts: [
+      "Unicorn Fish are named for the horn-like rostral protuberance on their foreheads",
+      "They belong to the genus Naso",
+      "As they grow, their horn can get in the way when feeding on algae along the seabed",
+      "They adapt by changing their food sources as they age",
+      "Some Unicorn Fish species find themselves eating the poop of other fish"
+    ],
+    image: "/lovable-uploads/fe2688f7-2b9c-4dfb-87b1-1b59a2847db9.png",
+    category: "magical"
+  },
   {
     id: "pink-fairy-armadillo",
     name: "Pink Fairy Armadillo",
