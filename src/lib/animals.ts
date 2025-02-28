@@ -40,7 +40,7 @@ export const animals: Animal[] = [
       "It's often called a 'living fossil' because it's the only living member of its family, which dates back 125 million years",
       "It primarily lives in deep ocean waters"
     ],
-    image: [BOOK_COVER],
+    image: ["/lovable-uploads/d51adab8-b69f-4ea2-b209-ebedc533f680.png", BOOK_COVER],
     category: "mysterious"
   },
   {
