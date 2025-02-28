@@ -573,6 +573,21 @@ export const animals: Animal[] = [
       "Unlike most sea cucumbers that stay on the ocean floor, this species can swim up into the water column using fin-like structures."
     ],
     image: "/lovable-uploads/10e9d55f-42ff-486c-bd56-59d1e72e36a3.png",
+  },
+  {
+    id: "white-bellied-go-away-bird",
+    name: "White-Bellied Go-Away Bird",
+    category: "mysterious",
+    question: "What bird is named after the sound of its distinctive call?",
+    facts: [
+      "The White-Bellied Go-Away Bird got its name from its loud 'go-away' call that sounds like someone telling you to leave.",
+      "It's a medium-sized bird native to eastern Africa, especially in dry woodlands and savannas.",
+      "These birds are known for their distinctive black crest and white belly that contrasts with their grey upper body."
+    ],
+    image: [
+      "/lovable-uploads/4386b5e0-605c-4cb5-830f-0a51e565826e.png",
+      "/lovable-uploads/1ce3b794-3bb6-46d3-8fe1-fcb59de28918.png"
+    ],
   }
 ];
 
@@ -591,4 +606,9 @@ export const getRandomImage = (animal: Animal): string => {
   // If it's an array, get a random image
   const randomIndex = Math.floor(Math.random() * animal.image.length);
   return animal.image[randomIndex];
+};
+
+// Function to get an animal by ID
+export const getAnimalById = (id: string): Animal | undefined => {
+  return animals.find(animal => animal.id === id);
 };
