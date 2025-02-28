@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Animal, getRandomImage, getServiceDesignQuestion } from "@/lib/animals";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -157,3 +158,4 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
 };
 
 export default AnimalCard;
+
