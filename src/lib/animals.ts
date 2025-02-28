@@ -187,6 +187,19 @@ export const animals: Animal[] = [
     category: "weird"
   },
   {
+    id: "cuckoo-wasp",
+    name: "Cuckoo Wasp",
+    question: "What if a service could be as brilliantly distinctive as a Cuckoo Wasp's metallic colors?",
+    facts: [
+      "Cuckoo Wasps have stunning metallic blue and green coloration that shimmers in the light",
+      "They're named 'cuckoo' because they lay their eggs in other insects' nests, similar to cuckoo birds",
+      "Their exoskeleton is extremely tough, which protects them when they invade other insects' nests",
+      "They can curl into a defensive ball when threatened, protecting their vulnerable parts"
+    ],
+    image: ["/lovable-uploads/f157dcd0-9218-4d98-abd2-42e051483a08.png", "/lovable-uploads/0923a6e3-70f6-461a-8912-3ee29c3cb1b5.png", BOOK_COVER],
+    category: "mysterious"
+  },
+  {
     id: "pyjama-squid",
     name: "Pyjama Squid",
     question: "What if a service could adapt to blend in any environment like a Pyjama Squid with its distinctive stripes?",
