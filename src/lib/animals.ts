@@ -170,6 +170,19 @@ export const animals: Animal[] = [
     ],
     image: ["/lovable-uploads/9cd1674f-c952-4d10-a2a0-05051c7e9b2c.png", BOOK_COVER],
     category: "original"
+  },
+  {
+    id: "pyjama-squid",
+    name: "Pyjama Squid",
+    question: "What if a service could adapt to blend in any environment like a Pyjama Squid with its distinctive stripes?",
+    facts: [
+      "The Pyjama Squid is actually a type of cuttlefish despite its name",
+      "Its distinctive white and brown striped pattern resembles pajamas or a zebra",
+      "It can change its color and pattern to camouflage with its surroundings",
+      "They're generally nocturnal and hide in the sand or among rocks during the day"
+    ],
+    image: ["/lovable-uploads/3ac88dae-5336-4f8d-98c6-26f10b4c4551.png", "/lovable-uploads/298cb0f7-5917-4b2a-bf29-582997fe1d8f.png", BOOK_COVER],
+    category: "mysterious"
   }
 ];
 
