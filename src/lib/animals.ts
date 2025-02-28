@@ -13,6 +13,20 @@ const BOOK_LINK = "https://amzn.to/41maKgG";
 
 export const animals: Animal[] = [
   {
+    id: "spined-assassin-bug",
+    name: "Spined Assassin Bug",
+    question: "What if a service could adapt its approach as precisely as a Spined Assassin Bug hunts its prey?",
+    facts: [
+      "The Spined Assassin Bug has a long, needle-like proboscis that doubles as an injection device",
+      "It injects digestive enzymes into its prey, liquefying their insides before sucking them out",
+      "Despite its fearsome hunting technique, it's beneficial to humans by controlling pest populations",
+      "They're called 'assassin bugs' because of their stealthy hunting skills and deadly efficiency",
+      "The spines on its body serve as both defense mechanism and camouflage in its environment"
+    ],
+    image: "/lovable-uploads/e37f63ba-6b94-4f10-87a2-5121b21a7ac2.png",
+    category: "fierce"
+  },
+  {
     id: "hellbender",
     name: "Hellbender",
     question: "What if a service could adapt to difficult environments like a Hellbender salamander in rocky streams?",
