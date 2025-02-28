@@ -1,4 +1,3 @@
-
 export interface Animal {
   id: string;
   name: string;
@@ -333,7 +332,8 @@ export const animals: Animal[] = [
     image: [
       "/lovable-uploads/d51adab8-b69f-4ea2-b209-ebedc533f680.png",
       "/lovable-uploads/aba8aea6-6c61-472d-b308-b9f776866f9c.png",
-      "/lovable-uploads/79da017d-d2a8-4e0d-9c0a-030f5c16d960.png"
+      "/lovable-uploads/79da017d-d2a8-4e0d-9c0a-030f5c16d960.png",
+      "/lovable-uploads/07214a05-dd3d-46e5-a754-fdbb36751a88.png"
     ],
     category: "mysterious"
   },
@@ -677,7 +677,6 @@ export const getRandomImage = (imageSource: string | string[]): string => {
   return imageSource[Math.floor(Math.random() * imageSource.length)];
 };
 
-// Add the missing getAnimalById function
 export const getAnimalById = (id: string): Animal | undefined => {
   return animals.find(animal => animal.id === id);
 };

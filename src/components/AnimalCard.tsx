@@ -87,7 +87,8 @@ const PINK_FAIRY_ARMADILLO_IMAGES = [
 const GOBLIN_SHARK_IMAGES = [
   "/lovable-uploads/d51adab8-b69f-4ea2-b209-ebedc533f680.png",
   "/lovable-uploads/aba8aea6-6c61-472d-b308-b9f776866f9c.png",
-  "/lovable-uploads/79da017d-d2a8-4e0d-9c0a-030f5c16d960.png"
+  "/lovable-uploads/79da017d-d2a8-4e0d-9c0a-030f5c16d960.png",
+  "/lovable-uploads/07214a05-dd3d-46e5-a754-fdbb36751a88.png"
 ];
 
 const FRIED_EGG_JELLYFISH_IMAGES = [
