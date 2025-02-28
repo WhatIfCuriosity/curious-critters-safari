@@ -70,7 +70,10 @@ export const animals: Animal[] = [
       "Despite its name, it's actually a small lizard, not a dragon"
     ],
     image: [
-      "/lovable-uploads/d2a1aa74-8d30-4f7e-996c-78ca522be1d2.png"
+      "/lovable-uploads/d2a1aa74-8d30-4f7e-996c-78ca522be1d2.png",
+      "/lovable-uploads/c2c9b2f0-89c0-47ea-b006-e70e2b2043fd.png",
+      "/lovable-uploads/a6728415-0632-4a42-b9fa-b402dca7ab54.png",
+      "/lovable-uploads/4986cec5-cb02-47e9-b3f5-611b7e7df83e.png"
     ],
     category: "magical"
   },
