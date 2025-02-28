@@ -48,6 +48,21 @@ export const animals: Animal[] = [
     category: "mysterious"
   },
   {
+    id: "australian-ghost-shark",
+    name: "Australian Ghost Shark",
+    question: "What if a service could navigate hidden depths like an Australian Ghost Shark?",
+    facts: [
+      "The Australian Ghost Shark looks like a phantom of the deep sea",
+      "Despite its name, it's not actually a shark but belongs to the family of chimaeras",
+      "It has a venomous spine in front of its dorsal fin for defense",
+      "Ghost sharks use electroreception to find prey on the ocean floor"
+    ],
+    image: [
+      "/lovable-uploads/b6d60faf-4825-4b5e-97b4-2e8970649602.png"
+    ],
+    category: "mysterious"
+  },
+  {
     id: "red-lipped-batfish",
     name: "Red-Lipped Batfish",
     question: "What if a service could stand out as boldly as a Red-Lipped Batfish's lips?",

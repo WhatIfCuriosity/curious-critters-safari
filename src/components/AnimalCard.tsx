@@ -29,6 +29,7 @@ const RED_LIPPED_BATFISH_IMAGES = [
   "/lovable-uploads/f3205e2a-86cf-4934-887f-c40862c21ab0.png",
   "/lovable-uploads/33cae5a1-1c32-49e5-ad2d-13fd8ba04809.png"
 ];
+const AUSTRALIAN_GHOST_SHARK_IMAGE = "/lovable-uploads/b6d60faf-4825-4b5e-97b4-2e8970649602.png";
 
 const AnimalCard = ({
   animal,
@@ -93,6 +94,8 @@ const AnimalCard = ({
         return SCREAMING_HAIRY_ARMADILLO_IMAGE;
       } else if (animal.id === "red-lipped-batfish") {
         return RED_LIPPED_BATFISH_IMAGES;
+      } else if (animal.id === "australian-ghost-shark") {
+        return AUSTRALIAN_GHOST_SHARK_IMAGE;
       } else {
         return animal.image;
       }
