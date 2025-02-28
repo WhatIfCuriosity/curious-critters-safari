@@ -141,6 +141,11 @@ const POISON_DART_FROG_IMAGES = [
   "/lovable-uploads/36c20eaf-4b47-443c-9a26-7a337b4862d2.png"
 ];
 
+const BONE_EATING_SNOT_FLOWER_WORM_IMAGES = [
+  "/lovable-uploads/57f09d26-cde9-4730-8967-b6c037b44528.png",
+  "/lovable-uploads/93960820-e0cd-4fcb-8903-c75302378bb9.png"
+];
+
 const AnimalCard = ({
   animal,
   showFacts = false,
@@ -258,6 +263,8 @@ const AnimalCard = ({
         return HAGFISH_IMAGE;
       } else if (animal.id === "poison-dart-frog") {
         return POISON_DART_FROG_IMAGES;
+      } else if (animal.id === "bone-eating-snot-flower-worm") {
+        return BONE_EATING_SNOT_FLOWER_WORM_IMAGES;
       } else {
         return animal.image;
       }

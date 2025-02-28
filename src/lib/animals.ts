@@ -13,6 +13,23 @@ const BOOK_LINK = "https://amzn.to/41maKgG";
 
 export const animals: Animal[] = [
   {
+    id: "bone-eating-snot-flower-worm",
+    name: "Bone-Eating Snot Flower Worm",
+    question: "What if a service could extract value from overlooked resources like a Bone-Eating Snot Flower Worm?",
+    facts: [
+      "The Bone-Eating Snot Flower Worm (Osedax) has no mouth or digestive system",
+      "It uses root-like structures to absorb nutrients from whale bones on the ocean floor",
+      "The 'flowers' are actually its feathery gills that extract oxygen from the water",
+      "Only female worms attach to bones - males live as microscopic creatures inside the females",
+      "They were discovered in 2002 and can consume an entire whale skeleton in just a few years"
+    ],
+    image: [
+      "/lovable-uploads/57f09d26-cde9-4730-8967-b6c037b44528.png",
+      "/lovable-uploads/93960820-e0cd-4fcb-8903-c75302378bb9.png"
+    ],
+    category: "weird"
+  },
+  {
     id: "poison-dart-frog",
     name: "Poison Dart Frog",
     question: "What if a service could be as colorful yet cautionary as a Poison Dart Frog?",

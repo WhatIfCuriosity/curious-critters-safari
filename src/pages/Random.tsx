@@ -45,7 +45,8 @@ const animalThumbnails: Record<string, string> = {
   "ba-humbugi": "/lovable-uploads/7c8c7438-96f5-483c-8f8a-a7b96ebcf229.png",
   "lionhead-rabbit": "/lovable-uploads/fb87f26b-313f-4968-85eb-4f5895bb5ade.png",
   "hagfish": "/lovable-uploads/26ed8a88-1b0b-4643-b0e2-12f1491364d3.png",
-  "poison-dart-frog": "/lovable-uploads/f1e987b7-ef95-43af-8629-a5385bc56ed9.png"
+  "poison-dart-frog": "/lovable-uploads/f1e987b7-ef95-43af-8629-a5385bc56ed9.png",
+  "bone-eating-snot-flower-worm": "/lovable-uploads/57f09d26-cde9-4730-8967-b6c037b44528.png"
 };
 
 const Random = () => {
