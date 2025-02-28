@@ -32,6 +32,23 @@ export const animals: Animal[] = [
     category: "original"
   },
   {
+    id: "hercules-beetle",
+    name: "Hercules Beetle",
+    question: "What if a service could demonstrate strength like a Hercules Beetle, carrying 850 times its own weight?",
+    facts: [
+      "The Hercules Beetle is one of the world's strongest creatures relative to its size",
+      "It can lift up to 850 times its own body weight",
+      "Male beetles have distinctive long horns they use for fighting rivals",
+      "Their color can change from green to black depending on humidity",
+      "They're among the largest beetle species, growing up to 7 inches long"
+    ],
+    image: [
+      "/lovable-uploads/fa0dc4ec-7637-4fd4-91d3-32e96249f92f.png",
+      "/lovable-uploads/07210a5f-1f2f-443a-917e-ea437efd5e89.png"
+    ],
+    category: "fierce"
+  },
+  {
     id: "goblin-shark",
     name: "Goblin Shark",
     question: "What if a service could adapt its approach as swiftly as a Goblin Shark extends its jaw?",

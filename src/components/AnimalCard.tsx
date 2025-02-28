@@ -30,6 +30,10 @@ const RED_LIPPED_BATFISH_IMAGES = [
   "/lovable-uploads/33cae5a1-1c32-49e5-ad2d-13fd8ba04809.png"
 ];
 const AUSTRALIAN_GHOST_SHARK_IMAGE = "/lovable-uploads/b6d60faf-4825-4b5e-97b4-2e8970649602.png";
+const HERCULES_BEETLE_IMAGES = [
+  "/lovable-uploads/fa0dc4ec-7637-4fd4-91d3-32e96249f92f.png",
+  "/lovable-uploads/07210a5f-1f2f-443a-917e-ea437efd5e89.png"
+];
 
 const AnimalCard = ({
   animal,
@@ -96,6 +100,8 @@ const AnimalCard = ({
         return RED_LIPPED_BATFISH_IMAGES;
       } else if (animal.id === "australian-ghost-shark") {
         return AUSTRALIAN_GHOST_SHARK_IMAGE;
+      } else if (animal.id === "hercules-beetle") {
+        return HERCULES_BEETLE_IMAGES;
       } else {
         return animal.image;
       }
