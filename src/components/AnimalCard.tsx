@@ -1,9 +1,9 @@
 
 import { useEffect, useState } from "react";
-import { Animal, getRandomImage } from "../lib/animals";
+import { Animal, getRandomImage, bookInfo } from "../lib/animals";
 import AnimatedContainer from "./AnimatedContainer";
 import { cn } from "../lib/utils";
-import { Info, HelpCircle } from "lucide-react";
+import { Info, HelpCircle, ExternalLink } from "lucide-react";
 
 interface AnimalCardProps {
   animal: Animal;
@@ -20,6 +20,7 @@ const AnimalCard = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string>("");
+  const [showBookInfo, setShowBookInfo] = useState(false);
 
   useEffect(() => {
     // Reset states when animal changes
@@ -75,6 +76,14 @@ const AnimalCard = ({
     }
   };
 
+  const handleImageClick = () => {
+    // If the image is the book cover, open the Amazon link
+    if (selectedImage === bookInfo.coverImage) {
+      window.open(bookInfo.link, "_blank");
+      setShowBookInfo(true);
+    }
+  };
+
   return (
     <AnimatedContainer
       animation="scale"
@@ -93,14 +102,26 @@ const AnimalCard = ({
               </p>
             </div>
           ) : (
-            <img
-              src={selectedImage}
-              alt={animal.name}
-              className={cn(
-                "w-full h-full object-contain transition-opacity duration-500",
-                isLoaded ? "opacity-100" : "opacity-0"
+            <div 
+              className="relative cursor-pointer group"
+              onClick={handleImageClick}
+            >
+              <img
+                src={selectedImage}
+                alt={animal.name}
+                className={cn(
+                  "w-full h-48 object-contain transition-opacity duration-500",
+                  isLoaded ? "opacity-100" : "opacity-0"
+                )}
+              />
+              {selectedImage === bookInfo.coverImage && (
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <span className="bg-white/90 text-safari-brown px-3 py-1 rounded-full text-sm font-medium flex items-center">
+                    View on Amazon <ExternalLink className="h-3 w-3 ml-1" />
+                  </span>
+                </div>
               )}
-            />
+            </div>
           )}
         </div>
         <div className="absolute top-4 right-4">
@@ -145,6 +166,23 @@ const AnimalCard = ({
                 {showAllFacts ? "Show less" : `Show ${animal.facts.length - 1} more facts`}
               </button>
             )}
+          </div>
+        )}
+        
+        {showBookInfo && (
+          <div className="mt-6 p-4 bg-safari-cream/50 rounded-lg border border-safari-orange/20">
+            <h5 className="font-bold text-safari-brown text-sm">From the book:</h5>
+            <p className="text-sm mt-1">{bookInfo.title}</p>
+            <p className="text-xs text-gray-600 mt-1">by {bookInfo.authors}, illustrated by {bookInfo.illustrator}</p>
+            <p className="text-xs mt-2 text-gray-700">{bookInfo.description}</p>
+            <a 
+              href={bookInfo.link} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex text-xs items-center text-safari-orange hover:underline"
+            >
+              View on Amazon <ExternalLink className="h-3 w-3 ml-1" />
+            </a>
           </div>
         )}
       </div>

@@ -8,6 +8,9 @@ export interface Animal {
   category: "original" | "sweet" | "weird" | "magical" | "fierce" | "delicious" | "mysterious";
 }
 
+const BOOK_COVER = "/lovable-uploads/4813c70d-678a-4536-bd98-88a5e0eca792.png";
+const BOOK_LINK = "https://amzn.to/41maKgG";
+
 export const animals: Animal[] = [
   {
     id: "pink-fairy-armadillo",
@@ -18,7 +21,7 @@ export const animals: Animal[] = [
       "It spends most of its life underground",
       "Its pink color comes from blood vessels showing through its thin shell"
     ],
-    image: ["/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"],
+    image: [BOOK_COVER],
     category: "original"
   },
   {
@@ -30,7 +33,7 @@ export const animals: Animal[] = [
       "It's often called a 'living fossil' because it's the only living member of its family, which dates back 125 million years",
       "It primarily lives in deep ocean waters"
     ],
-    image: ["/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png", "/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"],
+    image: [BOOK_COVER, BOOK_COVER],
     category: "mysterious"
   },
   {
@@ -54,7 +57,7 @@ export const animals: Animal[] = [
       "It uses expandable ribs covered with skin to form 'wings'",
       "Despite its name, it's actually a small lizard, not a dragon"
     ],
-    image: ["/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"],
+    image: [BOOK_COVER],
     category: "magical"
   },
   {
@@ -66,7 +69,7 @@ export const animals: Animal[] = [
       "It has vibrant, colorful patterns on its abdomen",
       "It's only about the size of a grain of rice"
     ],
-    image: ["/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png", "/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"],
+    image: [BOOK_COVER, BOOK_COVER],
     category: "magical"
   },
   {
@@ -78,7 +81,7 @@ export const animals: Animal[] = [
       "The bluer the feet, the more attractive they are to potential mates",
       "They dive from great heights to catch fish in the ocean"
     ],
-    image: ["/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png", "/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"],
+    image: [BOOK_COVER, BOOK_COVER],
     category: "weird"
   },
   {
@@ -126,7 +129,7 @@ export const animals: Animal[] = [
       "They are almost immune to cancer",
       "They can survive with very little oxygen and feel almost no pain"
     ],
-    image: ["/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png", "/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"],
+    image: [BOOK_COVER, BOOK_COVER],
     category: "weird"
   }
 ];
@@ -176,4 +179,14 @@ export const getRandomAnimal = (): Animal => {
 // Utility function to get animal by ID
 export const getAnimalById = (id: string): Animal | undefined => {
   return animals.find(animal => animal.id === id);
+};
+
+// Book information
+export const bookInfo = {
+  title: "The Screaming Hairy Armadillo and 76 Other Animals with Weird, Wild Names",
+  authors: "Matthew Murrie and Steve Murrie",
+  illustrator: "Julie Benbassat",
+  description: "A fascinating and funny guide to animals with bizarre names, from the Bald-Faced Hornets to the Fried Egg Jellyfish. Perfect for animal lovers of all ages!",
+  link: BOOK_LINK,
+  coverImage: BOOK_COVER
 };
