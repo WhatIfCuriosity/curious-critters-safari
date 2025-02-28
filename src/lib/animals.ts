@@ -1,4 +1,3 @@
-
 export interface Animal {
   id: string;
   name: string;
@@ -328,13 +327,13 @@ export const animals: Animal[] = [
     facts: [
       "The Goblin Shark can extend its jaws forward to catch prey",
       "It's often called a 'living fossil' because it's the only living member of its family, which dates back 125 million years",
-      "It primarily lives in deep ocean waters"
+      "It primarily lives in deep ocean waters",
+      "Named for its fancied resemblance to a folkloric demon",
+      "Belongs to the Mitsukurinidae shark family"
     ],
     image: [
-      "/lovable-uploads/d51adab8-b69f-4ea2-b209-ebedc533f680.png",
-      "/lovable-uploads/aba8aea6-6c61-472d-b308-b9f776866f9c.png",
-      "/lovable-uploads/79da017d-d2a8-4e0d-9c0a-030f5c16d960.png",
-      "/lovable-uploads/07214a05-dd3d-46e5-a754-fdbb36751a88.png"
+      "/lovable-uploads/5e619189-b98d-4c22-8e23-cff80bc2b7da.png",
+      "/lovable-uploads/b4c4722a-5202-447a-8a73-9aaea8000bbc.png"
     ],
     category: "mysterious"
   },
