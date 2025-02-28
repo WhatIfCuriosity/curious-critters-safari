@@ -326,7 +326,6 @@ const Biomimicrosity = () => {
             <Button
               variant="outline"
               onClick={handleNextStep}
-              disabled={!completed[currentStep]}
               className="flex items-center"
             >
               Next
@@ -336,7 +335,7 @@ const Biomimicrosity = () => {
             <Button
               variant={completed[currentStep] ? "default" : "outline"}
               onClick={handleComplete}
-              disabled={!completed[currentStep] || isSaving}
+              disabled={isSaving}
               className="flex items-center"
             >
               <Sparkles className="h-4 w-4 mr-1" />
