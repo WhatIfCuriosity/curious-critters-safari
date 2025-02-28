@@ -96,6 +96,23 @@ export const animals: Animal[] = [
     category: "fierce"
   },
   {
+    id: "leafy-sea-dragon",
+    name: "Leafy Sea Dragon",
+    question: "What if a service could blend seamlessly with its environment like a Leafy Sea Dragon among seaweed?",
+    facts: [
+      "The Leafy Sea Dragon has leaf-like appendages that help it camouflage in seaweed and kelp",
+      "Despite its dragon-shaped body, it's actually related to seahorses and pipefish",
+      "It moves by using nearly invisible fins and can appear to be floating motionless",
+      "Leafy Sea Dragons are found primarily in the waters off south and east Australia",
+      "Their excellent camouflage helps them hide from predators and sneak up on prey"
+    ],
+    image: [
+      "/lovable-uploads/6d46bd6b-028e-4023-b686-dbdc3e37207a.png",
+      "/lovable-uploads/90b595ed-7bc8-4c7f-9b41-665093c80180.png"
+    ],
+    category: "magical"
+  },
+  {
     id: "sparklemuffin-peacock-spider",
     name: "Sparklemuffin Peacock Spider",
     question: "What if a service could dazzle users like a Sparklemuffin Peacock Spider's dance?",
