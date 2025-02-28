@@ -19,9 +19,16 @@ export const animals: Animal[] = [
     facts: [
       "The Pink Fairy Armadillo is the smallest armadillo species",
       "It spends most of its life underground",
-      "Its pink color comes from blood vessels showing through its thin shell"
+      "Its pink color comes from blood vessels showing through its thin shell",
+      "It's also known for its silky white fur and tiny size",
+      "The Pink Fairy Armadillo has specialized claws for digging through sand"
     ],
-    image: ["/lovable-uploads/ce8c8520-8c58-4029-b828-9d1f65f21d21.png", BOOK_COVER],
+    image: [
+      "/lovable-uploads/bd7c3d5a-85af-4cbc-bbf0-e7b84e278a78.png", 
+      "/lovable-uploads/5b6665f7-758b-4942-8619-671ed0fa0132.png", 
+      "/lovable-uploads/ce8c8520-8c58-4029-b828-9d1f65f21d21.png", 
+      BOOK_COVER
+    ],
     category: "original"
   },
   {
