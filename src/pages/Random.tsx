@@ -54,7 +54,8 @@ const animalThumbnails: Record<string, string> = {
   "bone-eating-snot-flower-worm": "/lovable-uploads/57f09d26-cde9-4730-8967-b6c037b44528.png",
   "hickory-horned-devil": "/lovable-uploads/b243e9ce-c47f-4f9c-a4a8-cf591b0b54e2.png",
   "honey-badger": "/lovable-uploads/ddacacb5-d210-4b3f-a705-0a0958330fc6.png",
-  "chocolate-dipped-damselfish": "/lovable-uploads/e86cf5b4-84d5-4754-b8a6-ff7b0e604ea2.png"
+  "chocolate-dipped-damselfish": "/lovable-uploads/e86cf5b4-84d5-4754-b8a6-ff7b0e604ea2.png",
+  "pieza-pi": "/lovable-uploads/c843c985-49b9-4baa-8d84-839084778214.png"
 };
 
 const Random = () => {

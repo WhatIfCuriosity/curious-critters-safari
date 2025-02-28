@@ -195,6 +195,9 @@ const HONEY_BADGER_IMAGES = [
 // New Chocolate Dipped Damselfish image
 const CHOCOLATE_DIPPED_DAMSELFISH_IMAGE = "/lovable-uploads/e86cf5b4-84d5-4754-b8a6-ff7b0e604ea2.png";
 
+// New Pieza Pi image
+const PIEZA_PI_IMAGE = "/lovable-uploads/c843c985-49b9-4baa-8d84-839084778214.png";
+
 const AnimalCard = ({
   animal,
   showFacts = false,
@@ -332,6 +335,8 @@ const AnimalCard = ({
         return HONEY_BADGER_IMAGES;
       } else if (animal.id === "chocolate-dipped-damselfish") {
         return CHOCOLATE_DIPPED_DAMSELFISH_IMAGE;
+      } else if (animal.id === "pieza-pi") {
+        return PIEZA_PI_IMAGE;
       } else {
         return animal.image;
       }
