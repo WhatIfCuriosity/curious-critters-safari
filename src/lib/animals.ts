@@ -174,6 +174,19 @@ export const animals: Animal[] = [
     category: "original"
   },
   {
+    id: "monkeyface-prickleback",
+    name: "Monkeyface Prickleback",
+    question: "What if a service could adapt as easily to its environment as a Monkeyface Prickleback?",
+    facts: [
+      "Despite its name, the Monkeyface Prickleback is definitely a fish, not a monkey",
+      "It gets its name from its facial features that resemble a monkey",
+      "It has prickly spines on its dorsal fin",
+      "It's a popular fish for catching and eating along the Pacific coast of North America"
+    ],
+    image: ["/lovable-uploads/dcb35bf4-8a2b-471e-8da8-3211c44f19e0.png", BOOK_COVER],
+    category: "weird"
+  },
+  {
     id: "pyjama-squid",
     name: "Pyjama Squid",
     question: "What if a service could adapt to blend in any environment like a Pyjama Squid with its distinctive stripes?",
