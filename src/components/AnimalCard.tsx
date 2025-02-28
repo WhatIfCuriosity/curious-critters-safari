@@ -1,3 +1,4 @@
+
 import { useEffect, useState, useRef } from "react";
 import { Animal, getRandomImage, bookInfo, BOOK_COVER } from "../lib/animals";
 import AnimatedContainer from "./AnimatedContainer";
@@ -145,8 +146,11 @@ const SCREAMING_HAIRY_ARMADILLO_IMAGES = [
 
 const RED_LIPPED_BATFISH_IMAGES = [
   "/lovable-uploads/f3205e2a-86cf-4934-887f-c40862c21ab0.png",
-  "/lovable-uploads/33cae5a1-1c32-49e5-ad2d-13fd8ba04809.png"
+  "/lovable-uploads/33cae5a1-1c32-49e5-ad2d-13fd8ba04809.png",
+  "/lovable-uploads/2282b28d-4320-4022-b465-d8a1e009082a.png",
+  "/lovable-uploads/d8de0004-11df-49e8-a74d-176206ff400c.png"
 ];
+
 const AUSTRALIAN_GHOST_SHARK_IMAGE = "/lovable-uploads/b6d60faf-4825-4b5e-97b4-2e8970649602.png";
 const HERCULES_BEETLE_IMAGES = [
   "/lovable-uploads/fa0dc4ec-7637-4fd4-91d3-32e96249f92f.png",
@@ -197,6 +201,12 @@ const CHOCOLATE_DIPPED_DAMSELFISH_IMAGE = "/lovable-uploads/e86cf5b4-84d5-4754-b
 
 // New Pieza Pi image
 const PIEZA_PI_IMAGE = "/lovable-uploads/c843c985-49b9-4baa-8d84-839084778214.png";
+
+// New Banana Slug images
+const BANANA_SLUG_IMAGES = [
+  "/lovable-uploads/9b9595ae-b4e2-43fa-b83c-6ca66e17323d.png",
+  "/lovable-uploads/7320dbeb-59eb-460c-b8f0-1cad8f7879a3.png"
+];
 
 const AnimalCard = ({
   animal,
@@ -337,6 +347,8 @@ const AnimalCard = ({
         return CHOCOLATE_DIPPED_DAMSELFISH_IMAGE;
       } else if (animal.id === "pieza-pi") {
         return PIEZA_PI_IMAGE;
+      } else if (animal.id === "banana-slug") {
+        return BANANA_SLUG_IMAGES;
       } else {
         return animal.image;
       }

@@ -19,7 +19,7 @@ const animalThumbnails: Record<string, string> = {
   "naked-mole-rat": "/lovable-uploads/bb8eb6cc-a644-41df-bbce-f82ad79d7f45.png",
   "southern-hairy-nosed-wombat": "/lovable-uploads/e15c59a6-e20f-47bd-9d62-e5028ecb994c.png",
   "vampire-squid": "/lovable-uploads/1d7339ad-b285-43e9-a6b6-1314465ec4bc.png",
-  "red-lipped-batfish": "/lovable-uploads/f3205e2a-86cf-4934-887f-c40862c21ab0.png",
+  "red-lipped-batfish": "/lovable-uploads/2282b28d-4320-4022-b465-d8a1e009082a.png",
   "unicorn-fish": "/lovable-uploads/fe2688f7-2b9c-4dfb-87b1-1b59a2847db9.png",
   "agra-cadabra": "/lovable-uploads/5198a0b6-c5ce-4228-b837-a314cee5ca8d.png",
   "yeti-crab": "/lovable-uploads/930ae911-cd64-4277-9e81-9993ed4ecf7b.png",
@@ -55,7 +55,8 @@ const animalThumbnails: Record<string, string> = {
   "hickory-horned-devil": "/lovable-uploads/b243e9ce-c47f-4f9c-a4a8-cf591b0b54e2.png",
   "honey-badger": "/lovable-uploads/ddacacb5-d210-4b3f-a705-0a0958330fc6.png",
   "chocolate-dipped-damselfish": "/lovable-uploads/e86cf5b4-84d5-4754-b8a6-ff7b0e604ea2.png",
-  "pieza-pi": "/lovable-uploads/c843c985-49b9-4baa-8d84-839084778214.png"
+  "pieza-pi": "/lovable-uploads/c843c985-49b9-4baa-8d84-839084778214.png",
+  "banana-slug": "/lovable-uploads/9b9595ae-b4e2-43fa-b83c-6ca66e17323d.png"
 };
 
 const Random = () => {
