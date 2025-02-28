@@ -18,6 +18,11 @@ const DEFAULT_PLACEHOLDER = "/lovable-uploads/4813c70d-678a-4536-bd98-88a5e0eca7
 const globalImageCache: Record<string, string> = {};
 
 // Images for all animals
+const TWICE_STABBED_STINK_BUG_IMAGES = [
+  "/lovable-uploads/7dd65f6a-01f4-4b19-ab78-4f17217e7f61.png",
+  "/lovable-uploads/78a6b72b-4069-40ee-a78b-15ecf7acea3d.png"
+];
+
 const NAKED_MOLE_RAT_IMAGES = [
   "/lovable-uploads/bb8eb6cc-a644-41df-bbce-f82ad79d7f45.png", 
   "/lovable-uploads/5cc87126-c35c-42e4-b267-1032de57fe99.png"
@@ -214,7 +219,9 @@ const AnimalCard = ({
     // Function to ensure specific animals get their correct images
     const getImageOptionsForAnimal = (animal: Animal): string | string[] => {
       // Explicit handling for specific animals based on their ID
-      if (animal.id === "naked-mole-rat") {
+      if (animal.id === "twice-stabbed-stink-bug") {
+        return TWICE_STABBED_STINK_BUG_IMAGES;
+      } else if (animal.id === "naked-mole-rat") {
         return NAKED_MOLE_RAT_IMAGES;
       } else if (animal.id === "moonrat") {
         return MOONRAT_IMAGES;

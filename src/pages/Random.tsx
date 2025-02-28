@@ -13,6 +13,7 @@ const DEFAULT_FALLBACK = "/lovable-uploads/4813c70d-678a-4536-bd98-88a5e0eca792.
 
 // Mapping of animal IDs to their primary thumbnail images
 const animalThumbnails: Record<string, string> = {
+  "twice-stabbed-stink-bug": "/lovable-uploads/78a6b72b-4069-40ee-a78b-15ecf7acea3d.png",
   "moonrat": "/lovable-uploads/ad213540-469d-407b-a147-4899319b2ef4.png",
   "hercules-beetle": "/lovable-uploads/fa0dc4ec-7637-4fd4-91d3-32e96249f92f.png",
   "naked-mole-rat": "/lovable-uploads/bb8eb6cc-a644-41df-bbce-f82ad79d7f45.png",

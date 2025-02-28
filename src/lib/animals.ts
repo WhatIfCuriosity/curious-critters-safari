@@ -13,6 +13,23 @@ const BOOK_LINK = "https://amzn.to/41maKgG";
 
 export const animals: Animal[] = [
   {
+    id: "twice-stabbed-stink-bug",
+    name: "Twice-Stabbed Stink Bug",
+    question: "What if a service could defend itself like a Twice-Stabbed Stink Bug when threatened?",
+    facts: [
+      "The Twice-Stabbed Stink Bug gets its name from the two red spots on its back that look like stab wounds",
+      "When threatened, it releases a nasty-smelling spray as a defense mechanism",
+      "It's part of the shield bug family (Pentatomidae) known for their distinctive shield-shaped bodies",
+      "These bugs aren't picky eaters and consume various plants",
+      "While defensive, they play important roles in their ecosystems"
+    ],
+    image: [
+      "/lovable-uploads/7dd65f6a-01f4-4b19-ab78-4f17217e7f61.png",
+      "/lovable-uploads/78a6b72b-4069-40ee-a78b-15ecf7acea3d.png"
+    ],
+    category: "fierce"
+  },
+  {
     id: "bone-eating-snot-flower-worm",
     name: "Bone-Eating Snot Flower Worm",
     question: "What if a service could extract value from overlooked resources like a Bone-Eating Snot Flower Worm?",
