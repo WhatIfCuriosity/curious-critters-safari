@@ -221,6 +221,12 @@ const CHICKEN_TURTLE_IMAGES = [
   "/lovable-uploads/fa9636a2-cba8-4b4a-bb78-a4f140e27400.png"
 ];
 
+// New Dogface Butterfly images
+const DOGFACE_BUTTERFLY_IMAGES = [
+  "/lovable-uploads/74ad3c1d-8f45-4b60-ab56-b3e8e64a8569.png",
+  "/lovable-uploads/9a2680d2-e921-4a4e-8aae-be364052792a.png"
+];
+
 const AnimalCard = ({
   animal,
   showFacts = false,
@@ -366,6 +372,8 @@ const AnimalCard = ({
         return WAXY_MONKEY_TREE_FROG_IMAGES;
       } else if (animal.id === "chicken-turtle") {
         return CHICKEN_TURTLE_IMAGES;
+      } else if (animal.id === "dogface-butterfly") {
+        return DOGFACE_BUTTERFLY_IMAGES;
       } else {
         return animal.image;
       }
