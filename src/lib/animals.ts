@@ -155,7 +155,7 @@ export const animals: Animal[] = [
       "They live in the Pacific Ocean off the coast of North America",
       "Their name comes from their cranky, aggressive behavior"
     ],
-    image: ["/lovable-uploads/8c79dbe2-73ec-4260-9abb-104b2de92996.png", BOOK_COVER],
+    image: ["/lovable-uploads/8c79dbe2-73ec-4260-9abb-104b2de92996.png", "/lovable-uploads/ffe1fac4-535b-487d-b4fb-4490a85c9409.png", BOOK_COVER],
     category: "fierce"
   }
 ];
