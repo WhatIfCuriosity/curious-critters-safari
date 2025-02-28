@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Animal, getRandomImage, bookInfo } from "../lib/animals";
 import AnimatedContainer from "./AnimatedContainer";
 import { cn } from "../lib/utils";
@@ -25,9 +25,30 @@ const AnimalCard = ({
   const [selectedImage, setSelectedImage] = useState<string>(DEFAULT_PLACEHOLDER);
   const [showBookInfo, setShowBookInfo] = useState(false);
   const [retryCount, setRetryCount] = useState(0);
-  const MAX_RETRIES = 2;
-
+  const MAX_RETRIES = 3;
+  
+  // Use ref to prevent re-fetching images unnecessarily
+  const previousAnimalId = useRef<string | null>(null);
+  const loadedImagesCache = useRef<Map<string, string>>(new Map());
+  
   useEffect(() => {
+    // Only reset and reload if the animal actually changed
+    if (previousAnimalId.current === animal.id) {
+      return;
+    }
+    
+    // Update the ref to the current animal
+    previousAnimalId.current = animal.id;
+    
+    // Check if we have a cached image for this animal
+    const cachedImage = loadedImagesCache.current.get(animal.id);
+    if (cachedImage) {
+      setSelectedImage(cachedImage);
+      setIsLoaded(true);
+      setHasError(false);
+      return;
+    }
+    
     // Reset states when animal changes
     setIsLoaded(false);
     setHasError(false);
@@ -56,6 +77,9 @@ const AnimalCard = ({
         setSelectedImage(imageToUse);
         setIsLoaded(true);
         setHasError(false);
+        
+        // Cache the successful image
+        loadedImagesCache.current.set(animal.id, imageToUse);
       };
       
       img.onerror = () => {
@@ -65,17 +89,29 @@ const AnimalCard = ({
         if (retryCount < MAX_RETRIES && typeof animal.image !== 'string' && animal.image.length > 1) {
           // Try another image from the array if available
           setRetryCount(prev => prev + 1);
-          setTimeout(loadImage, 200); // Short delay before retrying
+          setTimeout(loadImage, 300); // Longer delay before retrying
         } else {
           // Use the book cover as final fallback
           setSelectedImage(DEFAULT_PLACEHOLDER);
           setIsLoaded(true);
           setHasError(true);
+          
+          // Cache the fallback image to prevent further loading attempts
+          loadedImagesCache.current.set(animal.id, DEFAULT_PLACEHOLDER);
         }
       };
       
       // Now set the src to trigger loading
       img.src = imageToUse;
+      
+      // Fix for some browsers that might have the image cached already
+      if (img.complete) {
+        img.onload = null;
+        setSelectedImage(imageToUse);
+        setIsLoaded(true);
+        setHasError(false);
+        loadedImagesCache.current.set(animal.id, imageToUse);
+      }
     };
     
     // Start the image loading process
@@ -88,19 +124,23 @@ const AnimalCard = ({
         setSelectedImage(DEFAULT_PLACEHOLDER);
         setIsLoaded(true);
         setHasError(true);
+        loadedImagesCache.current.set(animal.id, DEFAULT_PLACEHOLDER);
       }
     }, 5000);
     
     return () => {
       clearTimeout(timeout);
     };
-  }, [animal, animal.image, retryCount]);
+  }, [animal.id, animal.image, retryCount]);
 
   // Additional safeguard for runtime errors
   const handleImageError = () => {
     console.error(`Runtime image error triggered for: ${selectedImage}`);
-    setSelectedImage(DEFAULT_PLACEHOLDER);
-    setHasError(true);
+    
+    if (selectedImage !== DEFAULT_PLACEHOLDER) {
+      setSelectedImage(DEFAULT_PLACEHOLDER);
+      setHasError(true);
+    }
   };
 
   const getCategoryColor = (category: string) => {
@@ -164,6 +204,7 @@ const AnimalCard = ({
                 )}
                 onError={handleImageError}
                 loading="eager"
+                draggable="false"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                 <span className="bg-white/90 text-safari-brown px-3 py-1 rounded-full text-sm font-medium flex items-center">
