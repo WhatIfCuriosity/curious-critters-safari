@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Animal, getRandomImage, getServiceDesignQuestion } from "@/lib/animals";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Shuffle, ChevronDown, ChevronUp } from "lucide-react";
+import { Shuffle } from "lucide-react";
 
 interface AnimalCardProps {
   animal: Animal;
@@ -26,7 +26,7 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
       : animal.image[Math.floor(Math.random() * animal.image.length)]
   );
   
-  const [showAllFacts, setShowAllFacts] = useState(false);
+  const [showMoreFacts, setShowMoreFacts] = useState(false);
 
   // Get service design question to use as the main question
   const serviceDesignQuestion = getServiceDesignQuestion(animal.id) || animal.question;
@@ -42,20 +42,20 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
     setCurrentImage(newImage);
   };
 
-  const toggleShowAllFacts = () => {
-    setShowAllFacts(!showAllFacts);
+  const toggleShowMoreFacts = () => {
+    setShowMoreFacts(!showMoreFacts);
   };
 
   return (
     <Card className={`w-full max-w-md mx-auto overflow-hidden rounded-xl ${className}`}>
       <div 
-        className="relative aspect-[3/2] overflow-hidden cursor-pointer"
+        className="relative overflow-hidden cursor-pointer"
         onClick={handleImageClick}
       >
         <img
           src={currentImage}
           alt={animal.name}
-          className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
+          className="object-cover w-full h-full"
         />
         {typeof animal.image !== "string" && animal.image.length > 1 && (
           <div className="absolute top-2 right-2 bg-white/80 text-xs p-1 rounded-md">
@@ -64,49 +64,40 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
         )}
       </div>
 
-      <CardContent className="pt-3 text-left">
-        <h2 className="text-2xl font-bold mb-2 text-[#92400E]">{animal.name}</h2>
-        <div className="inline-block px-3 py-1 mb-3 text-sm rounded-full bg-gray-100/80">
+      <CardContent className="px-6 py-4">
+        <div className="absolute top-4 right-4 bg-pink-100 px-3 py-1 rounded-full text-sm text-pink-800">
           {animal.category.charAt(0).toUpperCase() + animal.category.slice(1)}
         </div>
+        
+        <h2 className="text-2xl font-bold mb-2 text-[#8B4513]">{animal.name}</h2>
 
-        <p className="text-lg font-medium italic mb-4 text-[#78350F] text-left">"{serviceDesignQuestion}"</p>
+        <p className="text-lg italic mb-6 text-[#8B4513]">"{serviceDesignQuestion}"</p>
 
         {showFacts && (
-          <div className="mt-2">
+          <div className="mt-4">
             <div className="flex items-center mb-3">
-              <div className="w-5 h-5 rounded-full bg-[#EA580C] text-white flex items-center justify-center mr-2">
-                <span className="text-xs">i</span>
+              <div className="w-6 h-6 rounded-full bg-[#F97316] text-white flex items-center justify-center mr-2">
+                <span className="text-sm">i</span>
               </div>
-              <h3 className="text-lg font-semibold text-[#92400E]">Fun Facts</h3>
+              <h3 className="text-xl font-bold text-[#8B4513]">Fun Facts</h3>
             </div>
-            <ul className="space-y-2 text-left">
-              {animal.facts.slice(0, showAllFacts ? animal.facts.length : 1).map((fact, index) => (
-                <li key={index} className="text-sm flex items-start">
-                  <span className="text-[#EA580C] mr-2">•</span>
-                  <span className="text-[#78350F]">{fact}</span>
+            
+            <ul className="space-y-3">
+              {animal.facts.slice(0, showMoreFacts ? animal.facts.length : 1).map((fact, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="text-[#F97316] mr-2 text-xl">•</span>
+                  <span className="text-[#8B4513]">{fact}</span>
                 </li>
               ))}
             </ul>
             
             {animal.facts.length > 1 && (
-              <Button 
-                variant="ghost" 
-                onClick={toggleShowAllFacts}
-                className="mt-2 p-0 h-auto text-[#EA580C] hover:text-[#92400E] hover:bg-transparent flex items-center"
+              <button 
+                onClick={toggleShowMoreFacts}
+                className="text-[#F97316] font-medium mt-3 hover:underline"
               >
-                {showAllFacts ? (
-                  <>
-                    <span>Show fewer facts</span>
-                    <ChevronUp className="ml-1 h-4 w-4" />
-                  </>
-                ) : (
-                  <>
-                    <span>Show more facts</span>
-                    <ChevronDown className="ml-1 h-4 w-4" />
-                  </>
-                )}
-              </Button>
+                {showMoreFacts ? "Show fewer facts" : `Show ${animal.facts.length - 1} more facts`}
+              </button>
             )}
           </div>
         )}
