@@ -46,6 +46,14 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
     setShowMoreFacts(!showMoreFacts);
   };
 
+  // Get background color based on category
+  const getCategoryBgColor = () => {
+    if (animal.category === "weird") {
+      return "bg-pink-100 text-pink-800";
+    }
+    return "bg-white/80";
+  };
+
   return (
     <Card className={`w-full max-w-md mx-auto overflow-hidden rounded-xl ${className}`}>
       <div 
@@ -60,14 +68,14 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
           />
         </a>
         {typeof animal.image !== "string" && animal.image.length > 1 && (
-          <div className="absolute top-2 right-2 bg-white/80 text-xs p-1 rounded-md">
+          <div className={`absolute top-2 right-2 text-xs p-1 rounded-md ${getCategoryBgColor()}`}>
             {animal.category.charAt(0).toUpperCase() + animal.category.slice(1)}
           </div>
         )}
       </div>
 
       <CardContent className="px-6 py-4">
-        <div className="absolute top-4 right-4 bg-pink-100 px-3 py-1 rounded-full text-sm text-pink-800">
+        <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-sm ${getCategoryBgColor()}`}>
           {animal.category.charAt(0).toUpperCase() + animal.category.slice(1)}
         </div>
         
