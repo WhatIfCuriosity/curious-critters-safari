@@ -21,7 +21,7 @@ export const animals: Animal[] = [
       "It spends most of its life underground",
       "Its pink color comes from blood vessels showing through its thin shell"
     ],
-    image: [BOOK_COVER],
+    image: ["/lovable-uploads/ce8c8520-8c58-4029-b828-9d1f65f21d21.png", BOOK_COVER],
     category: "original"
   },
   {
@@ -33,7 +33,7 @@ export const animals: Animal[] = [
       "It's often called a 'living fossil' because it's the only living member of its family, which dates back 125 million years",
       "It primarily lives in deep ocean waters"
     ],
-    image: [BOOK_COVER, BOOK_COVER],
+    image: [BOOK_COVER],
     category: "mysterious"
   },
   {
@@ -82,7 +82,7 @@ export const animals: Animal[] = [
       "The bluer the feet, the more attractive they are to potential mates",
       "They dive from great heights to catch fish in the ocean"
     ],
-    image: [BOOK_COVER, BOOK_COVER],
+    image: [BOOK_COVER],
     category: "weird"
   },
   {
