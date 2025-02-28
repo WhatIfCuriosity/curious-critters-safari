@@ -25,7 +25,24 @@ const animalThumbnails: Record<string, string> = {
   "yeti-crab": "/lovable-uploads/930ae911-cd64-4277-9e81-9993ed4ecf7b.png",
   "wunderpus-octopus": "/lovable-uploads/d8d68f30-d905-40eb-b414-91b26bc78d36.png",
   "hellbender": "/lovable-uploads/7b54880d-fa56-4f4f-957e-c6f6a46eb2b6.png",
-  "spined-assassin-bug": "/lovable-uploads/e37f63ba-6b94-4f10-87a2-5121b21a7ac2.png"
+  "spined-assassin-bug": "/lovable-uploads/e37f63ba-6b94-4f10-87a2-5121b21a7ac2.png",
+  "flying-dragon": "/lovable-uploads/d2a1aa74-8d30-4f7e-996c-78ca522be1d2.png",
+  "komodo-dragon": "/lovable-uploads/9fa472e1-640b-419f-a567-29269d7f0b56.png",
+  "leafy-sea-dragon": "/lovable-uploads/6d46bd6b-028e-4023-b686-dbdc3e37207a.png",
+  "sparklemuffin-peacock-spider": "/lovable-uploads/bd8e6eba-d75a-4091-b9eb-9d01aab80b31.png",
+  "blue-footed-booby": "/lovable-uploads/6897367d-a430-4f51-a44b-121384738827.png",
+  "screaming-hairy-armadillo": "/lovable-uploads/7b96f153-2562-47fa-ba94-df3d8a4b3be1.png",
+  "caramel-coated-capybara": "/lovable-uploads/a921d78a-a617-405b-af5e-ba4fd16eb181.png",
+  "pink-fairy-armadillo": "/lovable-uploads/bd7c3d5a-85af-4cbc-bbf0-e7b84e278a78.png",
+  "goblin-shark": "/lovable-uploads/d51adab8-b69f-4ea2-b209-ebedc533f680.png",
+  "australian-ghost-shark": "/lovable-uploads/b6d60faf-4825-4b5e-97b4-2e8970649602.png",
+  "monkeyface-prickleback": "/lovable-uploads/dcb35bf4-8a2b-471e-8da8-3211c44f19e0.png",
+  "sarcastic-fringehead": "/lovable-uploads/8c79dbe2-73ec-4260-9abb-104b2de92996.png",
+  "long-wattled-umbrellabird": "/lovable-uploads/fb824a16-e514-4e58-a21b-87c220bfdc8e.png",
+  "blobfish": "/lovable-uploads/eb0a6e45-42af-4c28-98d3-3f7c6a7a82ff.png",
+  "pyjama-squid": "/lovable-uploads/3ac88dae-5336-4f8d-98c6-26f10b4c4551.png",
+  "cuckoo-wasp": "/lovable-uploads/f157dcd0-9218-4d98-abd2-42e051483a08.png",
+  "ba-humbugi": "/lovable-uploads/7c8c7438-96f5-483c-8f8a-a7b96ebcf229.png"
 };
 
 const Random = () => {

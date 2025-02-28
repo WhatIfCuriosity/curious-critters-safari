@@ -46,6 +46,71 @@ const HELLBENDER_IMAGE = "/lovable-uploads/7b54880d-fa56-4f4f-957e-c6f6a46eb2b6.
 
 const SPINED_ASSASSIN_BUG_IMAGE = "/lovable-uploads/e37f63ba-6b94-4f10-87a2-5121b21a7ac2.png";
 
+const FLYING_DRAGON_IMAGES = [
+  "/lovable-uploads/d2a1aa74-8d30-4f7e-996c-78ca522be1d2.png",
+  "/lovable-uploads/c2c9b2f0-89c0-47ea-b006-e70e2b2043fd.png",
+  "/lovable-uploads/a6728415-0632-4a42-b9fa-b402dca7ab54.png",
+  "/lovable-uploads/4986cec5-cb02-47e9-b3f5-611b7e7df83e.png"
+];
+
+const KOMODO_DRAGON_IMAGE = "/lovable-uploads/9fa472e1-640b-419f-a567-29269d7f0b56.png";
+
+const LEAFY_SEA_DRAGON_IMAGES = [
+  "/lovable-uploads/6d46bd6b-028e-4023-b686-dbdc3e37207a.png",
+  "/lovable-uploads/90b595ed-7bc8-4c7f-9b41-665093c80180.png"
+];
+
+const SPARKLEMUFFIN_PEACOCK_SPIDER_IMAGES = [
+  "/lovable-uploads/bd8e6eba-d75a-4091-b9eb-9d01aab80b31.png", 
+  "/lovable-uploads/6a968286-9e9f-4704-8c99-dc9dca87952a.png",
+  "/lovable-uploads/0b6e48e8-07e5-461f-bc9c-7a7d9f292b91.png"
+];
+
+const BLUE_FOOTED_BOOBY_IMAGES = [
+  "/lovable-uploads/6897367d-a430-4f51-a44b-121384738827.png", 
+  "/lovable-uploads/e26dfbc2-3a9b-4a58-9b4d-2c33e4cabc25.png", 
+  "/lovable-uploads/870d7b5e-d363-40d9-9f46-a270bacb437d.png"
+];
+
+const PINK_FAIRY_ARMADILLO_IMAGES = [
+  "/lovable-uploads/bd7c3d5a-85af-4cbc-bbf0-e7b84e278a78.png", 
+  "/lovable-uploads/5b6665f7-758b-4942-8619-671ed0fa0132.png", 
+  "/lovable-uploads/ce8c8520-8c58-4029-b828-9d1f65f21d21.png",
+  "/lovable-uploads/1193d4dd-e023-4b8d-8625-792f5b1a3409.png"
+];
+
+const GOBLIN_SHARK_IMAGES = [
+  "/lovable-uploads/d51adab8-b69f-4ea2-b209-ebedc533f680.png",
+  "/lovable-uploads/aba8aea6-6c61-472d-b308-b9f776866f9c.png",
+  "/lovable-uploads/79da017d-d2a8-4e0d-9c0a-030f5c16d960.png"
+];
+
+const SARCASTIC_FRINGEHEAD_IMAGES = [
+  "/lovable-uploads/8c79dbe2-73ec-4260-9abb-104b2de92996.png", 
+  "/lovable-uploads/ffe1fac4-535b-487d-b4fb-4490a85c9409.png"
+];
+
+const LONG_WATTLED_UMBRELLABIRD_IMAGE = "/lovable-uploads/fb824a16-e514-4e58-a21b-87c220bfdc8e.png";
+
+const BLOBFISH_IMAGE = "/lovable-uploads/eb0a6e45-42af-4c28-98d3-3f7c6a7a82ff.png";
+
+const PYJAMA_SQUID_IMAGES = [
+  "/lovable-uploads/3ac88dae-5336-4f8d-98c6-26f10b4c4551.png", 
+  "/lovable-uploads/298cb0f7-5917-4b2a-bf29-582997fe1d8f.png"
+];
+
+const CUCKOO_WASP_IMAGES = [
+  "/lovable-uploads/f157dcd0-9218-4d98-abd2-42e051483a08.png", 
+  "/lovable-uploads/0923a6e3-70f6-461a-8912-3ee29c3cb1b5.png"
+];
+
+const BA_HUMBUGI_IMAGES = [
+  "/lovable-uploads/7c8c7438-96f5-483c-8f8a-a7b96ebcf229.png", 
+  "/lovable-uploads/52a92cf1-d7c1-45e1-a4c3-e14b10da3e91.png"
+];
+
+const CARAMEL_COATED_CAPYBARA_IMAGE = "/lovable-uploads/a921d78a-a617-405b-af5e-ba4fd16eb181.png";
+
 const MONKEYFACE_PRICKLEBACK_IMAGE = "/lovable-uploads/dcb35bf4-8a2b-471e-8da8-3211c44f19e0.png";
 const SCREAMING_HAIRY_ARMADILLO_IMAGE = "/lovable-uploads/7b96f153-2562-47fa-ba94-df3d8a4b3be1.png";
 const RED_LIPPED_BATFISH_IMAGES = [
@@ -131,6 +196,34 @@ const AnimalCard = ({
         return HELLBENDER_IMAGE;
       } else if (animal.id === "spined-assassin-bug") {
         return SPINED_ASSASSIN_BUG_IMAGE;
+      } else if (animal.id === "flying-dragon") {
+        return FLYING_DRAGON_IMAGES;
+      } else if (animal.id === "komodo-dragon") {
+        return KOMODO_DRAGON_IMAGE;
+      } else if (animal.id === "leafy-sea-dragon") {
+        return LEAFY_SEA_DRAGON_IMAGES;
+      } else if (animal.id === "sparklemuffin-peacock-spider") {
+        return SPARKLEMUFFIN_PEACOCK_SPIDER_IMAGES;
+      } else if (animal.id === "blue-footed-booby") {
+        return BLUE_FOOTED_BOOBY_IMAGES;
+      } else if (animal.id === "pink-fairy-armadillo") {
+        return PINK_FAIRY_ARMADILLO_IMAGES;
+      } else if (animal.id === "goblin-shark") {
+        return GOBLIN_SHARK_IMAGES;
+      } else if (animal.id === "sarcastic-fringehead") {
+        return SARCASTIC_FRINGEHEAD_IMAGES;
+      } else if (animal.id === "long-wattled-umbrellabird") {
+        return LONG_WATTLED_UMBRELLABIRD_IMAGE;
+      } else if (animal.id === "blobfish") {
+        return BLOBFISH_IMAGE;
+      } else if (animal.id === "pyjama-squid") {
+        return PYJAMA_SQUID_IMAGES;
+      } else if (animal.id === "cuckoo-wasp") {
+        return CUCKOO_WASP_IMAGES;
+      } else if (animal.id === "ba-humbugi") {
+        return BA_HUMBUGI_IMAGES;
+      } else if (animal.id === "caramel-coated-capybara") {
+        return CARAMEL_COATED_CAPYBARA_IMAGE;
       } else if (animal.id === "monkeyface-prickleback") {
         return MONKEYFACE_PRICKLEBACK_IMAGE;
       } else if (animal.id === "screaming-hairy-armadillo") {
