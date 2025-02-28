@@ -1,6 +1,7 @@
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, RefreshCw, HelpCircle } from "lucide-react";
+import { ArrowLeft, RefreshCw, HelpCircle, ExternalLink } from "lucide-react";
 import AnimalCard from "../components/AnimalCard";
 import { Button } from "../components/ui/button";
 import { getRandomAnimal, Animal, getRandomImage, bookInfo, BOOK_COVER } from "../lib/animals";

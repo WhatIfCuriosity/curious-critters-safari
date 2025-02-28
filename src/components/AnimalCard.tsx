@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Animal, getRandomImage, getServiceDesignQuestion } from "@/lib/animals";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -124,22 +123,6 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
             </div>
           </a>
         </div>
-        
-        <div className="mt-4">
-          <a 
-            href="https://www.thescreaminghairyarmadillo.com/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="block"
-          >
-            <Button 
-              className="w-full bg-gradient-to-r from-safari-orange to-safari-blue text-white font-medium"
-            >
-              Random Curiosity Generator: Animal Style
-              <ExternalLink className="w-4 h-4 ml-2" />
-            </Button>
-          </a>
-        </div>
       </CardContent>
 
       {showRandomButton && (
@@ -158,4 +141,3 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
 };
 
 export default AnimalCard;
-
