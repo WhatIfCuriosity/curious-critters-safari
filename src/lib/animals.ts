@@ -42,7 +42,8 @@ export const animals: Animal[] = [
     ],
     image: [
       "/lovable-uploads/d51adab8-b69f-4ea2-b209-ebedc533f680.png",
-      "/lovable-uploads/aba8aea6-6c61-472d-b308-b9f776866f9c.png"
+      "/lovable-uploads/aba8aea6-6c61-472d-b308-b9f776866f9c.png",
+      "/lovable-uploads/79da017d-d2a8-4e0d-9c0a-030f5c16d960.png"
     ],
     category: "mysterious"
   },
@@ -56,7 +57,8 @@ export const animals: Animal[] = [
       "It uses a modified dorsal fin on its head to lure prey"
     ],
     image: [
-      "/lovable-uploads/88b8ec06-2483-4641-9925-f9c40a2f9d6e.png"
+      "/lovable-uploads/88b8ec06-2483-4641-9925-f9c40a2f9d6e.png",
+      "/lovable-uploads/ff6b17de-b56e-48c2-9b3b-ef7988d5b1b7.png"
     ],
     category: "weird"
   },
@@ -165,7 +167,8 @@ export const animals: Animal[] = [
     ],
     image: [
       "/lovable-uploads/bb8eb6cc-a644-41df-bbce-f82ad79d7f45.png", 
-      "/lovable-uploads/5cc87126-c35c-42e4-b267-1032de57fe99.png"
+      "/lovable-uploads/5cc87126-c35c-42e4-b267-1032de57fe99.png",
+      "/lovable-uploads/2ea06720-63eb-4db7-9b39-c5584b236640.png"
     ],
     category: "weird"
   },

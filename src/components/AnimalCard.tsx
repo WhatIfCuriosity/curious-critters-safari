@@ -17,6 +17,15 @@ const DEFAULT_PLACEHOLDER = "/lovable-uploads/4813c70d-678a-4536-bd98-88a5e0eca7
 // Use a global cache to persist between component unmounts/remounts with animal ID as key
 const globalImageCache: Record<string, string> = {};
 
+// New images for animals missing proper imagery
+const NAKED_MOLE_RAT_IMAGES = [
+  "/lovable-uploads/bb8eb6cc-a644-41df-bbce-f82ad79d7f45.png", 
+  "/lovable-uploads/5cc87126-c35c-42e4-b267-1032de57fe99.png"
+];
+
+const MONKEYFACE_PRICKLEBACK_IMAGE = "/lovable-uploads/dcb35bf4-8a2b-471e-8da8-3211c44f19e0.png";
+const SCREAMING_HAIRY_ARMADILLO_IMAGE = "/lovable-uploads/7b96f153-2562-47fa-ba94-df3d8a4b3be1.png";
+
 const AnimalCard = ({
   animal,
   showFacts = false,
@@ -33,7 +42,7 @@ const AnimalCard = ({
   // Use ref to track if component is mounted
   const isMounted = useRef(true);
 
-  // Reset loading state when animal changes
+  // Reset loading state when animal changes and set default image mapping
   useEffect(() => {
     setIsLoaded(false);
     setHasError(false);
@@ -69,14 +78,31 @@ const AnimalCard = ({
       return;
     }
     
+    // Function to ensure specific animals get their correct images
+    const getImageOptionsForAnimal = (animal: Animal): string | string[] => {
+      // Explicit handling for specific animals based on their ID
+      if (animal.id === "naked-mole-rat") {
+        return NAKED_MOLE_RAT_IMAGES;
+      } else if (animal.id === "monkeyface-prickleback") {
+        return MONKEYFACE_PRICKLEBACK_IMAGE;
+      } else if (animal.id === "screaming-hairy-armadillo") {
+        return SCREAMING_HAIRY_ARMADILLO_IMAGE;
+      } else {
+        return animal.image;
+      }
+    };
+    
     // Function to load an image
     const loadImage = () => {
       if (!isMounted.current) return;
       
+      // Get the appropriate image options for this specific animal
+      const imageSource = getImageOptionsForAnimal(animal);
+      
       // Filter out book cover from image options to prioritize actual animal images
-      const imageOptions = typeof animal.image === 'string' 
-        ? animal.image 
-        : animal.image.filter(img => img !== DEFAULT_PLACEHOLDER && img !== bookInfo.coverImage);
+      const imageOptions = typeof imageSource === 'string' 
+        ? imageSource 
+        : imageSource.filter(img => img !== DEFAULT_PLACEHOLDER && img !== bookInfo.coverImage);
       
       // Only use book cover if no other images are available
       if (Array.isArray(imageOptions) && imageOptions.length === 0) {
