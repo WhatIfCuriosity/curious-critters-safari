@@ -80,6 +80,22 @@ export const animals: Animal[] = [
     category: "magical"
   },
   {
+    id: "komodo-dragon",
+    name: "Komodo Dragon",
+    question: "What if a service could be as powerful and efficient as a Komodo Dragon's hunting strategy?",
+    facts: [
+      "The Komodo Dragon is the largest lizard in the world, growing up to 10 feet long",
+      "It has venomous saliva that prevents blood clotting and causes shock in its prey",
+      "It can eat up to 80 percent of its body weight in a single feeding",
+      "Komodo Dragons are found only on a few Indonesian islands, including Komodo Island",
+      "Despite their name, they're not actually dragons but are often considered the closest living thing to mythological dragons"
+    ],
+    image: [
+      "/lovable-uploads/9fa472e1-640b-419f-a567-29269d7f0b56.png"
+    ],
+    category: "fierce"
+  },
+  {
     id: "sparklemuffin-peacock-spider",
     name: "Sparklemuffin Peacock Spider",
     question: "What if a service could dazzle users like a Sparklemuffin Peacock Spider's dance?",
