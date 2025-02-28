@@ -1,3 +1,4 @@
+
 import { useEffect, useState, useRef } from "react";
 import { Animal, getRandomImage, bookInfo, BOOK_COVER } from "../lib/animals";
 import AnimatedContainer from "./AnimatedContainer";
@@ -87,6 +88,11 @@ const GOBLIN_SHARK_IMAGES = [
   "/lovable-uploads/d51adab8-b69f-4ea2-b209-ebedc533f680.png",
   "/lovable-uploads/aba8aea6-6c61-472d-b308-b9f776866f9c.png",
   "/lovable-uploads/79da017d-d2a8-4e0d-9c0a-030f5c16d960.png"
+];
+
+const FRIED_EGG_JELLYFISH_IMAGES = [
+  "/lovable-uploads/6f706930-a007-4787-8190-8dd117cbe6d2.png",
+  "/lovable-uploads/2b305c5a-f54d-46c7-babb-1cfaf6f05431.png"
 ];
 
 const SARCASTIC_FRINGEHEAD_IMAGES = [
@@ -248,6 +254,8 @@ const AnimalCard = ({
         return PINK_FAIRY_ARMADILLO_IMAGES;
       } else if (animal.id === "goblin-shark") {
         return GOBLIN_SHARK_IMAGES;
+      } else if (animal.id === "fried-egg-jellyfish") {
+        return FRIED_EGG_JELLYFISH_IMAGES;
       } else if (animal.id === "sarcastic-fringehead") {
         return SARCASTIC_FRINGEHEAD_IMAGES;
       } else if (animal.id === "long-wattled-umbrellabird") {

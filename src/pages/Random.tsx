@@ -35,6 +35,7 @@ const animalThumbnails: Record<string, string> = {
   "caramel-coated-capybara": "/lovable-uploads/a921d78a-a617-405b-af5e-ba4fd16eb181.png",
   "pink-fairy-armadillo": "/lovable-uploads/bd7c3d5a-85af-4cbc-bbf0-e7b84e278a78.png",
   "goblin-shark": "/lovable-uploads/d51adab8-b69f-4ea2-b209-ebedc533f680.png",
+  "fried-egg-jellyfish": "/lovable-uploads/6f706930-a007-4787-8190-8dd117cbe6d2.png",
   "australian-ghost-shark": "/lovable-uploads/b6d60faf-4825-4b5e-97b4-2e8970649602.png",
   "monkeyface-prickleback": "/lovable-uploads/dcb35bf4-8a2b-471e-8da8-3211c44f19e0.png",
   "sarcastic-fringehead": "/lovable-uploads/8c79dbe2-73ec-4260-9abb-104b2de92996.png",
@@ -196,7 +197,7 @@ const Random = () => {
                       </div>
                       <div>
                         <h3 className="font-medium text-gray-900">{prevAnimal.name}</h3>
-                        <p className="text-sm text-gray-500 truncate max-w-[200px]">{prevAnimal.question.substring(0, 40)}...</p>
+                        <p className="text-xs text-gray-500 truncate max-w-[200px]">{prevAnimal.question.substring(0, 40)}...</p>
                       </div>
                     </div>
                   </AnimatedContainer>
