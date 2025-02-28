@@ -208,6 +208,13 @@ const BANANA_SLUG_IMAGES = [
   "/lovable-uploads/7320dbeb-59eb-460c-b8f0-1cad8f7879a3.png"
 ];
 
+// New Waxy Monkey Tree Frog images
+const WAXY_MONKEY_TREE_FROG_IMAGES = [
+  "/lovable-uploads/e931cfc9-6e89-4dad-9a01-10bde4da20c1.png",
+  "/lovable-uploads/50d45d98-0a48-440f-bd02-d32114066130.png",
+  "/lovable-uploads/4f3e5526-bca1-48c2-86b2-da7ed3786e46.png"
+];
+
 const AnimalCard = ({
   animal,
   showFacts = false,
@@ -349,6 +356,8 @@ const AnimalCard = ({
         return PIEZA_PI_IMAGE;
       } else if (animal.id === "banana-slug") {
         return BANANA_SLUG_IMAGES;
+      } else if (animal.id === "waxy-monkey-tree-frog") {
+        return WAXY_MONKEY_TREE_FROG_IMAGES;
       } else {
         return animal.image;
       }
