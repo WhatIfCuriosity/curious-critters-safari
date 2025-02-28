@@ -1,7 +1,82 @@
 
-import { supabase, UserActivity, UserProfile } from '../lib/supabase';
+import { supabase, UserProfile, UserActivity } from '../lib/supabase';
 import { Animal } from '../lib/animals';
 import { Activity } from '../lib/activities';
+
+// User data interface
+interface UserData {
+  favoriteAnimals?: string[];
+  completedActivities?: string[];
+}
+
+// Get user data from database
+export const getUserData = async (userId: string): Promise<UserData | null> => {
+  try {
+    const { data, error } = await supabase
+      .from('user_data')
+      .select('*')
+      .eq('user_id', userId)
+      .single();
+    
+    if (error && error.code !== 'PGRST116') throw error; // PGRST116 is the code for "no rows returned"
+    
+    // If using development mode without actual Supabase, return mock data
+    if (!data) {
+      console.log('Using mock user data');
+      return {
+        favoriteAnimals: [],
+        completedActivities: []
+      };
+    }
+    
+    return data;
+  } catch (error) {
+    console.error('Error getting user data:', error);
+    // Return mock data in case of errors
+    return {
+      favoriteAnimals: [],
+      completedActivities: []
+    };
+  }
+};
+
+// Update user data in database
+export const updateUserData = async (userId: string, updates: UserData): Promise<UserData | null> => {
+  try {
+    // First, check if user data exists
+    const existingData = await getUserData(userId);
+    
+    if (!existingData) {
+      // If no data exists, create a new record
+      const { data, error } = await supabase
+        .from('user_data')
+        .insert([{ user_id: userId, ...updates }])
+        .select()
+        .single();
+      
+      if (error) throw error;
+      return data;
+    } else {
+      // If data exists, update it
+      const { data, error } = await supabase
+        .from('user_data')
+        .update(updates)
+        .eq('user_id', userId)
+        .select()
+        .single();
+      
+      if (error) throw error;
+      return data;
+    }
+  } catch (error) {
+    console.error('Error updating user data:', error);
+    // Return mock data with updates applied
+    return {
+      favoriteAnimals: updates.favoriteAnimals || [],
+      completedActivities: updates.completedActivities || []
+    };
+  }
+};
 
 // User Profile Services
 export const createUserProfile = async (userId: string, username: string): Promise<UserProfile> => {

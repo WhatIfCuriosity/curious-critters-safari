@@ -7,7 +7,7 @@ import { useAuth } from "../contexts/AuthContext";
 import AnimatedContainer from "../components/AnimatedContainer";
 import { getAnimalById, animals } from "../lib/animals";
 import AnimalCard from "../components/AnimalCard";
-import { databaseService } from "../services/databaseService";
+import * as databaseService from "../services/databaseService";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -91,7 +91,7 @@ const Profile = () => {
                   {user.email || 'Safari Explorer'}
                 </h2>
                 <p className="text-gray-600">
-                  {user.emailConfirmed ? 'Verified Explorer' : 'New Explorer'}
+                  {user.email_confirmed_at ? 'Verified Explorer' : 'New Explorer'}
                 </p>
               </div>
               <div className="ml-auto">
