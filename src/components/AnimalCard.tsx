@@ -95,6 +95,11 @@ const FRIED_EGG_JELLYFISH_IMAGES = [
   "/lovable-uploads/2b305c5a-f54d-46c7-babb-1cfaf6f05431.png"
 ];
 
+const CANDY_STRIPED_HERMIT_CRAB_IMAGES = [
+  "/lovable-uploads/a9979d2e-efc7-4763-98ce-69602a6e55e9.png",
+  "/lovable-uploads/3e41b731-dad5-4490-a5c3-fbefbabdcae6.png"
+];
+
 const SARCASTIC_FRINGEHEAD_IMAGES = [
   "/lovable-uploads/8c79dbe2-73ec-4260-9abb-104b2de92996.png", 
   "/lovable-uploads/ffe1fac4-535b-487d-b4fb-4490a85c9409.png"
@@ -256,6 +261,8 @@ const AnimalCard = ({
         return GOBLIN_SHARK_IMAGES;
       } else if (animal.id === "fried-egg-jellyfish") {
         return FRIED_EGG_JELLYFISH_IMAGES;
+      } else if (animal.id === "candy-striped-hermit-crab") {
+        return CANDY_STRIPED_HERMIT_CRAB_IMAGES;
       } else if (animal.id === "sarcastic-fringehead") {
         return SARCASTIC_FRINGEHEAD_IMAGES;
       } else if (animal.id === "long-wattled-umbrellabird") {

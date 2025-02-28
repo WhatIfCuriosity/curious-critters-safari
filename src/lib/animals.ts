@@ -30,6 +30,23 @@ export const animals: Animal[] = [
     category: "fierce"
   },
   {
+    id: "candy-striped-hermit-crab",
+    name: "Candy-Striped Hermit Crab",
+    question: "What if a service could adapt to changing environments like a Candy-Striped Hermit Crab finding a new shell?",
+    facts: [
+      "The Candy-Striped Hermit Crab has distinctive red and white striped legs that resemble candy canes",
+      "Like other hermit crabs, it doesn't grow its own shell and must find abandoned shells to live in",
+      "They're known for their bright red eyestalks and claws",
+      "They're relatively small, typically growing to about 1-2 inches in size",
+      "They were discovered by marine biologist Ellen Muller in coral reef environments"
+    ],
+    image: [
+      "/lovable-uploads/a9979d2e-efc7-4763-98ce-69602a6e55e9.png",
+      "/lovable-uploads/3e41b731-dad5-4490-a5c3-fbefbabdcae6.png"
+    ],
+    category: "weird"
+  },
+  {
     id: "bone-eating-snot-flower-worm",
     name: "Bone-Eating Snot Flower Worm",
     question: "What if a service could extract value from overlooked resources like a Bone-Eating Snot Flower Worm?",
