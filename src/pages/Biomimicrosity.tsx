@@ -8,7 +8,6 @@ import { Button } from "../components/ui/button";
 import { getAnimalById, getRandomAnimal, Animal } from "../lib/animals";
 import { getRandomActivity, Activity } from "../lib/activities";
 import AnimatedContainer from "../components/AnimatedContainer";
-import { useToast } from "../hooks/use-toast";
 import { useAuth } from "../contexts/AuthContext";
 import { saveUserActivity } from "../services/databaseService";
 import ProfileBadge from "../components/ProfileBadge";
@@ -39,7 +38,6 @@ const steps = [
 const Biomimicrosity = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { toast } = useToast();
   const { user } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
   const [animal, setAnimal] = useState<Animal | null>(null);
@@ -76,11 +74,6 @@ const Biomimicrosity = () => {
     newCompleted[stepIndex] = true;
     setCompleted(newCompleted);
     
-    toast({
-      title: `${steps[stepIndex].title} completed!`,
-      description: `You've finished step ${stepIndex + 1} of 4.`,
-    });
-    
     // If not last step, automatically go to next step
     if (stepIndex < steps.length - 1) {
       handleNextStep();
@@ -116,30 +109,21 @@ const Biomimicrosity = () => {
           true
         );
         
-        toast({
-          title: "Activity saved!",
-          description: "Your progress has been saved to your profile.",
-        });
+        // Successful save, navigate after a small delay
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
       } catch (error) {
         console.error("Error saving activity:", error);
-        toast({
-          title: "Error saving activity",
-          description: "There was a problem saving your progress.",
-          variant: "destructive",
-        });
+        // Continue navigation even if save failed
+        navigate("/");
       } finally {
         setIsSaving(false);
       }
     } else {
-      toast({
-        title: "Activity completed!",
-        description: "Sign in to save your progress for next time.",
-      });
-    }
-    
-    setTimeout(() => {
+      // If no user, just navigate
       navigate("/");
-    }, 1500);
+    }
   };
   
   const progressPercentage = ((completed.filter(Boolean).length) / steps.length) * 100;

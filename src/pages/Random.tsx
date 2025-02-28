@@ -6,7 +6,6 @@ import AnimalCard from "../components/AnimalCard";
 import { Button } from "../components/ui/button";
 import { getRandomAnimal, Animal, getRandomImage, bookInfo, BOOK_COVER } from "../lib/animals";
 import AnimatedContainer from "../components/AnimatedContainer";
-import { useToast } from "../hooks/use-toast";
 import ProfileBadge from "../components/ProfileBadge";
 
 // Default fallback image that is guaranteed to exist
@@ -51,7 +50,6 @@ const animalThumbnails: Record<string, string> = {
 
 const Random = () => {
   const navigate = useNavigate();
-  const { toast } = useToast();
   const [animal, setAnimal] = useState<Animal | null>(null);
   const [isChanging, setIsChanging] = useState(false);
   const [previousAnimals, setPreviousAnimals] = useState<Animal[]>([]);
@@ -60,12 +58,6 @@ const Random = () => {
     // Load initial animal
     const initialAnimal = getRandomAnimal();
     setAnimal(initialAnimal);
-    
-    // Show welcome toast
-    toast({
-      title: "Welcome to Random Safari!",
-      description: `Exploring: ${initialAnimal.name}`,
-    });
   }, []);
   
   const handleNewAnimal = () => {
@@ -84,11 +76,6 @@ const Random = () => {
       const newAnimal = getRandomAnimal();
       setAnimal(newAnimal);
       setIsChanging(false);
-      
-      toast({
-        title: "New inspiration loaded!",
-        description: `Exploring: ${newAnimal.name}`,
-      });
     }, 300);
   };
   
