@@ -103,6 +103,26 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
             )}
           </div>
         )}
+
+        {/* Book recommendation section */}
+        <div className="mt-6 pt-4 border-t border-gray-200">
+          <a 
+            href="https://amzn.to/3QFrWsF" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center hover:bg-safari-cream/40 p-2 rounded-lg transition-colors"
+          >
+            <img 
+              src="/lovable-uploads/00a5381a-e137-4afc-8bbf-a00815e14f5d.png" 
+              alt="The Screaming Hairy Armadillo Book Cover" 
+              className="w-16 h-auto mr-3 shadow-md rounded-sm"
+            />
+            <div>
+              <p className="text-sm font-medium text-[#8B4513]">Discover more unusual animals:</p>
+              <p className="text-xs text-gray-600">The Screaming Hairy Armadillo and 76 Other Animals with Weird, Wild Names</p>
+            </div>
+          </a>
+        </div>
       </CardContent>
 
       {showRandomButton && (
