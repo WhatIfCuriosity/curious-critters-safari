@@ -555,6 +555,23 @@ export const animals: Animal[] = [
       "/lovable-uploads/0283ed03-15cc-4ecc-bd41-ec583d2fac4a.png"
     ],
     category: "fierce"
+  },
+  {
+    id: "arrowtooth-lizardfish",
+    name: "Arrowtooth Lizardfish",
+    question: "What if a service could adapt its approach to diverse environments like an Arrowtooth Lizardfish?",
+    facts: [
+      "The Arrowtooth Lizardfish has spiny, sharp teeth covering their mouth for catching prey",
+      "They bury themselves in ocean sand with only their eyes sticking out, waiting for prey",
+      "Despite their fierce appearance, they're relatively small, usually less than a foot long",
+      "They belong to the family Synodontidae, with a scientific name that fits their predatory nature",
+      "They were discovered near the Poor Knights Islands off the coast of New Zealand"
+    ],
+    image: [
+      "/lovable-uploads/3773c73b-4e41-4b77-958e-d3a2ec1f7d70.png",
+      "/lovable-uploads/a030d289-67f6-4f83-8f99-a9456a0d5111.png"
+    ],
+    category: "fierce"
   }
 ];
 
