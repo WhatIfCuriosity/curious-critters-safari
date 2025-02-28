@@ -144,6 +144,19 @@ export const animals: Animal[] = [
     ],
     image: ["/lovable-uploads/fb824a16-e514-4e58-a21b-87c220bfdc8e.png", BOOK_COVER],
     category: "mysterious"
+  },
+  {
+    id: "sarcastic-fringehead",
+    name: "Sarcastic Fringehead",
+    question: "What if a service could adapt to challenges like a Sarcastic Fringehead expands its impressive jaw?",
+    facts: [
+      "The Sarcastic Fringehead can expand its colorful mouth to an enormous size when threatened",
+      "These fish are extremely territorial and will aggressively defend their homes",
+      "They live in the Pacific Ocean off the coast of North America",
+      "Their name comes from their cranky, aggressive behavior"
+    ],
+    image: ["/lovable-uploads/8c79dbe2-73ec-4260-9abb-104b2de92996.png", BOOK_COVER],
+    category: "fierce"
   }
 ];
 
