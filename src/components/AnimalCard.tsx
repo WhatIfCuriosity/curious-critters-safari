@@ -41,7 +41,7 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
   };
 
   return (
-    <Card className={`w-full max-w-md mx-auto overflow-hidden ${className}`}>
+    <Card className={`w-full max-w-md mx-auto overflow-hidden rounded-xl border-safari-cream/50 ${className}`}>
       <div 
         className="relative aspect-[4/3] overflow-hidden cursor-pointer bg-gray-100"
         onClick={handleImageClick}
@@ -59,21 +59,30 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
       </div>
 
       <CardContent className="pt-4 text-center">
-        <h2 className="text-2xl font-bold mb-2">{animal.name}</h2>
+        <h2 className="text-2xl font-bold mb-2 text-[#8B4513]">{animal.name}</h2>
         <div className="inline-block px-3 py-1 mb-4 text-sm rounded-full bg-gray-100">
           {animal.category.charAt(0).toUpperCase() + animal.category.slice(1)}
         </div>
 
-        <p className="text-lg font-medium italic mb-4">{serviceDesignQuestion}</p>
+        <p className="text-lg font-medium italic mb-4 text-gray-700">{serviceDesignQuestion}</p>
 
         {showFacts && (
-          <ul className="space-y-2 text-left list-disc list-inside">
-            {animal.facts.map((fact, index) => (
-              <li key={index} className="text-sm">
-                {fact}
-              </li>
-            ))}
-          </ul>
+          <div>
+            <div className="flex items-center justify-center mb-2">
+              <div className="w-6 h-6 rounded-full bg-[#F97316] text-white flex items-center justify-center mr-2">
+                <span className="text-sm">i</span>
+              </div>
+              <h3 className="text-lg font-bold text-[#8B4513]">Fun Facts</h3>
+            </div>
+            <ul className="space-y-2 text-left list-none">
+              {animal.facts.map((fact, index) => (
+                <li key={index} className="text-sm flex items-start">
+                  <span className="text-[#F97316] mr-2 mt-1">•</span>
+                  <span>{fact}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </CardContent>
 
@@ -81,10 +90,10 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
         <CardFooter className="justify-center pb-4">
           <Button 
             onClick={onNextAnimal} 
-            className="bg-indigo-600 hover:bg-indigo-700 text-white"
+            className="bg-[#65A30D] hover:bg-[#65A30D]/90 text-white font-medium"
           >
             <Shuffle className="w-4 h-4 mr-2" />
-            Show me another animal
+            New Animal
           </Button>
         </CardFooter>
       )}
