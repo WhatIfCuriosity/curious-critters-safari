@@ -1,4 +1,4 @@
-<lov-code>
+
 export interface Animal {
   id: string;
   name: string;
@@ -398,20 +398,6 @@ export const animals: Animal[] = [
     category: "sweet"
   },
   {
-    id: "vampire-squid",
-    name: "Vampire Squid",
-    question: "What if a service could illuminate hidden user needs like a Vampire Squid lights up the deep?",
-    facts: [
-      "The Vampire Squid can turn itself inside out to defend against predators",
-      "It can produce bioluminescent light from light organs on its body",
-      "Despite its name, it doesn't suck blood and is actually quite gentle"
-    ],
-    image: [
-      BOOK_COVER
-    ],
-    category: "mysterious"
-  },
-  {
     id: "naked-mole-rat",
     name: "Naked Mole Rat",
     question: "What if a service could thrive underground like a Naked Mole Rat's colony?",
@@ -544,4 +530,33 @@ export const animals: Animal[] = [
     facts: [
       "The Pyjama Squid is actually a type of cuttlefish despite its name",
       "Its distinctive white and brown striped pattern resembles pajamas or a zebra",
-      "
+      "It can change color and pattern to blend with its surroundings",
+      "It's found in the waters around Australia and is also known as the Striped Pyjama Squid"
+    ],
+    image: [
+      "/lovable-uploads/3ac88dae-5336-4f8d-98c6-26f10b4c4551.png", 
+      "/lovable-uploads/298cb0f7-5917-4b2a-bf29-582997fe1d8f.png"
+    ],
+    category: "mysterious"
+  }
+];
+
+export const bookInfo = {
+  title: "Biomimicrosity: The Secret to Innovative Products and Services",
+  authors: "Joe Miller and Todd McCullough",
+  illustrator: "Brendan Coudal",
+  coverImage: BOOK_COVER,
+  link: BOOK_LINK,
+  description: "Use the genius of the natural world to spark your creative process and design exceptional products and services that solve real human problems."
+};
+
+export const getRandomAnimal = (): Animal => {
+  return animals[Math.floor(Math.random() * animals.length)];
+};
+
+export const getRandomImage = (imageSource: string | string[]): string => {
+  if (typeof imageSource === 'string') {
+    return imageSource;
+  }
+  return imageSource[Math.floor(Math.random() * imageSource.length)];
+};
