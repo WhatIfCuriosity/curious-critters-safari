@@ -136,6 +136,11 @@ const LIONHEAD_RABBIT_IMAGES = [
 
 const HAGFISH_IMAGE = "/lovable-uploads/26ed8a88-1b0b-4643-b0e2-12f1491364d3.png";
 
+const POISON_DART_FROG_IMAGES = [
+  "/lovable-uploads/f1e987b7-ef95-43af-8629-a5385bc56ed9.png",
+  "/lovable-uploads/36c20eaf-4b47-443c-9a26-7a337b4862d2.png"
+];
+
 const AnimalCard = ({
   animal,
   showFacts = false,
@@ -251,6 +256,8 @@ const AnimalCard = ({
         return LIONHEAD_RABBIT_IMAGES;
       } else if (animal.id === "hagfish") {
         return HAGFISH_IMAGE;
+      } else if (animal.id === "poison-dart-frog") {
+        return POISON_DART_FROG_IMAGES;
       } else {
         return animal.image;
       }

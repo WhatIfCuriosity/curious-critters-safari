@@ -13,6 +13,23 @@ const BOOK_LINK = "https://amzn.to/41maKgG";
 
 export const animals: Animal[] = [
   {
+    id: "poison-dart-frog",
+    name: "Poison Dart Frog",
+    question: "What if a service could be as colorful yet cautionary as a Poison Dart Frog?",
+    facts: [
+      "Poison Dart Frogs come in a variety of bright colors, which warns predators of their toxicity",
+      "Some species of Poison Dart Frogs contain enough toxin to kill 10 adult humans",
+      "Their toxins come from their diet of specific insects in the wild - frogs in captivity are non-toxic",
+      "Despite their name, only three species were ever used by indigenous people for poison darts",
+      "They're very small, most species being less than 1.5 inches in length"
+    ],
+    image: [
+      "/lovable-uploads/f1e987b7-ef95-43af-8629-a5385bc56ed9.png",
+      "/lovable-uploads/36c20eaf-4b47-443c-9a26-7a337b4862d2.png"
+    ],
+    category: "fierce"
+  },
+  {
     id: "hagfish",
     name: "Hagfish",
     question: "What if a service could adapt to pressure as naturally as a Hagfish in the deep ocean?",
