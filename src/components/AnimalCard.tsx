@@ -11,6 +11,9 @@ interface AnimalCardProps {
   className?: string;
 }
 
+// Default placeholder image that's guaranteed to exist in the project
+const DEFAULT_PLACEHOLDER = "/lovable-uploads/4813c70d-678a-4536-bd98-88a5e0eca792.png"; // Book cover
+
 const AnimalCard = ({
   animal,
   showFacts = false,
@@ -19,83 +22,85 @@ const AnimalCard = ({
   const [showAllFacts, setShowAllFacts] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string>("");
+  const [selectedImage, setSelectedImage] = useState<string>(DEFAULT_PLACEHOLDER);
   const [showBookInfo, setShowBookInfo] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
+  const MAX_RETRIES = 2;
 
   useEffect(() => {
     // Reset states when animal changes
     setIsLoaded(false);
     setHasError(false);
+    setRetryCount(0);
     
-    // Handle question mark placeholder or select a random image from available options
+    // Default to placeholder for safety
+    setSelectedImage(DEFAULT_PLACEHOLDER);
+    
+    // Handle question mark placeholder
     if (animal.image === "?") {
       setIsLoaded(true);
       setHasError(true);
       return;
     }
     
-    // Get a random image if multiple are available
-    const imageToUse = getRandomImage(animal.image);
-    setSelectedImage(imageToUse);
-    
-    // Pre-load the image
-    const img = new Image();
-    img.src = imageToUse;
-    
-    // Set up proper event handlers
-    img.onload = () => {
-      setIsLoaded(true);
-      setHasError(false);
-    };
-    
-    img.onerror = () => {
-      console.error(`Failed to load image: ${imageToUse}`);
-      setHasError(true);
-      setIsLoaded(true);
+    // Initialize with placeholder while loading actual image
+    const loadImage = () => {
+      // Get a random image if multiple are available
+      const imageToUse = getRandomImage(animal.image);
       
-      // Try book cover as fallback if we're not already using it
-      if (imageToUse !== bookInfo.coverImage) {
-        setTimeout(() => {
-          setSelectedImage(bookInfo.coverImage);
-        }, 100);
-      }
+      // Pre-load the image
+      const img = new Image();
+      
+      // Set up event handlers before setting src to avoid race conditions
+      img.onload = () => {
+        setSelectedImage(imageToUse);
+        setIsLoaded(true);
+        setHasError(false);
+      };
+      
+      img.onerror = () => {
+        console.error(`Failed to load image: ${imageToUse}, retry: ${retryCount}`);
+        
+        // If we have retries left and the image isn't already the default, try another image
+        if (retryCount < MAX_RETRIES && typeof animal.image !== 'string' && animal.image.length > 1) {
+          // Try another image from the array if available
+          setRetryCount(prev => prev + 1);
+          setTimeout(loadImage, 200); // Short delay before retrying
+        } else {
+          // Use the book cover as final fallback
+          setSelectedImage(DEFAULT_PLACEHOLDER);
+          setIsLoaded(true);
+          setHasError(true);
+        }
+      };
+      
+      // Now set the src to trigger loading
+      img.src = imageToUse;
     };
+    
+    // Start the image loading process
+    loadImage();
     
     // Fallback in case image loading takes too long
     const timeout = setTimeout(() => {
       if (!isLoaded) {
-        console.warn(`Image load timeout for: ${imageToUse}`);
+        console.warn("Image load timeout, using fallback");
+        setSelectedImage(DEFAULT_PLACEHOLDER);
         setIsLoaded(true);
-        
-        // Only set error if the image hasn't already loaded
-        if (!isLoaded) {
-          setHasError(true);
-          
-          // Try book cover as fallback if we're not already using it
-          if (imageToUse !== bookInfo.coverImage) {
-            setSelectedImage(bookInfo.coverImage);
-          }
-        }
+        setHasError(true);
       }
-    }, 5000); // Increased timeout for slower connections
+    }, 5000);
     
     return () => {
-      // Clean up
       clearTimeout(timeout);
-      img.onload = null;
-      img.onerror = null;
     };
-  }, [animal, animal.image]);
+  }, [animal, animal.image, retryCount]);
 
-  // Handle image error as a direct event on the img element as an additional safeguard
+  // Additional safeguard for runtime errors
   const handleImageError = () => {
-    console.error(`Image error event triggered for: ${selectedImage}`);
+    console.error(`Runtime image error triggered for: ${selectedImage}`);
+    setSelectedImage(DEFAULT_PLACEHOLDER);
     setHasError(true);
-    
-    // Try book cover as fallback if we're not already using it
-    if (selectedImage !== bookInfo.coverImage) {
-      setSelectedImage(bookInfo.coverImage);
-    }
   };
 
   const getCategoryColor = (category: string) => {
@@ -119,9 +124,9 @@ const AnimalCard = ({
 
   const handleImageClick = () => {
     // Show book info when image is clicked
-    setShowBookInfo(true);
+    setShowBookInfo(prev => !prev);
     
-    // Only open Amazon link when book cover is clicked or specifically requested
+    // Only open Amazon link when book cover is clicked
     if (selectedImage === bookInfo.coverImage) {
       window.open(bookInfo.link, "_blank");
     }
@@ -137,11 +142,11 @@ const AnimalCard = ({
     >
       <div className="relative h-48 overflow-hidden bg-safari-amber/10">
         <div className={`absolute inset-0 ${!isLoaded ? 'animate-pulse bg-safari-amber/20' : ''}`}>
-          {hasError || animal.image === "?" ? (
+          {hasError ? (
             <div className="w-full h-48 flex flex-col items-center justify-center bg-safari-cream">
               <HelpCircle className="h-16 w-16 text-safari-orange mb-2" />
               <p className="text-safari-brown text-sm text-center px-4">
-                Image from "The Screaming Hairy Armadillo" book needed
+                Image unavailable - using placeholder
               </p>
             </div>
           ) : (
@@ -149,11 +154,12 @@ const AnimalCard = ({
               className="relative cursor-pointer group h-48 flex items-center justify-center bg-safari-cream/50"
               onClick={handleImageClick}
             >
+              {/* Always render the image but control visibility with CSS */}
               <img
-                src={selectedImage}
+                src={selectedImage || DEFAULT_PLACEHOLDER}
                 alt={animal.name}
                 className={cn(
-                  "max-w-full max-h-48 object-contain transition-opacity duration-500",
+                  "max-w-full max-h-48 object-contain transition-opacity duration-300",
                   isLoaded ? "opacity-100" : "opacity-0"
                 )}
                 onError={handleImageError}

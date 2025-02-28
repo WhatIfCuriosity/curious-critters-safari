@@ -4,10 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft, RefreshCw, HelpCircle } from "lucide-react";
 import AnimalCard from "../components/AnimalCard";
 import { Button } from "../components/ui/button";
-import { getRandomAnimal, Animal, getRandomImage } from "../lib/animals";
+import { getRandomAnimal, Animal, getRandomImage, bookInfo } from "../lib/animals";
 import AnimatedContainer from "../components/AnimatedContainer";
 import { useToast } from "../hooks/use-toast";
 import ProfileBadge from "../components/ProfileBadge";
+
+// Default fallback image that is guaranteed to exist
+const DEFAULT_FALLBACK = "/lovable-uploads/4813c70d-678a-4536-bd98-88a5e0eca792.png";
 
 const Random = () => {
   const navigate = useNavigate();
@@ -49,6 +52,32 @@ const Random = () => {
     if (animal) {
       navigate(`/biomimicrosity?animal=${animal.id}`);
     }
+  };
+
+  // Safely get an image URL for the animal thumbnail
+  const getSafeThumbnailImage = (animalImage: string | string[]): string => {
+    try {
+      // If it's a string, return it directly
+      if (typeof animalImage === 'string') {
+        return animalImage === '?' ? DEFAULT_FALLBACK : animalImage;
+      }
+      
+      // If it's an array, get the first image or fallback
+      if (animalImage.length > 0) {
+        return animalImage[0];
+      }
+      
+      return DEFAULT_FALLBACK;
+    } catch (error) {
+      console.error('Error getting thumbnail:', error);
+      return DEFAULT_FALLBACK;
+    }
+  };
+
+  // Handle image errors in thumbnails
+  const handleThumbnailError = (event: React.SyntheticEvent<HTMLImageElement>) => {
+    console.warn('Thumbnail failed to load, using fallback');
+    event.currentTarget.src = DEFAULT_FALLBACK;
   };
   
   return (
@@ -115,9 +144,11 @@ const Random = () => {
                           <HelpCircle className="h-6 w-6 text-gray-400" />
                         ) : (
                           <img 
-                            src={typeof prevAnimal.image === 'string' ? prevAnimal.image : getRandomImage(prevAnimal.image)} 
+                            src={getSafeThumbnailImage(prevAnimal.image)}
                             alt={prevAnimal.name} 
                             className="h-full w-full object-contain" 
+                            onError={handleThumbnailError}
+                            loading="eager"
                           />
                         )}
                       </div>
