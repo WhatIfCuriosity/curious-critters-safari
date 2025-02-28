@@ -23,7 +23,8 @@ const animalThumbnails: Record<string, string> = {
   "unicorn-fish": "/lovable-uploads/fe2688f7-2b9c-4dfb-87b1-1b59a2847db9.png",
   "agra-cadabra": "/lovable-uploads/5198a0b6-c5ce-4228-b837-a314cee5ca8d.png",
   "yeti-crab": "/lovable-uploads/930ae911-cd64-4277-9e81-9993ed4ecf7b.png",
-  "wunderpus-octopus": "/lovable-uploads/d8d68f30-d905-40eb-b414-91b26bc78d36.png"
+  "wunderpus-octopus": "/lovable-uploads/d8d68f30-d905-40eb-b414-91b26bc78d36.png",
+  "hellbender": "/lovable-uploads/7b54880d-fa56-4f4f-957e-c6f6a46eb2b6.png"
 };
 
 const Random = () => {

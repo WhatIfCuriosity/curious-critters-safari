@@ -13,6 +13,20 @@ const BOOK_LINK = "https://amzn.to/41maKgG";
 
 export const animals: Animal[] = [
   {
+    id: "hellbender",
+    name: "Hellbender",
+    question: "What if a service could adapt to difficult environments like a Hellbender salamander in rocky streams?",
+    facts: [
+      "The Hellbender is North America's largest salamander, growing up to 2.5 feet long",
+      "Despite its name, it's harmless to humans and spends most of its time under large rocks in rivers",
+      "Its wrinkled skin increases surface area, helping it absorb oxygen directly from the water",
+      "Hellbenders can live up to 30 years in the wild",
+      "They're sometimes called 'snot otters' or 'devil dogs' due to their slimy appearance"
+    ],
+    image: "/lovable-uploads/7b54880d-fa56-4f4f-957e-c6f6a46eb2b6.png",
+    category: "weird"
+  },
+  {
     id: "wunderpus-octopus",
     name: "Wunderpus Octopus",
     question: "What if a service could disguise itself as effectively as a Wunderpus Octopus?",
