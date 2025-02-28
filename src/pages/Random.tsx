@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, RefreshCw, HelpCircle } from "lucide-react";
@@ -147,7 +146,7 @@ const Random = () => {
           Back
         </Button>
         
-        <h1 className="text-xl font-bold">Random Safari</h1>
+        <h1 className="text-xl font-bold">Curiosity Service Design Safari</h1>
         
         <ProfileBadge />
       </header>
