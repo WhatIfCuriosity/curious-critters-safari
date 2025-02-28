@@ -1,3 +1,4 @@
+
 export interface Animal {
   id: string;
   name: string;
@@ -653,6 +654,20 @@ export const animals: Animal[] = [
       "/lovable-uploads/3773c73b-4e41-4b77-958e-d3a2ec1f7d70.png",
       "/lovable-uploads/a030d289-67f6-4f83-8f99-a9456a0d5111.png"
     ],
+    category: "fierce"
+  },
+  {
+    id: "chocolate-dipped-damselfish",
+    name: "Chocolate Dipped Damselfish",
+    question: "What if a service could protect user data as fiercely as a Chocolate Dipped Damselfish guards its territory?",
+    facts: [
+      "Chocolate Dipped Damselfish are extremely territorial and will vigorously defend their patch of coral reef",
+      "They get their name from their distinctive coloration - dark on top with a white underbelly, resembling chocolate-dipped desserts",
+      "The male damselfish protects the eggs until they hatch, chasing away any potential threats",
+      "They form symbiotic relationships with certain corals, helping to keep the reef ecosystem healthy",
+      "Their aggressive defense behavior makes them stand out among similar-sized reef fish"
+    ],
+    image: "/lovable-uploads/e86cf5b4-84d5-4754-b8a6-ff7b0e604ea2.png",
     category: "fierce"
   }
 ];

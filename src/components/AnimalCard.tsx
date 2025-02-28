@@ -195,6 +195,9 @@ const HONEY_BADGER_IMAGES = [
   "/lovable-uploads/99a13886-4fe8-4f52-9d3c-7d99a8350c7a.png"
 ];
 
+// New Chocolate Dipped Damselfish image
+const CHOCOLATE_DIPPED_DAMSELFISH_IMAGE = "/lovable-uploads/e86cf5b4-84d5-4754-b8a6-ff7b0e604ea2.png";
+
 const AnimalCard = ({
   animal,
   showFacts = false,
@@ -330,6 +333,8 @@ const AnimalCard = ({
         return HICKORY_HORNED_DEVIL_IMAGES;
       } else if (animal.id === "honey-badger") {
         return HONEY_BADGER_IMAGES;
+      } else if (animal.id === "chocolate-dipped-damselfish") {
+        return CHOCOLATE_DIPPED_DAMSELFISH_IMAGE;
       } else {
         return animal.image;
       }
