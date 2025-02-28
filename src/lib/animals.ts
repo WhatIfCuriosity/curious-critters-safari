@@ -200,6 +200,19 @@ export const animals: Animal[] = [
     category: "mysterious"
   },
   {
+    id: "ba-humbugi",
+    name: "Ba Humbugi",
+    question: "What if a service could bring cheer to users as unexpectedly as the name Ba Humbugi brings a smile?",
+    facts: [
+      "The Ba Humbugi is a snail named as a humorous play on Ebenezer Scrooge's phrase 'Bah! Humbug!' from A Christmas Carol",
+      "It's a type of land snail native to the islands of Hawaii",
+      "This snail has a distinctive spiral shell with beautiful brown patterns",
+      "Many Hawaiian snail species are endangered due to habitat loss and introduced predators"
+    ],
+    image: ["/lovable-uploads/52a92cf1-d7c1-45e1-a4c3-e14b10da3e91.png", BOOK_COVER],
+    category: "weird"
+  },
+  {
     id: "pyjama-squid",
     name: "Pyjama Squid",
     question: "What if a service could adapt to blend in any environment like a Pyjama Squid with its distinctive stripes?",
