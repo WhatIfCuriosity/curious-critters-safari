@@ -41,7 +41,7 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
   };
 
   return (
-    <Card className={`w-full max-w-md mx-auto overflow-hidden rounded-xl border-safari-cream/50 ${className}`}>
+    <Card className={`w-full max-w-md mx-auto overflow-hidden rounded-xl ${className}`}>
       <div 
         className="relative aspect-[4/3] overflow-hidden cursor-pointer bg-gray-100"
         onClick={handleImageClick}
@@ -64,20 +64,20 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
           {animal.category.charAt(0).toUpperCase() + animal.category.slice(1)}
         </div>
 
-        <p className="text-lg font-medium italic mb-4 text-gray-700">{serviceDesignQuestion}</p>
+        <p className="text-lg font-medium italic mb-4 text-gray-700">"{serviceDesignQuestion}"</p>
 
         {showFacts && (
           <div>
-            <div className="flex items-center justify-center mb-2">
+            <div className="flex items-center mb-2">
               <div className="w-6 h-6 rounded-full bg-[#F97316] text-white flex items-center justify-center mr-2">
                 <span className="text-sm">i</span>
               </div>
               <h3 className="text-lg font-bold text-[#8B4513]">Fun Facts</h3>
             </div>
-            <ul className="space-y-2 text-left list-none">
+            <ul className="space-y-2 text-left">
               {animal.facts.map((fact, index) => (
                 <li key={index} className="text-sm flex items-start">
-                  <span className="text-[#F97316] mr-2 mt-1">•</span>
+                  <span className="text-[#F97316] mr-2">•</span>
                   <span>{fact}</span>
                 </li>
               ))}
