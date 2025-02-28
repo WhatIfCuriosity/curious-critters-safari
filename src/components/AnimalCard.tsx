@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Animal, getRandomImage, getServiceDesignQuestion } from "@/lib/animals";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Shuffle } from "lucide-react";
+import { Shuffle, ExternalLink } from "lucide-react";
 
 interface AnimalCardProps {
   animal: Animal;
@@ -125,6 +125,23 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
               <p className="text-sm font-medium text-[#8B4513]">Discover more unusual animals:</p>
               <p className="text-xs text-gray-600">The Screaming Hairy Armadillo and 76 Other Animals with Weird, Wild Names</p>
             </div>
+          </a>
+        </div>
+        
+        {/* Random Curiosity Generator button */}
+        <div className="mt-4">
+          <a 
+            href="https://www.thescreaminghairyarmadillo.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block"
+          >
+            <Button 
+              className="w-full bg-gradient-to-r from-safari-orange to-safari-blue text-white font-medium"
+            >
+              Random Curiosity Generator: Animal Style
+              <ExternalLink className="w-4 h-4 ml-2" />
+            </Button>
           </a>
         </div>
       </CardContent>
