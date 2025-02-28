@@ -247,9 +247,7 @@ export const animals: Animal[] = [
     ],
     image: [
       "/lovable-uploads/5e619189-b98d-4c22-8e23-cff80bc2b7da.png",
-      "/lovable-uploads/b4c4722a-5202-447a-8a73-9aaea8000bbc.png",
-      "/lovable-uploads/9b9595ae-b4e2-43fa-b83c-6ca66e17323d.png",
-      "/lovable-uploads/7320dbeb-59eb-460c-b8f0-1cad8f7879a3.png"
+      "/lovable-uploads/b4c4722a-5202-447a-8a73-9aaea8000bbc.png"
     ],
   },
   {
@@ -502,7 +500,12 @@ export const animals: Animal[] = [
       "Its bright red lips may help attract prey or mates, though scientists aren't entirely sure of their purpose.",
       "It has a modified dorsal fin on its head that acts as a fishing lure to attract prey."
     ],
-    image: ["/lovable-uploads/f3205e2a-86cf-4934-887f-c40862c21ab0.png", "/lovable-uploads/33cae5a1-1c32-49e5-ad2d-13fd8ba04809.png"],
+    image: [
+      "/lovable-uploads/f3205e2a-86cf-4934-887f-c40862c21ab0.png", 
+      "/lovable-uploads/33cae5a1-1c32-49e5-ad2d-13fd8ba04809.png",
+      "/lovable-uploads/2282b28d-4320-4022-b465-d8a1e009082a.png",
+      "/lovable-uploads/d8de0004-11df-49e8-a74d-176206ff400c.png"
+    ],
   },
   {
     id: "hercules-beetle",
@@ -582,6 +585,22 @@ export const animals: Animal[] = [
     image: [
       "/lovable-uploads/9b9595ae-b4e2-43fa-b83c-6ca66e17323d.png",
       "/lovable-uploads/7320dbeb-59eb-460c-b8f0-1cad8f7879a3.png"
+    ],
+  },
+  {
+    id: "aye-aye",
+    name: "Aye-Aye",
+    category: "mysterious",
+    question: "What nocturnal primate has a long, thin middle finger that it uses to find food?",
+    facts: [
+      "The aye-aye is a rare lemur native to Madagascar with distinctive features like large eyes, big ears, and a specialized middle finger.",
+      "It uses its unusually long middle finger to tap on trees to find hollow areas containing grubs, then extracts them with the same finger.",
+      "In Malagasy folklore, the aye-aye is considered an omen of bad luck, which has unfortunately contributed to its endangered status.",
+      "Despite its somewhat spooky appearance, it's actually related to monkeys, apes, and humans as a fellow primate."
+    ],
+    image: [
+      "/lovable-uploads/63480d3a-5723-416d-93a4-4493e65d6060.png",
+      "/lovable-uploads/8956f0d2-5f9a-4fb2-9f4b-dd2aac0f9de5.png"
     ],
   }
 ];
