@@ -672,3 +672,4 @@ export const getServiceDesignQuestion = (animalId: string): string => {
   return serviceDesignQuestions[animalId] || 
     "What if a service could adapt to users' needs like this animal adapts to its environment?";
 };
+
