@@ -215,6 +215,12 @@ const WAXY_MONKEY_TREE_FROG_IMAGES = [
   "/lovable-uploads/4f3e5526-bca1-48c2-86b2-da7ed3786e46.png"
 ];
 
+// New Chicken Turtle images
+const CHICKEN_TURTLE_IMAGES = [
+  "/lovable-uploads/8ed3ae0d-1a26-4996-9d15-2a7f04a850d9.png",
+  "/lovable-uploads/fa9636a2-cba8-4b4a-bb78-a4f140e27400.png"
+];
+
 const AnimalCard = ({
   animal,
   showFacts = false,
@@ -358,6 +364,8 @@ const AnimalCard = ({
         return BANANA_SLUG_IMAGES;
       } else if (animal.id === "waxy-monkey-tree-frog") {
         return WAXY_MONKEY_TREE_FROG_IMAGES;
+      } else if (animal.id === "chicken-turtle") {
+        return CHICKEN_TURTLE_IMAGES;
       } else {
         return animal.image;
       }
