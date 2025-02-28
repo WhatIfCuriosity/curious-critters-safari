@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Animal, getRandomImage, getServiceDesignQuestion } from "@/lib/animals";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -28,7 +27,6 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
   
   const [showMoreFacts, setShowMoreFacts] = useState(false);
 
-  // Get service design question to use as the main question
   const serviceDesignQuestion = getServiceDesignQuestion(animal.id) || animal.question;
 
   const handleImageClick = () => {
@@ -46,7 +44,6 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
     setShowMoreFacts(!showMoreFacts);
   };
 
-  // Get background color based on category
   const getCategoryBgColor = () => {
     if (animal.category === "weird") {
       return "bg-pink-100 text-pink-800";
@@ -108,7 +105,6 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
           </div>
         )}
 
-        {/* Book recommendation section */}
         <div className="mt-6 pt-4 border-t border-gray-200">
           <a 
             href="https://amzn.to/3QFrWsF" 
@@ -128,7 +124,6 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
           </a>
         </div>
         
-        {/* Random Curiosity Generator button */}
         <div className="mt-4">
           <a 
             href="https://www.thescreaminghairyarmadillo.com/" 
