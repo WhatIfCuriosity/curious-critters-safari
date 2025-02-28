@@ -618,6 +618,23 @@ export const animals: Animal[] = [
       "/lovable-uploads/57caccdb-7bca-4144-8ed3-85d3f2128c20.png",
       "/lovable-uploads/4699e393-4c77-4b21-86a7-0830122ef84a.png"
     ],
+  },
+  {
+    id: "tasseled-wobbegong",
+    name: "Tasseled Wobbegong",
+    category: "mysterious",
+    question: "What shark is so well camouflaged it looks like a piece of coral reef?",
+    facts: [
+      "The tasseled wobbegong has elaborate skin flaps around its mouth that look like tassels, which help it blend with the reef.",
+      "It's a carpet shark that lies motionless on the seafloor, using its camouflage to ambush prey that swims too close.",
+      "These sharks can eat prey nearly as large as themselves and have been observed eating other sharks up to 80% of their size.",
+      "Their name 'wobbegong' comes from an Australian Aboriginal language and means 'shaggy beard,' referring to the growths around their mouth."
+    ],
+    image: [
+      "/lovable-uploads/ba9e9ac9-eb17-4ed0-82a4-a0c876e16efa.png",
+      "/lovable-uploads/6c55f42e-10a0-4fb9-9473-db1086daff6e.png",
+      "/lovable-uploads/a0c94d6a-63ee-444e-8e21-3f78be22e6c8.png"
+    ],
   }
 ];
 
@@ -646,3 +663,4 @@ export const getRandomImage = (animal: Animal): string => {
 export const getAnimalById = (id: string): Animal | undefined => {
   return animals.find(animal => animal.id === id);
 };
+
