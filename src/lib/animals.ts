@@ -1,3 +1,4 @@
+
 export interface Animal {
   id: string;
   name: string;
@@ -131,7 +132,7 @@ export const animals: Animal[] = [
       "They're excellent swimmers with partially webbed feet"
     ],
     image: [
-      "/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"
+      "/lovable-uploads/a921d78a-a617-405b-af5e-ba4fd16eb181.png"
     ],
     category: "sweet"
   },
@@ -145,7 +146,7 @@ export const animals: Animal[] = [
       "Despite its name, it doesn't suck blood and is actually quite gentle"
     ],
     image: [
-      "/lovable-uploads/0b9427c6-c842-4b1c-9d75-4619c19c84f6.png"
+      "/lovable-uploads/9cd1674f-c952-4d10-a2a0-05051c7e9b2c.png"
     ],
     category: "mysterious"
   },
