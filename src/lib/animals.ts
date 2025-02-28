@@ -170,7 +170,7 @@ export const animals: Animal[] = [
       "They can dig extensive burrow systems with their powerful claws",
       "They are well-adapted to Australia's arid environments with efficient water conservation systems"
     ],
-    image: ["/lovable-uploads/9cd1674f-c952-4d10-a2a0-05051c7e9b2c.png", BOOK_COVER],
+    image: ["/lovable-uploads/9cd1674f-c952-4d10-a2a0-05051c7e9b2c.png", "/lovable-uploads/a921d78a-a617-405b-af5e-ba4fd16eb181.png", BOOK_COVER],
     category: "original"
   },
   {

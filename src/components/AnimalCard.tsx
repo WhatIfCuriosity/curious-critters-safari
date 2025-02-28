@@ -42,13 +42,20 @@ const AnimalCard = ({
     img.src = imageToUse;
     img.onload = () => setIsLoaded(true);
     img.onerror = () => {
+      console.error(`Failed to load image: ${imageToUse}`);
       setIsLoaded(true);
       setHasError(true);
+      
+      // If this image failed, try the book cover as fallback
+      if (imageToUse !== bookInfo.coverImage) {
+        setSelectedImage(bookInfo.coverImage);
+      }
     };
     
     // Fallback in case image doesn't load
     const timeout = setTimeout(() => {
       if (!isLoaded) {
+        console.warn(`Image load timeout for: ${imageToUse}`);
         setIsLoaded(true);
         setHasError(true);
       }
@@ -118,6 +125,14 @@ const AnimalCard = ({
                   "w-full h-48 object-contain transition-opacity duration-500",
                   isLoaded ? "opacity-100" : "opacity-0"
                 )}
+                onError={() => {
+                  console.error(`Image error event for: ${selectedImage}`);
+                  setHasError(true);
+                  // Try book cover as fallback
+                  if (selectedImage !== bookInfo.coverImage) {
+                    setSelectedImage(bookInfo.coverImage);
+                  }
+                }}
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                 <span className="bg-white/90 text-safari-brown px-3 py-1 rounded-full text-sm font-medium flex items-center">
