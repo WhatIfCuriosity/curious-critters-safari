@@ -9,12 +9,16 @@ interface AnimalCardProps {
   animal: Animal;
   onNextAnimal?: () => void;
   showRandomButton?: boolean;
+  className?: string;
+  showFacts?: boolean;
 }
 
 const AnimalCard: React.FC<AnimalCardProps> = ({
   animal,
   onNextAnimal,
   showRandomButton = false,
+  className = "",
+  showFacts = true,
 }) => {
   const [currentImage, setCurrentImage] = useState<string>(
     typeof animal.image === "string"
@@ -37,7 +41,7 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto overflow-hidden">
+    <Card className={`w-full max-w-md mx-auto overflow-hidden ${className}`}>
       <div 
         className="relative aspect-[4/3] overflow-hidden cursor-pointer bg-gray-100"
         onClick={handleImageClick}
@@ -62,13 +66,15 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
 
         <p className="text-lg font-medium italic mb-4">{animal.question}</p>
 
-        <ul className="space-y-2 text-left list-disc list-inside">
-          {animal.facts.map((fact, index) => (
-            <li key={index} className="text-sm">
-              {fact}
-            </li>
-          ))}
-        </ul>
+        {showFacts && (
+          <ul className="space-y-2 text-left list-disc list-inside">
+            {animal.facts.map((fact, index) => (
+              <li key={index} className="text-sm">
+                {fact}
+              </li>
+            ))}
+          </ul>
+        )}
 
         {serviceDesignQuestion && (
           <div className="mt-6 p-4 bg-blue-50 rounded-lg">
