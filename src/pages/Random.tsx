@@ -39,6 +39,7 @@ const animalThumbnails: Record<string, string> = {
   "candy-striped-hermit-crab": "/lovable-uploads/a9979d2e-efc7-4763-98ce-69602a6e55e9.png",
   "pancake-tortoise": "/lovable-uploads/60a4b820-e601-4a27-a1ef-e001f2d68e9b.png",
   "potato-cod": "/lovable-uploads/07536683-61e2-4723-82c1-defa44d108fc.png",
+  "raspberry-crazy-ant": "/lovable-uploads/8487b8af-806f-4758-97ae-43854f70b4b6.png",
   "australian-ghost-shark": "/lovable-uploads/b6d60faf-4825-4b5e-97b4-2e8970649602.png",
   "monkeyface-prickleback": "/lovable-uploads/dcb35bf4-8a2b-471e-8da8-3211c44f19e0.png",
   "sarcastic-fringehead": "/lovable-uploads/8c79dbe2-73ec-4260-9abb-104b2de92996.png",

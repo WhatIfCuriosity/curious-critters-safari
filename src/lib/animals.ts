@@ -78,6 +78,23 @@ export const animals: Animal[] = [
     category: "mysterious"
   },
   {
+    id: "raspberry-crazy-ant",
+    name: "Raspberry Crazy Ant",
+    question: "What if a service could adapt and neutralize threats like a Raspberry Crazy Ant?",
+    facts: [
+      "Named after exterminator Tom Raspberry who discovered them in Texas",
+      "They're the first known insect species capable of neutralizing another critter's venom",
+      "They can coat themselves in formic acid as an antidote to fire ant venom",
+      "Native to South and Central America, they've spread to Texas where they've become invasive",
+      "Known for their erratic movement patterns which earned them the 'crazy' name"
+    ],
+    image: [
+      "/lovable-uploads/8487b8af-806f-4758-97ae-43854f70b4b6.png",
+      "/lovable-uploads/2a255d56-5473-44da-8031-6adfa385f369.png"
+    ],
+    category: "weird"
+  },
+  {
     id: "bone-eating-snot-flower-worm",
     name: "Bone-Eating Snot Flower Worm",
     question: "What if a service could extract value from overlooked resources like a Bone-Eating Snot Flower Worm?",

@@ -107,6 +107,11 @@ const POTATO_COD_IMAGES = [
   "/lovable-uploads/c2e246ec-84fe-40d5-b525-66c9ff44265e.png"
 ];
 
+const RASPBERRY_CRAZY_ANT_IMAGES = [
+  "/lovable-uploads/8487b8af-806f-4758-97ae-43854f70b4b6.png",
+  "/lovable-uploads/2a255d56-5473-44da-8031-6adfa385f369.png"
+];
+
 const SARCASTIC_FRINGEHEAD_IMAGES = [
   "/lovable-uploads/8c79dbe2-73ec-4260-9abb-104b2de92996.png", 
   "/lovable-uploads/ffe1fac4-535b-487d-b4fb-4490a85c9409.png"
@@ -274,6 +279,8 @@ const AnimalCard = ({
         return PANCAKE_TORTOISE_IMAGE;
       } else if (animal.id === "potato-cod") {
         return POTATO_COD_IMAGES;
+      } else if (animal.id === "raspberry-crazy-ant") {
+        return RASPBERRY_CRAZY_ANT_IMAGES;
       } else if (animal.id === "sarcastic-fringehead") {
         return SARCASTIC_FRINGEHEAD_IMAGES;
       } else if (animal.id === "long-wattled-umbrellabird") {
