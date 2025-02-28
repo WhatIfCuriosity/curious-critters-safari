@@ -78,27 +78,31 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
 }) => {
   // Get the appropriate image for the animal, prioritizing the predefined mapping
   const getInitialImage = (): string => {
-    // First check if we have a predefined primary image
+    // ALWAYS use the predefined primary image if available
     if (animalPrimaryImages[animal.id]) {
       return animalPrimaryImages[animal.id];
     }
     
-    // Fallback to the animal's image property
+    // Only use the animal's image property as a fallback
     if (typeof animal.image === "string") {
       return animal.image === "?" ? DEFAULT_FALLBACK : animal.image;
-    } else {
-      return animal.image.length > 0 ? animal.image[0] : DEFAULT_FALLBACK;
+    } else if (animal.image && animal.image.length > 0) {
+      return animal.image[0];
     }
+    
+    return DEFAULT_FALLBACK;
   };
 
   const [currentImage, setCurrentImage] = useState<string>(getInitialImage());
   const [showMoreFacts, setShowMoreFacts] = useState(false);
   const [imageError, setImageError] = useState(false);
 
-  // If animal changes, reset the image
+  // Reset image when animal changes
   useEffect(() => {
+    // Always use the predefined primary image first
     setCurrentImage(getInitialImage());
     setImageError(false);
+    setShowMoreFacts(false); // Reset facts expansion state
   }, [animal.id]);
 
   const serviceDesignQuestion = getServiceDesignQuestion(animal.id) || animal.question;
@@ -120,7 +124,7 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
   const handleImageError = () => {
     console.warn(`Image failed to load for ${animal.name}, using fallback`, currentImage);
     
-    // If the current image failed, try using the primary image from our mapping
+    // If the current image failed, always try using the primary image from our mapping first
     if (animalPrimaryImages[animal.id] && currentImage !== animalPrimaryImages[animal.id]) {
       setCurrentImage(animalPrimaryImages[animal.id]);
     } else if (!imageError) {
