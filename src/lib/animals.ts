@@ -127,9 +127,10 @@ export const animals: Animal[] = [
     facts: [
       "Naked Mole Rats live in complex underground colonies with a queen, similar to bees",
       "They are almost immune to cancer",
-      "They can survive with very little oxygen and feel almost no pain"
+      "They can survive with very little oxygen and feel almost no pain",
+      "Despite being called rats, they're more closely related to porcupines and guinea pigs"
     ],
-    image: [BOOK_COVER, BOOK_COVER],
+    image: ["/lovable-uploads/bb8eb6cc-a644-41df-bbce-f82ad79d7f45.png", "/lovable-uploads/5cc87126-c35c-42e4-b267-1032de57fe99.png", BOOK_COVER],
     category: "weird"
   },
   {
