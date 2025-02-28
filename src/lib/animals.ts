@@ -8,6 +8,7 @@ export type Animal = {
   biomimicrosity?: string[];
   facts: string[];
   image: string | string[];
+  serviceDesignQuestion?: string;
 };
 
 // Paths to animal images for the app
@@ -21,6 +22,59 @@ export const bookInfo = {
   coverImage: BOOK_COVER,
   description: "A unique book featuring weird, magical, fierce, sweet, delicious, & mysterious animals from around the world, with fascinating facts and questions to spark curiosity and imagination.",
   link: "https://www.amazon.com/Wonderful-Animals-Should-Know-magical/dp/1637742142/"
+};
+
+// Service Design Questions
+export const serviceDesignQuestions = {
+  "twice-stabbed-stink-bug": "What if a service could protect users from harm as effectively as a Twice-Stabbed Stink Bug?",
+  "naked-mole-rat": "What if a service could thrive underground like a Naked Mole Rat's colony?",
+  "moonrat": "What if a service could be as nocturnal and responsive as a Moonrat foraging at night?",
+  "agra-cadabra": "What if a service could appear magically at the right moment like Agra Cadabra suggests?",
+  "yeti-crab": "What if a service could thrive in extreme conditions like a Yeti Crab in deep-sea vents?",
+  "wunderpus-octopus": "What if a service could multitask as creatively as a Wonderpus octopus?",
+  "hellbender": "What if a service could navigate murky situations like a Hellbender in muddy waters?",
+  "spined-assassin-bug": "What if a service could pinpoint user pain points as precisely as a Spined Assassin Bug?",
+  "flying-dragon": "What if a service could glide effortlessly between user needs like a Flying Dragon soars?",
+  "komodo-dragon": "What if a service could be as powerful and commanding as a Komodo Dragon in its territory?",
+  "leafy-sea-dragon": "What if a service could blend seamlessly into a user's life like a Leafy Seadragon in seaweed?",
+  "sparklemuffin-peacock-spider": "What if a service could dazzle users like a Sparklemuffin Peacock Spider's dance?",
+  "blue-footed-booby": "What if a service could dance into users' lives like a Blue-Footed Booby's strut?",
+  "pink-fairy-armadillo": "What if a service could be as enchanting and unobtrusive as a Pink Fairy Armadillo in its burrow?",
+  "goblin-shark": "What if a service could adapt its approach as swiftly as a Goblin Shark extends its jaw?",
+  "fried-egg-jellyfish": "What if a service could be as visually appealing as a Fried Egg Jellyfish?",
+  "candy-striped-hermit-crab": "What if a service could offer a sweet, personalized experience like a Candy-Striped Hermit Crab?",
+  "pancake-tortoise": "What if a service could flatten barriers to entry like a Pancake Tortoise's shell?",
+  "potato-cod": "What if a service could be as comforting and familiar as a Potato Cod?",
+  "raspberry-crazy-ant": "What if a service could swarm to solve problems as quickly as Raspberry Crazy Ants?",
+  "sarcastic-fringehead": "What if a service could defend its space as fiercely as a Sarcastic Fringehead?",
+  "long-wattled-umbrellabird": "What if a service could amplify its presence like a Long-Wattled Umbrellabird's call?",
+  "blobfish": "What if a service could simplify complexity like a Smooth-Headed Blobfish's form?",
+  "pyjama-squid": "What if a service could wrap users in comfort like a Striped Pyjama Squid's stripes?",
+  "cuckoo-wasp": "What if a service could infiltrate systems as cleverly as a Cuckoo Wasp?",
+  "ba-humbugi": "What if a service could surprise users with a twist like Ba Humbugi's name?",
+  "caramel-coated-capybara": "What if a service could be as warm and inviting as a Caramel Coated Capybara?",
+  "monkeyface-prickleback": "What if a service could adapt its face to users like a Monkeyface Prickleback?",
+  "screaming-hairy-armadillo": "What if a service could dig deep into user insights like a Screaming Hairy Armadillo?",
+  "red-lipped-batfish": "What if a service could stand out as boldly as a Red-Lipped Batfish's lips?",
+  "australian-ghost-shark": "What if a service could operate silently and efficiently like an Australian Ghost Shark?",
+  "hercules-beetle": "What if a service could lift heavy user burdens as effortlessly as a Hercules Beetle?",
+  "southern-hairy-nosed-wombat": "What if a service could burrow into user needs like a Southern Hairy-Nosed Wombat?",
+  "unicorn-fish": "What if a service could be as mythical and memorable as a Unicornfish's horn?",
+  "vampire-squid": "What if a service could illuminate hidden user needs like a Vampire Squid lights up the deep?",
+  "lionhead-rabbit": "What if a service could combine strength and softness like a Lionhead Rabbit?",
+  "hagfish": "What if a service could slip through complex systems as smoothly as a Hagfish?",
+  "poison-dart-frog": "What if a service could be as vibrant and attention-grabbing as a Poison Dart Frog?",
+  "bone-eating-snot-flower-worm": "What if a service could recycle resources as efficiently as a Bone-Eating Snot Flower Worm?",
+  "hickory-horned-devil": "What if a service could transform user experiences as dramatically as a Hickory Horned Devil?",
+  "honey-badger": "What if a service could be as fearless and persistent as a Honey Badger?",
+  "chocolate-dipped-damselfish": "What if a service could offer a delightful surprise like a Chocolate Dip Damselfish?",
+  "pieza-pi": "What if a service could be as precise and delightful as Pieza Pi sounds?",
+  "banana-slug": "What if a service could move slowly but leave a lasting trail like a Banana Slug?",
+  "waxy-monkey-tree-frog": "What if a service could stick to user needs like a Waxy Monkey Tree Frog clings to trees?",
+  "chicken-turtle": "What if a service could be as versatile as a Chicken Turtle on land and water?",
+  "dogface-butterfly": "What if a service could charm users like a Dogface Butterfly's friendly face?",
+  "headless-chicken-monster": "What if a service could thrive in chaos like a Headless Chicken Monster?",
+  "white-bellied-go-away-bird": "What if a service could signal when to pivot like a White Bellied Go-Away Bird's call?"
 };
 
 // Define all animals in the app
@@ -611,4 +665,10 @@ export const getRandomImage = (animal: Animal): string => {
 // Function to get an animal by ID
 export const getAnimalById = (id: string): Animal | undefined => {
   return animals.find(animal => animal.id === id);
+};
+
+// Function to get a service design question for an animal
+export const getServiceDesignQuestion = (animalId: string): string => {
+  return serviceDesignQuestions[animalId] || 
+    "What if a service could adapt to users' needs like this animal adapts to its environment?";
 };
