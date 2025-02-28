@@ -45,7 +45,7 @@ export const animals: Animal[] = [
       "It actually walks on the ocean floor rather than swimming",
       "It uses a modified dorsal fin on its head to lure prey"
     ],
-    image: "?",
+    image: [BOOK_COVER],
     category: "weird"
   },
   {
@@ -93,7 +93,7 @@ export const animals: Animal[] = [
       "It has more hair than other armadillo species",
       "It's an excellent digger, creating burrows for shelter"
     ],
-    image: "?",
+    image: [BOOK_COVER],
     category: "original"
   },
   {
@@ -105,7 +105,7 @@ export const animals: Animal[] = [
       "They're highly social animals that live in groups",
       "They're excellent swimmers with partially webbed feet"
     ],
-    image: "?",
+    image: [BOOK_COVER],
     category: "sweet"
   },
   {
@@ -117,7 +117,7 @@ export const animals: Animal[] = [
       "It can produce bioluminescent light from light organs on its body",
       "Despite its name, it doesn't suck blood and is actually quite gentle"
     ],
-    image: "?",
+    image: [BOOK_COVER],
     category: "mysterious"
   },
   {
