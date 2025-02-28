@@ -13,6 +13,8 @@ interface AnimalCardProps {
 
 // Default placeholder image that's guaranteed to exist in the project
 const DEFAULT_PLACEHOLDER = "/lovable-uploads/4813c70d-678a-4536-bd98-88a5e0eca792.png"; // Book cover
+// Use a global cache to persist between component unmounts/remounts
+const globalImageCache: Record<string, string> = {};
 
 const AnimalCard = ({
   animal,
@@ -22,43 +24,50 @@ const AnimalCard = ({
   const [showAllFacts, setShowAllFacts] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string>(DEFAULT_PLACEHOLDER);
+  const [selectedImage, setSelectedImage] = useState<string>(
+    globalImageCache[animal.id] || DEFAULT_PLACEHOLDER
+  );
   const [showBookInfo, setShowBookInfo] = useState(false);
   const [retryCount, setRetryCount] = useState(0);
   const MAX_RETRIES = 3;
   
-  // Use ref to prevent re-fetching images unnecessarily
-  const previousAnimalId = useRef<string | null>(null);
+  // Use ref to track if component is mounted
+  const isMounted = useRef(true);
   const loadedImagesCache = useRef<Map<string, string>>(new Map());
   
+  // Immediately set as loaded if we have a cached image
   useEffect(() => {
-    // Only reset and reload if the animal actually changed
-    if (previousAnimalId.current === animal.id) {
-      return;
+    if (globalImageCache[animal.id]) {
+      setIsLoaded(true);
+      setHasError(false);
     }
-    
-    // Update the ref to the current animal
-    previousAnimalId.current = animal.id;
-    
-    // Check if we have a cached image for this animal
-    const cachedImage = loadedImagesCache.current.get(animal.id);
-    if (cachedImage) {
-      setSelectedImage(cachedImage);
+  }, [animal.id]);
+
+  // Cleanup function
+  useEffect(() => {
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+  
+  useEffect(() => {
+    // If we already have the image in global cache, use it
+    if (globalImageCache[animal.id]) {
+      setSelectedImage(globalImageCache[animal.id]);
       setIsLoaded(true);
       setHasError(false);
       return;
     }
     
-    // Reset states when animal changes
-    setIsLoaded(false);
-    setHasError(false);
-    setRetryCount(0);
-    
-    // Default to placeholder for safety
-    setSelectedImage(DEFAULT_PLACEHOLDER);
+    // Reset states for new animal
+    if (!isLoaded) {
+      setHasError(false);
+      setRetryCount(0);
+    }
     
     // Handle question mark placeholder
     if (animal.image === "?") {
+      setSelectedImage(DEFAULT_PLACEHOLDER);
       setIsLoaded(true);
       setHasError(true);
       return;
@@ -66,6 +75,8 @@ const AnimalCard = ({
     
     // Initialize with placeholder while loading actual image
     const loadImage = () => {
+      if (!isMounted.current) return;
+      
       // Get a random image if multiple are available
       const imageToUse = getRandomImage(animal.image);
       
@@ -74,6 +85,11 @@ const AnimalCard = ({
       
       // Set up event handlers before setting src to avoid race conditions
       img.onload = () => {
+        if (!isMounted.current) return;
+        
+        // Save to global cache
+        globalImageCache[animal.id] = imageToUse;
+        
         setSelectedImage(imageToUse);
         setIsLoaded(true);
         setHasError(false);
@@ -83,13 +99,15 @@ const AnimalCard = ({
       };
       
       img.onerror = () => {
+        if (!isMounted.current) return;
+        
         console.error(`Failed to load image: ${imageToUse}, retry: ${retryCount}`);
         
         // If we have retries left and the image isn't already the default, try another image
         if (retryCount < MAX_RETRIES && typeof animal.image !== 'string' && animal.image.length > 1) {
           // Try another image from the array if available
           setRetryCount(prev => prev + 1);
-          setTimeout(loadImage, 300); // Longer delay before retrying
+          setTimeout(loadImage, 500); // Even longer delay before retrying
         } else {
           // Use the book cover as final fallback
           setSelectedImage(DEFAULT_PLACEHOLDER);
@@ -97,7 +115,7 @@ const AnimalCard = ({
           setHasError(true);
           
           // Cache the fallback image to prevent further loading attempts
-          loadedImagesCache.current.set(animal.id, DEFAULT_PLACEHOLDER);
+          globalImageCache[animal.id] = DEFAULT_PLACEHOLDER;
         }
       };
       
@@ -110,28 +128,30 @@ const AnimalCard = ({
         setSelectedImage(imageToUse);
         setIsLoaded(true);
         setHasError(false);
-        loadedImagesCache.current.set(animal.id, imageToUse);
+        globalImageCache[animal.id] = imageToUse;
       }
     };
     
-    // Start the image loading process
-    loadImage();
+    // Start the image loading process if we don't have the image yet
+    if (!isLoaded) {
+      loadImage();
+    }
     
     // Fallback in case image loading takes too long
     const timeout = setTimeout(() => {
-      if (!isLoaded) {
+      if (!isLoaded && isMounted.current) {
         console.warn("Image load timeout, using fallback");
         setSelectedImage(DEFAULT_PLACEHOLDER);
         setIsLoaded(true);
         setHasError(true);
-        loadedImagesCache.current.set(animal.id, DEFAULT_PLACEHOLDER);
+        globalImageCache[animal.id] = DEFAULT_PLACEHOLDER;
       }
-    }, 5000);
+    }, 8000); // Longer timeout
     
     return () => {
       clearTimeout(timeout);
     };
-  }, [animal.id, animal.image, retryCount]);
+  }, [animal.id, animal.image, isLoaded, retryCount]);
 
   // Additional safeguard for runtime errors
   const handleImageError = () => {
@@ -140,6 +160,7 @@ const AnimalCard = ({
     if (selectedImage !== DEFAULT_PLACEHOLDER) {
       setSelectedImage(DEFAULT_PLACEHOLDER);
       setHasError(true);
+      globalImageCache[animal.id] = DEFAULT_PLACEHOLDER;
     }
   };
 
@@ -196,7 +217,7 @@ const AnimalCard = ({
             >
               {/* Always render the image but control visibility with CSS */}
               <img
-                src={selectedImage || DEFAULT_PLACEHOLDER}
+                src={selectedImage}
                 alt={animal.name}
                 className={cn(
                   "max-w-full max-h-48 object-contain transition-opacity duration-300",
