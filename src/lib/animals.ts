@@ -1,4 +1,3 @@
-
 export interface Animal {
   id: string;
   name: string;
@@ -208,8 +207,7 @@ export const animals: Animal[] = [
       "They are well-adapted to Australia's arid environments with efficient water conservation systems"
     ],
     image: [
-      // Removed the problematic wombat image and using book cover as fallback
-      BOOK_COVER
+      "/lovable-uploads/e15c59a6-e20f-47bd-9d62-e5028ecb994c.png"
     ],
     category: "original"
   },
