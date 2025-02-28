@@ -606,3 +606,8 @@ export const getRandomImage = (animal: Animal): string => {
   const randomIndex = Math.floor(Math.random() * animal.image.length);
   return animal.image[randomIndex];
 };
+
+// Get an animal by ID
+export const getAnimalById = (id: string): Animal | undefined => {
+  return animals.find(animal => animal.id === id);
+};
