@@ -602,6 +602,22 @@ export const animals: Animal[] = [
       "/lovable-uploads/63480d3a-5723-416d-93a4-4493e65d6060.png",
       "/lovable-uploads/8956f0d2-5f9a-4fb2-9f4b-dd2aac0f9de5.png"
     ],
+  },
+  {
+    id: "bird-beak-dogfish",
+    name: "Bird Beak Dogfish",
+    category: "weird",
+    question: "What deep-sea shark got its name from its pointed snout?",
+    facts: [
+      "The bird beak dogfish has a distinctive pointed, beak-like snout that gives it its unusual name.",
+      "It lives in deep waters of the Pacific and Atlantic Oceans, typically at depths of over 600 meters.",
+      "Like many deep-sea sharks, it hunts in packs, which is unusual for shark species.",
+      "When giving birth, the bird beak dogfish can have up to twelve baby sharks, known as 'pups'."
+    ],
+    image: [
+      "/lovable-uploads/57caccdb-7bca-4144-8ed3-85d3f2128c20.png",
+      "/lovable-uploads/4699e393-4c77-4b21-86a7-0830122ef84a.png"
+    ],
   }
 ];
 
