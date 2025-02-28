@@ -147,7 +147,7 @@ const Random = () => {
           Back
         </Button>
         
-        <h1 className="text-xl font-bold">Curiosity Service Design Safari</h1>
+        <h1 className="text-sm sm:text-lg font-bold">Curiosity Service Design Safari</h1>
         
         <ProfileBadge />
       </header>
@@ -176,6 +176,24 @@ const Random = () => {
           >
             Start 4-Step Activity
           </Button>
+        </div>
+        
+        <div className="mt-4 w-full">
+          <a 
+            href="https://www.thescreaminghairyarmadillo.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block w-full"
+          >
+            <Button 
+              className="w-full bg-gradient-to-r from-safari-orange to-safari-blue text-white font-medium"
+            >
+              <span className="mx-auto flex items-center justify-center">
+                Random Curiosity Generator: Animal Style
+                <ExternalLink className="w-4 h-4 ml-2" />
+              </span>
+            </Button>
+          </a>
         </div>
         
         {previousAnimals.length > 0 && (
