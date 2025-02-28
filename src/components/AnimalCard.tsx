@@ -134,6 +134,8 @@ const LIONHEAD_RABBIT_IMAGES = [
   "/lovable-uploads/a569de47-f3b9-4c4c-95dd-b13244ac767f.png"
 ];
 
+const HAGFISH_IMAGE = "/lovable-uploads/26ed8a88-1b0b-4643-b0e2-12f1491364d3.png";
+
 const AnimalCard = ({
   animal,
   showFacts = false,
@@ -247,6 +249,8 @@ const AnimalCard = ({
         return BOOK_COVER; // Always use book cover for vampire squid
       } else if (animal.id === "lionhead-rabbit") {
         return LIONHEAD_RABBIT_IMAGES;
+      } else if (animal.id === "hagfish") {
+        return HAGFISH_IMAGE;
       } else {
         return animal.image;
       }

@@ -13,6 +13,20 @@ const BOOK_LINK = "https://amzn.to/41maKgG";
 
 export const animals: Animal[] = [
   {
+    id: "hagfish",
+    name: "Hagfish",
+    question: "What if a service could adapt to pressure as naturally as a Hagfish in the deep ocean?",
+    facts: [
+      "The Hagfish produces slime when threatened - up to 5 gallons from a single fish",
+      "They're sometimes called 'slime eels' despite not being eels at all",
+      "Hagfish Day is celebrated every year on the third Wednesday of October",
+      "They can tie themselves in knots to escape predators or to get leverage when feeding",
+      "Hagfish have existed for over 300 million years and are considered 'living fossils'"
+    ],
+    image: "/lovable-uploads/26ed8a88-1b0b-4643-b0e2-12f1491364d3.png",
+    category: "weird"
+  },
+  {
     id: "lionhead-rabbit",
     name: "Lionhead Rabbit",
     question: "What if a service could be as adorable and distinctive as a Lionhead Rabbit with its fluffy mane?",
