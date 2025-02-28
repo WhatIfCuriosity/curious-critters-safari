@@ -1,4 +1,3 @@
-
 import { useEffect, useState, useRef } from "react";
 import { Animal, getRandomImage, bookInfo } from "../lib/animals";
 import AnimatedContainer from "./AnimatedContainer";
@@ -33,6 +32,11 @@ const AUSTRALIAN_GHOST_SHARK_IMAGE = "/lovable-uploads/b6d60faf-4825-4b5e-97b4-2
 const HERCULES_BEETLE_IMAGES = [
   "/lovable-uploads/fa0dc4ec-7637-4fd4-91d3-32e96249f92f.png",
   "/lovable-uploads/07210a5f-1f2f-443a-917e-ea437efd5e89.png"
+];
+const SOUTHERN_WOMBAT_IMAGES = [
+  "/lovable-uploads/e15c59a6-e20f-47bd-9d62-e5028ecb994c.png",
+  "/lovable-uploads/73762eb7-97bd-44f0-9064-9ec199c90cbd.png", 
+  "/lovable-uploads/de9414a0-a291-4caf-8d6d-a889a8e4d749.png"
 ];
 
 const AnimalCard = ({
@@ -102,6 +106,10 @@ const AnimalCard = ({
         return AUSTRALIAN_GHOST_SHARK_IMAGE;
       } else if (animal.id === "hercules-beetle") {
         return HERCULES_BEETLE_IMAGES;
+      } else if (animal.id === "southern-hairy-nosed-wombat") {
+        return SOUTHERN_WOMBAT_IMAGES;
+      } else if (animal.id === "vampire-squid") {
+        return bookInfo.coverImage; // Always use book cover for vampire squid
       } else {
         return animal.image;
       }

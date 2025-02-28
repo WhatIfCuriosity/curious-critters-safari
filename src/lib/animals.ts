@@ -280,7 +280,8 @@ export const animals: Animal[] = [
     ],
     image: [
       "/lovable-uploads/e15c59a6-e20f-47bd-9d62-e5028ecb994c.png",
-      "/lovable-uploads/73762eb7-97bd-44f0-9064-9ec199c90cbd.png"
+      "/lovable-uploads/73762eb7-97bd-44f0-9064-9ec199c90cbd.png",
+      "/lovable-uploads/de9414a0-a291-4caf-8d6d-a889a8e4d749.png"
     ],
     category: "original"
   },
