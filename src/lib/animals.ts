@@ -213,6 +213,19 @@ export const animals: Animal[] = [
     category: "weird"
   },
   {
+    id: "blobfish",
+    name: "Blobfish",
+    question: "What if a service could adapt to pressure and remain resilient like a Blobfish in the deep sea?",
+    facts: [
+      "The Blobfish appears gelatinous and droopy on land but has a more normal fish shape in its natural deep-sea habitat",
+      "It lives at depths where the pressure is up to 120 times higher than at sea level",
+      "Instead of a gas-filled swim bladder, it has gelatinous flesh with a density slightly less than water, allowing it to float above the seafloor",
+      "It was voted the 'World's Ugliest Animal' in 2013, becoming a mascot for the Ugly Animal Preservation Society"
+    ],
+    image: ["/lovable-uploads/eb0a6e45-42af-4c28-98d3-3f7c6a7a82ff.png", BOOK_COVER],
+    category: "weird"
+  },
+  {
     id: "pyjama-squid",
     name: "Pyjama Squid",
     question: "What if a service could adapt to blend in any environment like a Pyjama Squid with its distinctive stripes?",
