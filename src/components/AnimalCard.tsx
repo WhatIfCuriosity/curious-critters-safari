@@ -75,10 +75,6 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
       </div>
 
       <CardContent className="px-6 py-4">
-        <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-sm ${getCategoryBgColor()}`}>
-          {animal.category.charAt(0).toUpperCase() + animal.category.slice(1)}
-        </div>
-        
         <h2 className="text-2xl font-bold mb-2 text-[#8B4513]">{animal.name}</h2>
 
         <p className="text-lg italic mb-6 text-[#8B4513]">"{serviceDesignQuestion}"</p>
