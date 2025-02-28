@@ -80,9 +80,15 @@ export const animals: Animal[] = [
     facts: [
       "Blue-Footed Boobies have bright blue feet that they show off in a mating dance",
       "The bluer the feet, the more attractive they are to potential mates",
-      "They dive from great heights to catch fish in the ocean"
+      "They dive from great heights to catch fish in the ocean",
+      "The name 'booby' comes from the Spanish word 'bobo' meaning 'clown' or 'fool'"
     ],
-    image: [BOOK_COVER],
+    image: [
+      "/lovable-uploads/6897367d-a430-4f51-a44b-121384738827.png", 
+      "/lovable-uploads/e26dfbc2-3a9b-4a58-9b4d-2c33e4cabc25.png", 
+      "/lovable-uploads/870d7b5e-d363-40d9-9f46-a270bacb437d.png",
+      BOOK_COVER
+    ],
     category: "weird"
   },
   {
