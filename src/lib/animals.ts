@@ -13,6 +13,23 @@ const BOOK_LINK = "https://amzn.to/41maKgG";
 
 export const animals: Animal[] = [
   {
+    id: "yeti-crab",
+    name: "Yeti Crab",
+    question: "What if a service could thrive in extreme conditions like a Yeti Crab at hydrothermal vents?",
+    facts: [
+      "The Yeti Crab (Kiwa hirsuta) has hairy arms that are covered with bacteria, which it cultivates for food",
+      "It lives near hydrothermal vents on the ocean floor, where hot water flows from beneath the Earth's crust",
+      "First discovered in 2005, it was nicknamed 'Yeti' after the legendary abominable snowman due to its furry appearance",
+      "It has no eyes as they would be useless in the dark depths where it lives",
+      "The bacteria on its arms help detoxify the poisonous minerals found near the hydrothermal vents"
+    ],
+    image: [
+      "/lovable-uploads/930ae911-cd64-4277-9e81-9993ed4ecf7b.png",
+      "/lovable-uploads/54f13674-bc2a-4ac5-977b-98285f66941f.png"
+    ],
+    category: "weird"
+  },
+  {
     id: "agra-cadabra",
     name: "Agra Cadabra",
     question: "What if a service could disappear problems as magically as the name Agra Cadabra suggests?",
