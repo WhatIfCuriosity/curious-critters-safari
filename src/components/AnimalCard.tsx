@@ -52,11 +52,13 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
         className="relative overflow-hidden cursor-pointer"
         onClick={handleImageClick}
       >
-        <img
-          src={currentImage}
-          alt={animal.name}
-          className="object-cover w-full h-full"
-        />
+        <a href="https://amzn.to/3QFrWsF" target="_blank" rel="noopener noreferrer">
+          <img
+            src={currentImage}
+            alt={animal.name}
+            className="object-cover w-full h-full"
+          />
+        </a>
         {typeof animal.image !== "string" && animal.image.length > 1 && (
           <div className="absolute top-2 right-2 bg-white/80 text-xs p-1 rounded-md">
             Tap for more images
