@@ -1,4 +1,3 @@
-
 import { useEffect, useState, useRef } from "react";
 import { Animal, getRandomImage, bookInfo } from "../lib/animals";
 import AnimatedContainer from "./AnimatedContainer";
@@ -14,7 +13,7 @@ interface AnimalCardProps {
 // Default placeholder image that's guaranteed to exist in the project
 const DEFAULT_PLACEHOLDER = "/lovable-uploads/4813c70d-678a-4536-bd98-88a5e0eca792.png"; // Book cover
 
-// Use a global cache to persist between component unmounts/remounts
+// Use a global cache to persist between component unmounts/remounts with animal ID as key
 const globalImageCache: Record<string, string> = {};
 
 const AnimalCard = ({
@@ -25,24 +24,30 @@ const AnimalCard = ({
   const [showAllFacts, setShowAllFacts] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string>(
-    globalImageCache[animal.id] || DEFAULT_PLACEHOLDER
-  );
+  const [selectedImage, setSelectedImage] = useState<string>(DEFAULT_PLACEHOLDER);
   const [showBookInfo, setShowBookInfo] = useState(false);
   const [retryCount, setRetryCount] = useState(0);
   const MAX_RETRIES = 3;
   
   // Use ref to track if component is mounted
   const isMounted = useRef(true);
-  
-  // Immediately set as loaded if we have a cached image
+
+  // Reset loading state when animal changes
   useEffect(() => {
+    setIsLoaded(false);
+    setHasError(false);
+    setRetryCount(0);
+    
+    // If we have a cached image for this animal, use it immediately
     if (globalImageCache[animal.id]) {
+      setSelectedImage(globalImageCache[animal.id]);
       setIsLoaded(true);
-      setHasError(false);
+    } else {
+      // Otherwise start with placeholder while we load
+      setSelectedImage(DEFAULT_PLACEHOLDER);
     }
   }, [animal.id]);
-
+  
   // Cleanup function
   useEffect(() => {
     return () => {
@@ -50,20 +55,10 @@ const AnimalCard = ({
     };
   }, []);
   
+  // Handle image loading
   useEffect(() => {
-    // If we already have the image in global cache, use it
-    if (globalImageCache[animal.id]) {
-      setSelectedImage(globalImageCache[animal.id]);
-      setIsLoaded(true);
-      setHasError(false);
-      return;
-    }
-    
-    // Reset states for new animal
-    if (!isLoaded) {
-      setHasError(false);
-      setRetryCount(0);
-    }
+    // If already loaded or has error, don't try to load again
+    if (isLoaded || hasError) return;
     
     // Handle question mark placeholder
     if (animal.image === "?") {
@@ -73,7 +68,7 @@ const AnimalCard = ({
       return;
     }
     
-    // Initialize with placeholder while loading actual image
+    // Function to load an image
     const loadImage = () => {
       if (!isMounted.current) return;
       
@@ -83,11 +78,11 @@ const AnimalCard = ({
       // Pre-load the image
       const img = new Image();
       
-      // Set up event handlers before setting src to avoid race conditions
+      // Set up event handlers before setting src
       img.onload = () => {
         if (!isMounted.current) return;
         
-        // Save to global cache
+        // Save to global cache using animal ID as key
         globalImageCache[animal.id] = imageToUse;
         
         setSelectedImage(imageToUse);
@@ -98,13 +93,12 @@ const AnimalCard = ({
       img.onerror = () => {
         if (!isMounted.current) return;
         
-        console.error(`Failed to load image: ${imageToUse}, retry: ${retryCount}`);
+        console.error(`Failed to load image for ${animal.name}: ${imageToUse}, retry: ${retryCount}`);
         
-        // If we have retries left and the image isn't already the default, try another image
-        if (retryCount < MAX_RETRIES && typeof animal.image !== 'string' && animal.image.length > 1) {
-          // Try another image from the array if available
+        // If we have retries left and multiple images available, try another
+        if (retryCount < MAX_RETRIES && Array.isArray(animal.image) && animal.image.length > 1) {
           setRetryCount(prev => prev + 1);
-          setTimeout(loadImage, 500); // Longer delay before retrying
+          setTimeout(loadImage, 800); // Longer delay before retrying
         } else {
           // Use the book cover as final fallback
           setSelectedImage(DEFAULT_PLACEHOLDER);
@@ -119,7 +113,7 @@ const AnimalCard = ({
       // Now set the src to trigger loading
       img.src = imageToUse;
       
-      // Fix for some browsers that might have the image cached already
+      // Handle browsers that might have the image cached already
       if (img.complete) {
         img.onload = null;
         setSelectedImage(imageToUse);
@@ -129,31 +123,30 @@ const AnimalCard = ({
       }
     };
     
-    // Start the image loading process if we don't have the image yet
-    if (!isLoaded) {
-      loadImage();
-    }
+    // Start loading process
+    loadImage();
     
-    // Fallback in case image loading takes too long
+    // Fallback timeout in case loading takes too long
     const timeout = setTimeout(() => {
       if (!isLoaded && isMounted.current) {
-        console.warn("Image load timeout, using fallback");
+        console.warn(`Image load timeout for ${animal.name}, using fallback`);
         setSelectedImage(DEFAULT_PLACEHOLDER);
         setIsLoaded(true);
         setHasError(true);
         globalImageCache[animal.id] = DEFAULT_PLACEHOLDER;
       }
-    }, 8000); // Longer timeout
+    }, 10000); // Longer timeout
     
     return () => {
       clearTimeout(timeout);
     };
-  }, [animal.id, animal.image, isLoaded, retryCount]);
+  }, [animal.id, animal.name, animal.image, isLoaded, hasError, retryCount]);
 
-  // Additional safeguard for runtime errors
+  // Additional runtime error handler
   const handleImageError = () => {
-    console.error(`Runtime image error triggered for: ${selectedImage}`);
+    console.error(`Runtime image error for ${animal.name}: ${selectedImage}`);
     
+    // Prevent infinite error loop by checking if already using fallback
     if (selectedImage !== DEFAULT_PLACEHOLDER) {
       setSelectedImage(DEFAULT_PLACEHOLDER);
       setHasError(true);
