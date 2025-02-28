@@ -189,6 +189,12 @@ const HICKORY_HORNED_DEVIL_IMAGES = [
   "/lovable-uploads/0283ed03-15cc-4ecc-bd41-ec583d2fac4a.png"
 ];
 
+// New Honey Badger images
+const HONEY_BADGER_IMAGES = [
+  "/lovable-uploads/ddacacb5-d210-4b3f-a705-0a0958330fc6.png",
+  "/lovable-uploads/99a13886-4fe8-4f52-9d3c-7d99a8350c7a.png"
+];
+
 const AnimalCard = ({
   animal,
   showFacts = false,
@@ -322,6 +328,8 @@ const AnimalCard = ({
         return BONE_EATING_SNOT_FLOWER_WORM_IMAGES;
       } else if (animal.id === "hickory-horned-devil") {
         return HICKORY_HORNED_DEVIL_IMAGES;
+      } else if (animal.id === "honey-badger") {
+        return HONEY_BADGER_IMAGES;
       } else {
         return animal.image;
       }
