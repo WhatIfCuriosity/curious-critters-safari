@@ -57,8 +57,8 @@ export const animals: Animal[] = [
       "It uses a modified dorsal fin on its head to lure prey"
     ],
     image: [
-      "/lovable-uploads/88b8ec06-2483-4641-9925-f9c40a2f9d6e.png",
-      "/lovable-uploads/ff6b17de-b56e-48c2-9b3b-ef7988d5b1b7.png"
+      "/lovable-uploads/f3205e2a-86cf-4934-887f-c40862c21ab0.png",
+      "/lovable-uploads/33cae5a1-1c32-49e5-ad2d-13fd8ba04809.png"
     ],
     category: "weird"
   },

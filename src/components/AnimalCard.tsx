@@ -25,6 +25,10 @@ const NAKED_MOLE_RAT_IMAGES = [
 
 const MONKEYFACE_PRICKLEBACK_IMAGE = "/lovable-uploads/dcb35bf4-8a2b-471e-8da8-3211c44f19e0.png";
 const SCREAMING_HAIRY_ARMADILLO_IMAGE = "/lovable-uploads/7b96f153-2562-47fa-ba94-df3d8a4b3be1.png";
+const RED_LIPPED_BATFISH_IMAGES = [
+  "/lovable-uploads/f3205e2a-86cf-4934-887f-c40862c21ab0.png",
+  "/lovable-uploads/33cae5a1-1c32-49e5-ad2d-13fd8ba04809.png"
+];
 
 const AnimalCard = ({
   animal,
@@ -87,6 +91,8 @@ const AnimalCard = ({
         return MONKEYFACE_PRICKLEBACK_IMAGE;
       } else if (animal.id === "screaming-hairy-armadillo") {
         return SCREAMING_HAIRY_ARMADILLO_IMAGE;
+      } else if (animal.id === "red-lipped-batfish") {
+        return RED_LIPPED_BATFISH_IMAGES;
       } else {
         return animal.image;
       }
