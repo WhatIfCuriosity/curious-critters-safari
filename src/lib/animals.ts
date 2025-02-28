@@ -157,6 +157,19 @@ export const animals: Animal[] = [
     ],
     image: ["/lovable-uploads/8c79dbe2-73ec-4260-9abb-104b2de92996.png", "/lovable-uploads/ffe1fac4-535b-487d-b4fb-4490a85c9409.png", BOOK_COVER],
     category: "fierce"
+  },
+  {
+    id: "southern-hairy-nosed-wombat",
+    name: "Southern Hairy-nosed Wombat",
+    question: "What if a service could build resilient foundations like a Southern Hairy-nosed Wombat's burrow?",
+    facts: [
+      "The Southern Hairy-nosed Wombat has specialized teeth that grow continuously throughout its life",
+      "Their cube-shaped poop helps prevent it from rolling away from where they mark their territory",
+      "They can dig extensive burrow systems with their powerful claws",
+      "They are well-adapted to Australia's arid environments with efficient water conservation systems"
+    ],
+    image: ["/lovable-uploads/9cd1674f-c952-4d10-a2a0-05051c7e9b2c.png", BOOK_COVER],
+    category: "original"
   }
 ];
 
