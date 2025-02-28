@@ -13,6 +13,7 @@ interface AnimalCardProps {
 
 // Default placeholder image that's guaranteed to exist in the project
 const DEFAULT_PLACEHOLDER = "/lovable-uploads/4813c70d-678a-4536-bd98-88a5e0eca792.png"; // Book cover
+
 // Use a global cache to persist between component unmounts/remounts
 const globalImageCache: Record<string, string> = {};
 
@@ -33,7 +34,6 @@ const AnimalCard = ({
   
   // Use ref to track if component is mounted
   const isMounted = useRef(true);
-  const loadedImagesCache = useRef<Map<string, string>>(new Map());
   
   // Immediately set as loaded if we have a cached image
   useEffect(() => {
@@ -93,9 +93,6 @@ const AnimalCard = ({
         setSelectedImage(imageToUse);
         setIsLoaded(true);
         setHasError(false);
-        
-        // Cache the successful image
-        loadedImagesCache.current.set(animal.id, imageToUse);
       };
       
       img.onerror = () => {

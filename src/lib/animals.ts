@@ -209,7 +209,7 @@ export const animals: Animal[] = [
       "This snail has a distinctive spiral shell with beautiful brown patterns",
       "Many Hawaiian snail species are endangered due to habitat loss and introduced predators"
     ],
-    image: ["/lovable-uploads/52a92cf1-d7c1-45e1-a4c3-e14b10da3e91.png", BOOK_COVER],
+    image: ["/lovable-uploads/7c8c7438-96f5-483c-8f8a-a7b96ebcf229.png", "/lovable-uploads/52a92cf1-d7c1-45e1-a4c3-e14b10da3e91.png", BOOK_COVER],
     category: "weird"
   },
   {
