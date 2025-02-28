@@ -61,7 +61,7 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
         </a>
         {typeof animal.image !== "string" && animal.image.length > 1 && (
           <div className="absolute top-2 right-2 bg-white/80 text-xs p-1 rounded-md">
-            Tap for more images
+            {animal.category.charAt(0).toUpperCase() + animal.category.slice(1)}
           </div>
         )}
       </div>
