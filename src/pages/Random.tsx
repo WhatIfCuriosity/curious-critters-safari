@@ -12,6 +12,16 @@ import ProfileBadge from "../components/ProfileBadge";
 // Default fallback image that is guaranteed to exist
 const DEFAULT_FALLBACK = "/lovable-uploads/4813c70d-678a-4536-bd98-88a5e0eca792.png";
 
+// Mapping of animal IDs to their primary thumbnail images
+const animalThumbnails: Record<string, string> = {
+  "moonrat": "/lovable-uploads/ad213540-469d-407b-a147-4899319b2ef4.png",
+  "hercules-beetle": "/lovable-uploads/fa0dc4ec-7637-4fd4-91d3-32e96249f92f.png",
+  "naked-mole-rat": "/lovable-uploads/bb8eb6cc-a644-41df-bbce-f82ad79d7f45.png",
+  "southern-hairy-nosed-wombat": "/lovable-uploads/e15c59a6-e20f-47bd-9d62-e5028ecb994c.png",
+  "vampire-squid": BOOK_COVER,
+  "red-lipped-batfish": "/lovable-uploads/f3205e2a-86cf-4934-887f-c40862c21ab0.png"
+};
+
 const Random = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -21,7 +31,14 @@ const Random = () => {
   
   useEffect(() => {
     // Load initial animal
-    setAnimal(getRandomAnimal());
+    const initialAnimal = getRandomAnimal();
+    setAnimal(initialAnimal);
+    
+    // Show welcome toast
+    toast({
+      title: "Welcome to Random Safari!",
+      description: `Exploring: ${initialAnimal.name}`,
+    });
   }, []);
   
   const handleNewAnimal = () => {
@@ -55,12 +72,17 @@ const Random = () => {
   };
 
   // Safely get an image URL for the animal thumbnail
-  const getSafeThumbnailImage = (animalImage: string | string[]): string => {
+  const getSafeThumbnailImage = (animalImage: string | string[], animalId: string): string => {
     try {
+      // Check if we have a predefined thumbnail for this animal
+      if (animalThumbnails[animalId]) {
+        return animalThumbnails[animalId];
+      }
+      
       // If it's a string, return it directly
       if (typeof animalImage === 'string') {
-        // Check if it's the book cover or a question mark
-        if (animalImage === '?' || animalImage === bookInfo.coverImage) {
+        // Check if it's a question mark
+        if (animalImage === '?') {
           return DEFAULT_FALLBACK;
         }
         return animalImage;
@@ -68,10 +90,6 @@ const Random = () => {
       
       // If it's an array, get the first image or fallback
       if (animalImage.length > 0) {
-        // Check if the first image is the book cover
-        if (animalImage[0] === bookInfo.coverImage) {
-          return DEFAULT_FALLBACK;
-        }
         return animalImage[0];
       }
       
@@ -152,7 +170,7 @@ const Random = () => {
                           <HelpCircle className="h-6 w-6 text-gray-400" />
                         ) : (
                           <img 
-                            src={getSafeThumbnailImage(prevAnimal.image)}
+                            src={getSafeThumbnailImage(prevAnimal.image, prevAnimal.id)}
                             alt={prevAnimal.name} 
                             className="h-full w-full object-contain" 
                             onError={handleThumbnailError}

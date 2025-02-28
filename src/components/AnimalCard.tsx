@@ -1,3 +1,4 @@
+
 import { useEffect, useState, useRef } from "react";
 import { Animal, getRandomImage, bookInfo } from "../lib/animals";
 import AnimatedContainer from "./AnimatedContainer";
@@ -20,6 +21,11 @@ const globalImageCache: Record<string, string> = {};
 const NAKED_MOLE_RAT_IMAGES = [
   "/lovable-uploads/bb8eb6cc-a644-41df-bbce-f82ad79d7f45.png", 
   "/lovable-uploads/5cc87126-c35c-42e4-b267-1032de57fe99.png"
+];
+
+const MOONRAT_IMAGES = [
+  "/lovable-uploads/ad213540-469d-407b-a147-4899319b2ef4.png",
+  "/lovable-uploads/4c0bb9db-d9c9-475f-a6b0-a3865c32bc66.png"
 ];
 
 const MONKEYFACE_PRICKLEBACK_IMAGE = "/lovable-uploads/dcb35bf4-8a2b-471e-8da8-3211c44f19e0.png";
@@ -60,15 +66,13 @@ const AnimalCard = ({
     setIsLoaded(false);
     setHasError(false);
     setRetryCount(0);
+    setShowBookInfo(false);
     
-    // If we have a cached image for this animal, use it immediately
-    if (globalImageCache[animal.id]) {
-      setSelectedImage(globalImageCache[animal.id]);
-      setIsLoaded(true);
-    } else {
-      // Otherwise start with placeholder while we load
-      setSelectedImage(DEFAULT_PLACEHOLDER);
-    }
+    // Clear the cached image for this animal to ensure we get a fresh random image
+    delete globalImageCache[animal.id];
+    
+    // Start with placeholder while we load
+    setSelectedImage(DEFAULT_PLACEHOLDER);
   }, [animal.id]);
   
   // Cleanup function
@@ -96,6 +100,8 @@ const AnimalCard = ({
       // Explicit handling for specific animals based on their ID
       if (animal.id === "naked-mole-rat") {
         return NAKED_MOLE_RAT_IMAGES;
+      } else if (animal.id === "moonrat") {
+        return MOONRAT_IMAGES;
       } else if (animal.id === "monkeyface-prickleback") {
         return MONKEYFACE_PRICKLEBACK_IMAGE;
       } else if (animal.id === "screaming-hairy-armadillo") {
@@ -109,7 +115,7 @@ const AnimalCard = ({
       } else if (animal.id === "southern-hairy-nosed-wombat") {
         return SOUTHERN_WOMBAT_IMAGES;
       } else if (animal.id === "vampire-squid") {
-        return bookInfo.coverImage; // Always use book cover for vampire squid
+        return BOOK_COVER; // Always use book cover for vampire squid
       } else {
         return animal.image;
       }

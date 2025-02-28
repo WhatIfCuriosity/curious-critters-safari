@@ -32,6 +32,23 @@ export const animals: Animal[] = [
     category: "original"
   },
   {
+    id: "moonrat",
+    name: "Moonrat",
+    question: "What if a service could adapt to harsh environments like a Moonrat thrives in mangrove forests?",
+    facts: [
+      "Moonrats mark their territory by spraying a powerful scent from their anal glands",
+      "Their scientific name is Echinosorex gymnura",
+      "They inhabit mangrove and swamp forests of Southeast Asia",
+      "Despite their name, they're not related to rats - they're actually in the same family as hedgehogs",
+      "They have a long, pointed snout and a scaly, rat-like tail"
+    ],
+    image: [
+      "/lovable-uploads/ad213540-469d-407b-a147-4899319b2ef4.png",
+      "/lovable-uploads/4c0bb9db-d9c9-475f-a6b0-a3865c32bc66.png"
+    ],
+    category: "weird"
+  },
+  {
     id: "hercules-beetle",
     name: "Hercules Beetle",
     question: "What if a service could demonstrate strength like a Hercules Beetle, carrying 850 times its own weight?",
